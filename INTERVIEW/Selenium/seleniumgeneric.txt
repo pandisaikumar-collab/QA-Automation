@@ -3,14 +3,14 @@ Selenium General Questions
 """
 
 * what is selenium:
-    selenium is open-source automation testingtool used to automate 
+    selenium is open-source automation testing tool used to automate
     web applications for testing purposes.
 
 * how to install selenium:
-    pip install seleneium 
+    pip install selenium
 
 * how to get xpath:
-    Right-click the elemnet in browser -> inspect - right click highlighted code.
+    Right-click the element in browser -> inspect - right click highlighted code.
     Write custom XPATH using attributes 
 
 * how to launch a browser:
@@ -20,7 +20,7 @@ Selenium General Questions
     driver.get("url")
 
 * what is selenium Remote WebDriver:
-    it allows you to run your tests on a remote maching using Selenium Grid.
+    it allows you to run your tests on a remote matching using Selenium Grid.
 
 * Locating Elements & Waits:
     By.ID

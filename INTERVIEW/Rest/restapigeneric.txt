@@ -65,13 +65,13 @@ REST API with Python
 #Important status_code and Means:
 =================================
 201 -- created resource was successful 
-204 -- No content: request was successful but there is no body to return 
+204 -- No content: request was successful but there is nobody to return
 301/302 -- Moved(Redirect to other url)
-400 -- bad request (client side issue, like missing pyaload/invali parameters)
+400 -- bad request (client side issue, like missing payload/invali parameters)
 401 -- Unauthorized (authentication need/missing/invalid token/credentials)
-403 -- Forbidden (you have authonicated but there is not permission to access)
+403 -- Forbidden (you have authenticated but there is no permission to access)
 404 -- wrong (url/endpoint)
-500 -- Internal server (encountered an unexpected condtion/backend code thrown exception/database failure or timeout/)
+500 -- Internal server (encountered an unexpected condition/backend code thrown exception/database failure or timeout/)
 
 502:
 The server acting as a gateway or proxy received an invalid response from an upstream server.

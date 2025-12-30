@@ -1,0 +1,5 @@
+    a) we can install by using pip (python package installer)
+        pip install requests
+        pip install pytest
+        pip install pyyaml
+        pip install numpy==1.24.2

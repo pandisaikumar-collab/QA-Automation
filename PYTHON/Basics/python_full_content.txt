@@ -9,8 +9,7 @@ PYTHON
 Introduction
 Features of Python
 Limitations of Python
-Flavors of Python
-Python Versions
+Flavors of Python Versions
 Identifiers
 Reserved Words
 DATA TYPES
@@ -20,13 +19,13 @@ TYPE CASTING
 Fundamental Data Types vs Immutability
 Escape Characters
 Constants
-2. OPERATORS
 
+2. OPERATORS
 Arithmetic Operators
 Relational Operators OR Comparison Operators
 Equality Operators
 Logical Operators
-Bitwise Oeprators
+Bitwise Operators
 Shift Operators
 Assignment operators
 Ternary Operator OR Conditional Operator
@@ -35,8 +34,8 @@ Operator Precedence
 Mathematical Functions (math Module)
 Command Line Arguments
 Output Statements
-3. FLOW CONTROL
 
+3. FLOW CONTROL
 Conditional Statements
 Iterative Statements
 Transfer Statements
@@ -48,8 +47,7 @@ Difference between del and None
 What is String?
 How to define multi-line String Literals?
 How to Access Characters of a String?
-Behaviour of Slice Operator
-Slice Operator Case Study
+Behaviour of Slice Operator Case Study
 Mathematical Operators for String
 len() in-built Function
 Checking Membership
@@ -69,8 +67,7 @@ Formatting the Strings
 5. LIST DATA STRUCTURE
 
 Creation of List Objects
-Accessing Elements of List
-List vs Mutability
+Accessing Elements of List vs Mutability
 Traversing the Elements of List
 Important Functions of List
 Using Mathematical Operators for List Objects
@@ -83,11 +80,9 @@ List Comprehensions
 6. TUPLE DATA STRUCTURE
 
 Tuple Creation
-Accessing Elements of Tuple
-Tuple vs Immutability
+Accessing Elements of Tuple vs Immutability
 Mathematical Operators for Tuple
-Important Functions of Tuple
-Tuple Packing and Unpacking
+Important Functions of Tuple Packing and Unpacking
 Tuple Comprehension
 Differences between List and Tuple
 7. SET DATA STRUCTURE
@@ -103,8 +98,7 @@ How to Create Dictionary?
 How to Access Data from the Dictionary?
 How to Update Dictionaries?
 How to Delete Elements from Dictionary?
-Important Functions of Dictionary
-Dictionary Comprehension
+Important Functions of Dictionary Comprehension
 9. FUNCTIONS
 
 Built in Functions
