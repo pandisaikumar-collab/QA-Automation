@@ -1,0 +1,3 @@
+> Reducing data size to improve speed
+
+Example: ZIP files, JPEG images

@@ -1,0 +1,4 @@
+> Converting data into a secure format to prevent unauthorized access during transmission.
+
+Example: Password encryption in HTTPs ensures that sensitive information is protected from eavesdropping.
+Keywords: Encryption, security

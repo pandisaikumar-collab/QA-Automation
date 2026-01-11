@@ -1,0 +1,1 @@
+> Adding random data before hashing to ensure unique hash outputs for identical inputs.

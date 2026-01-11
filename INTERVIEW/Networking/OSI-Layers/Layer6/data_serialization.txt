@@ -1,0 +1,7 @@
+> Converting data objects into a transferable format for transmission over a network.
+
+Example: JSON, XML, Protocol Buffers.
+Data serialization is the process of converting complex data structures or objects
+into a format that can be easily transmitted over a network or stored in a file.
+This process is essential for communication between different systems, especially
+when they use different programming languages or architectures.

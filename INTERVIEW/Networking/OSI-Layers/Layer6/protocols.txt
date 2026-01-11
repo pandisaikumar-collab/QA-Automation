@@ -1,0 +1,42 @@
+> Protocols works at Layer 6 (Presentation Layer) of the OSI model include:
+
+1. SSL/TLS (Secure Sockets Layer / Transport Layer Security):
+   These protocols are used to secure data transmission over networks by encrypting the data
+   before it is sent and decrypting it upon receipt.
+
+2. MIME (Multipurpose Internet Mail Extensions):
+   This protocol is used to format email messages so that they can include text in character sets
+   other than ASCII, as well as attachments like images, audio, and video.
+
+3. JPEG (Joint Photographic Experts Group):
+   This is a commonly used method of lossy compression for digital images, particularly for those
+   images produced by digital photography.
+
+4. GIF (Graphics Interchange Format):
+    A bitmap image format that supports both animated and static images, commonly used on the web.
+
+5. ASCII (American Standard Code for Information Interchange):
+    A character encoding standard for electronic communication, representing text in computers
+    and other devices that use text.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

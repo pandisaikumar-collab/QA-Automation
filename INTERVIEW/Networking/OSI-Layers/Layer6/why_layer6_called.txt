@@ -1,0 +1,6 @@
+> Because it presents data in a readable format for the application layer,
+> handling data encoding, compression, and encryption to ensure proper
+
+Example: Converting raw bytes data into JSON format for web applications.
+
+Keywords: Data representation

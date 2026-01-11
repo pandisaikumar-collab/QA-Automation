@@ -1,0 +1,4 @@
+> Same key for encryption and decryption
+> Faster than asymmetric encryption
+> Examples: AES, DES, 3DES
+> Key distribution can be challenging

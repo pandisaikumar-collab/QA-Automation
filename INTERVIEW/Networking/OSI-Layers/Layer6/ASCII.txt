@@ -1,0 +1,4 @@
+> Basic character encoding
+ASCII (American Standard Code for Information Interchange) is a character
+encoding standard used for representing text in computers and other devices that use text.
+It was developed in the early 1960s and is based on the English alphabet.

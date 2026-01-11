@@ -1,0 +1,4 @@
+> Digital proof of identity issued by a trusted authority,
+  used to establish secure communications over networks.
+
+Example: Website certificates (SSL/TLS) ensure that users are connecting to legitimate sites.

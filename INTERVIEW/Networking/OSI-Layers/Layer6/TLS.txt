@@ -1,0 +1,4 @@
+> TLS is a security protocol that encrypts communication.
+
+Example: Secure API calls in ATT
+

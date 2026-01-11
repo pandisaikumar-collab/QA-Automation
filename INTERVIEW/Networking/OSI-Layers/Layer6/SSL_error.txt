@@ -1,0 +1,4 @@
+Certificate or handshake error
+This error indicates that there was a problem during the SSL/TLS handshake process,
+which is responsible for establishing a secure connection between a client and a server.
+Common causes of this error include:

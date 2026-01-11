@@ -1,0 +1,7 @@
+> Data formatting
+> Encryption and decryption
+> Compression and decompression
+
+Example: Compressing images before sending them over a network to reduce file size and improve transfer speed.
+
+Keywords: Security, compression

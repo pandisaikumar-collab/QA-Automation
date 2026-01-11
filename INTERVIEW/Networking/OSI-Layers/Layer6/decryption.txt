@@ -1,0 +1,3 @@
+> Converting encrypted data back to readable form using decryption algorithms.
+
+Example: Browser decrypting HTTPS data for secure web browsing.

@@ -1,0 +1,5 @@
+> Defines how character are represented in binary format
+
+Example: UTF-8 encoding
+
+Keywords: ASCII, Unicode

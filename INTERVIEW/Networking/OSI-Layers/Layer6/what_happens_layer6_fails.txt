@@ -1,0 +1,5 @@
+> Data is unreadable or corrupted. When Layer 6 (the Presentation Layer) fails, it can lead to issues with data formatting,
+> encryption, and compression. This means that the data being transmitted may not be properly encoded or decoded,
+
+Example: SSL handshake error
+> resulting in unreadable or corrupted information. For example, if encryption protocols fail, sensitive data may be exposed,

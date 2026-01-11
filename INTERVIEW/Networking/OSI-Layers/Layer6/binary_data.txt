@@ -1,0 +1,2 @@
+> Data in 0s and 1s representing binary information.
+01001000 01100101 01101100 01101100 01101111

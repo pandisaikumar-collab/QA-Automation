@@ -1,0 +1,5 @@
+> Entity that issues certificates for secure communication in a network.
+
+Example: DigitCert
+         is a well-known certificate authority that provides SSL/TLS certificates to websites,
+         ensuring secure data transmission between the server and clients.

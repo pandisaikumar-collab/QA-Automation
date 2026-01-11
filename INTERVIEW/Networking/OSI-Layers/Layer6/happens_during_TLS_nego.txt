@@ -1,0 +1,1 @@
+> Client and server agree on encryption methods, exchange keys, and establish a secure session.

@@ -1,0 +1,3 @@
+> Converting data into a specific format
+
+Example: like JSON, XML encoding, Base64 encoding, etc.

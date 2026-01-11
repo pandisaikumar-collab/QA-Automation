@@ -1,0 +1,5 @@
+> Process to establish a secure connection using SSL/TLS involves several steps:
+
+1. **Client Hello**: The client sends a "Client Hello" message to the server.
+This message includes the client's supported SSL/TLS versions, cipher suites,
+compression methods, and a randomly generated number (client random).

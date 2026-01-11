@@ -1,0 +1,1 @@
+> Layer 6 ensures the data is properly formatted and secured encrypted before it reaches the application layer.

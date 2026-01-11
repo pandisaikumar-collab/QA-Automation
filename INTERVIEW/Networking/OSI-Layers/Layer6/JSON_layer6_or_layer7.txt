@@ -1,0 +1,2 @@
+> JSON is Layer 6 format, used by layer 7 applications for data interchange.
+Keyword: Data format

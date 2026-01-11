@@ -1,0 +1,5 @@
+> Defines file type format in emails
+
+Example: text/plain, Email attachments
+
+Keyword: MIME (Multipurpose Internet Mail Extensions)

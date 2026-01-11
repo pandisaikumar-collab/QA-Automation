@@ -1,0 +1,8 @@
+> Layer6 is the presentation layer
+> it is responsible for data translation like formatting, encoding, and secured
+> so both sides can understand the data being exchanged
+
+Example: Encrypting data when using HTTPS,
+         or converting character encoding from ASCII to UTF-8
+
+Keywords: Formatting, encoding, encryption.

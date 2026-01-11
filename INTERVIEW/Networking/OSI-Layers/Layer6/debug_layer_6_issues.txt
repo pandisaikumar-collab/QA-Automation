@@ -1,0 +1,5 @@
+Check certificates,
+TLS/SSL configurations,
+TLS version compatibility,
+encryption logic errors,
+and data encoding/decoding problems.

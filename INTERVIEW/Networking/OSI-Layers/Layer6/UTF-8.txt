@@ -1,0 +1,3 @@
+> A character encoding standard
+> that encodes all possible characters (code points) in Unicode using one to four 8-bit bytes.
+> It is backward compatible with ASCII and is widely used on the web and in programming languages.
