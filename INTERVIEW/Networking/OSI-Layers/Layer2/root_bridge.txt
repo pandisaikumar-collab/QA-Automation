@@ -1,0 +1,9 @@
+> Central STP Bridge:
+    - Bridge ID: 32768.00-14-22-01-23-45-67
+    - MAC Address: 00-14-22-01-23-45
+    - Priority: 32768
+    - Role: Root Bridge
+    - Ports:
+        - Port 1: VLAN 1, Cost 19, State: Forwarding
+        - Port 2: VLAN 10, Cost 19, State: Forwarding
+        - Port 3: VLAN 20, Cost 19, State: Forwarding

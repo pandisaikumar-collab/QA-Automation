@@ -1,0 +1,3 @@
+> ARP is a layer 2/3 boundary protocol: used to map IP addresses (layer 3) to MAC addresses (layer 2).
+> ARP operates primarily at Layer 2 (Data Link Layer) to resolve MAC addresses for given IP addresses,
+  but it is often associated with Layer 3 (Network Layer) because it deals with IP addressing.

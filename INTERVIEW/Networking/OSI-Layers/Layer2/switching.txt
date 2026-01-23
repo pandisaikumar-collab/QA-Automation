@@ -1,0 +1,8 @@
+Switching:
+ - The process of forwarding data frames between devices on the same network based on MAC addresses.
+ - Operates at Layer 2 (Data Link Layer) of the OSI model.
+ - Uses MAC address tables to determine the destination of frames.
+ - Types of switching:
+    - Store-and-Forward: The switch receives the entire frame, checks for errors, and then forwards it.
+    - Cut-Through: The switch starts forwarding the frame as soon as it reads the destination MAC address, resulting in lower latency.
+    - Fragment-Free: The switch reads the first 64 bytes of the frame to check for collisions before forwarding.

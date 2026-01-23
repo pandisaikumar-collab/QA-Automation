@@ -1,0 +1,6 @@
+LCAP: Link Aggregation Control Protocol
+----------------------------------------
+Definition:
+    Link Aggregation Control Protocol (LACP) is a network protocol that allows the bundling of multiple physical network
+    links into a single logical link. This aggregation enhances bandwidth, provides redundancy, and improves fault tolerance
+    in network connections.

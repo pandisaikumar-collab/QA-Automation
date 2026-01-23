@@ -1,0 +1,5 @@
+> Frame is a data packet at layer 2
+> It encapsulates the data from layer 3 (Network Layer) into a format suitable for transmission over the physical medium.
+> A frame typically includes:
+ - Header: Contains control information such as source and destination MAC addresses, frame type, and error-checking data.
+ - Payload: The actual data being transmitted, which is the encapsulated packet from layer 3

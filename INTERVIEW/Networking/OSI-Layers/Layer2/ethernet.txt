@@ -1,0 +1,6 @@
+Ethernet:
+ - Definition: Wiring and signaling standard for the physical layer and data link layer's media access control (MAC) sublayer of the OSI model.
+ - Function: Provides a way for devices to format and transmit data packets over a local area network
+ - Data Unit: Frame
+ - Common Speeds: 10 Mbps, 100 Mbps (Fast Ethernet), 1 Gbps (Gigabit Ethernet), 10 Gbps (10 Gigabit Ethernet)
+ - Cables: Twisted pair (Cat5, Cat6), Fiber optic, Coaxial

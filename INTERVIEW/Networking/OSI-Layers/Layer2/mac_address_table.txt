@@ -1,0 +1,4 @@
+Mac Addressing Table:
+ - Switch table mapping MAC addresses to physical ports
+ - Used for efficient data frame forwarding within a LAN
+ - Helps reduce network congestion by limiting broadcast traffic

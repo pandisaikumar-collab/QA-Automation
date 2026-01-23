@@ -1,0 +1,7 @@
+Broadcast Domain:
+ - Area where broadcast frames are forwarded.
+ - Defined by Layer 2 devices (switches, bridges).
+ - All devices in the same broadcast domain receive broadcast frames.
+ - Routers create separate broadcast domains by not forwarding broadcast frames.
+ - VLANs can be used to segment a network into multiple broadcast domains.
+ - Important for network design and performance optimization.

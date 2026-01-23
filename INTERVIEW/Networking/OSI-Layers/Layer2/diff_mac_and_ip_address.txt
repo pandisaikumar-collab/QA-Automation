@@ -1,0 +1,8 @@
+MAC: Physical, Local address used for communication within a local network segment.
+IP: Logical, Global address used for communication across different networks.
+
+MAC: Assigned by manufacturer, unique to each network interface card (NIC).
+IP: Assigned by network administrator or dynamically by DHCP, can change over time.
+
+MAC: 48 bits (6 bytes) long, typically represented in hexadecimal format (e.g., 00:1A:2B:3C:4D:5E).
+IP: IPv4 is 32 bits (4 bytes) long, represented in dotted decimal format (e.g.,

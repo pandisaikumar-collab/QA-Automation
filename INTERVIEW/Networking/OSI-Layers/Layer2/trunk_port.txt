@@ -1,0 +1,11 @@
+> Carries multiple VLANs
+> Uses 802.1Q tagging
+> Connects switches together
+> Typically used in switch-to-switch or switch-to-router connections
+> Requires configuration on both ends to define allowed VLANs
+> Helps in managing traffic between different VLANs efficiently
+> Can be configured as a trunk or access port depending on the requirement
+> Commonly used in enterprise networks to optimize bandwidth usage
+> Supports VLAN pruning to limit unnecessary traffic on the trunk link
+> Essential for implementing VLANs in a network infrastructure
+A trunk port is a type of network port that is configured to carry traffic for multiple VLANs

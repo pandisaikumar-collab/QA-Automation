@@ -1,0 +1,19 @@
+BPDU: [Bridge Protocol Data Unit]
+ - Stands for Bridge Protocol Data Unit
+ - A type of network message used in the Spanning Tree Protocol (STP)
+ - STP control messages to prevent loops in Ethernet networks
+ - Sent by switches to share information about network topology
+ - Contains information such as:
+    - Bridge ID
+    - Root Bridge ID
+    - Path Cost
+    - Port ID
+    - Message Age
+    - Max Age
+    - Hello Time
+    - Forward Delay
+ - Types of BPDUs:
+    - Configuration BPDUs: Used for maintaining the spanning tree topology
+    - Topology Change Notification (TCN) BPDUs: Used to notify switches of topology changes
+ - BPDUs are exchanged at regular intervals (default is every 2 seconds)
+ - Critical for maintaining a loop-free and efficient network topology

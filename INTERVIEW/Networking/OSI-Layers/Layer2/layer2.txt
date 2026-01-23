@@ -1,0 +1,9 @@
+> Layer 2 is the Data Link layer
+> It delivers data within the same local network using MAC addresses
+
+Example:
+ - Laptop sends data to a printer in the same office
+ - Switch forwards data based on MAC addresses
+ - Ethernet and Wi-Fi operate at this layer
+
+> Keywords: Switching, MAC Address

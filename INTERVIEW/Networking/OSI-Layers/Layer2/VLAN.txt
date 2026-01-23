@@ -1,0 +1,33 @@
+VLAN: (Virtual Local Area Network):
+ - A VLAN is a logical subdivision of a physical network that allows devices to be grouped together
+   based on function, department, or project, regardless of their physical location.
+ - VLANs improve network efficiency and security by segmenting traffic and reducing broadcast domains.
+ - They operate at Layer 2 of the OSI model and use tagging protocols like IEEE 802.1Q to identify VLAN membership on Ethernet frames.
+
+Example:
+    - In a corporate network, the IT department and HR department can be placed in separate VLANs
+    - even if their devices are connected to the same physical switch.
+    - This segregation ensures that sensitive HR data is not accessible to IT staff and vice versa,
+    - enhancing security and reducing unnecessary traffic between departments.
+
+Benefits of VLANs:
+    - Improved Security: By isolating sensitive data and restricting access between VLANs.
+    - Reduced Broadcast Traffic: Limits the scope of broadcast traffic to within the VLAN.
+    - Enhanced Network Management: Simplifies network administration by grouping related devices.
+    - Flexibility and Scalability: Allows for easy reconfiguration of network segments without physical changes
+    - Cost Savings: Reduces the need for additional physical hardware by maximizing the use of existing infrastructure.
+
+Configuration Example (Cisco Switch):
+    Switch(config)# vlan 10
+    Switch(config-vlan)# name HR_Department
+    Switch(config-vlan)# exit
+    Switch(config)# vlan 20
+    Switch(config-vlan)# name IT_Department
+    Switch(config-vlan)# exit
+    Switch(config)# interface FastEthernet0/1
+    Switch(config-if)# switchport mode access
+    Switch(config-if)# switchport access vlan 10
+    Switch(config-if)# exit
+    Switch(config)# interface FastEthernet0/2
+    Switch(config-if)# switchport mode access
+    Switch(config-if)# switchport access vlan 20

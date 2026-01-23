@@ -1,0 +1,18 @@
+ARP: (Address Resolution Protocol):
+- Function: ARP is used to map a known IP address to a MAC (Media Access Control) address within a local network.
+  It enables devices to find the hardware address of a device associated with a given IP address.
+
+- Operation: When a device wants to communicate with another device on the same local network,
+  it sends an ARP request broadcast asking "Who has this IP address?"
+
+- Response: The device with the matching IP address responds with an ARP reply, providing its MAC address.
+
+- Usage: ARP is essential for the proper functioning of IPv4 networks, as it allows devices to communicate
+  at the data link layer (Layer 2) using MAC addresses.
+
+- Limitations: ARP is not used in IPv6 networks, which utilize the Neighbor Discovery Protocol (NDP) for similar functionality.
+
+- Security: ARP is vulnerable to certain types of attacks, such as ARP spoofing, where an attacker
+  sends false ARP messages to associate their MAC address with the IP address of another device.
+
+- Example: If a computer with IP address

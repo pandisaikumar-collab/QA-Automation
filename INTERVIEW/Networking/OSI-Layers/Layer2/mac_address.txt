@@ -1,0 +1,8 @@
+> Mac address (Media access control address):
+ - A physical address of a network device.
+ - It is a unique identifier assigned to network interfaces for communications on the physical network segment.
+ - Mac addresses are typically assigned by the manufacturer of the network interface card (NIC) and are
+    stored in the hardware.
+  - A Mac address is a 48-bit address usually represented as six groups of two hexadecimal digits,
+    separated by colons (:) or hyphens (-). For example, 00:1A:2B:3C:4D:5E.
+   - Mac addresses operate at the Data Link Layer (Layer 2) of the OSI model

@@ -1,0 +1,3 @@
+> VLAN tagging standard
+IEEE 802.1Q is the networking standard that supports virtual LANs (VLANs) on an Ethernet network.
+It defines a method for inserting VLAN membership information into Ethernet frames, allowing

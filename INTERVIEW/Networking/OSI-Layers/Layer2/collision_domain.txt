@@ -1,0 +1,11 @@
+Collision Domain:
+ - A collision domain is a network segment where data packets can collide with one another
+   when being sent on a shared medium, such as Ethernet.
+ - In a collision domain, if two devices transmit data simultaneously, a collision occurs,
+   causing the data to be corrupted and requiring retransmission.
+ - Collision domains are typically found in networks using hubs or repeaters, where multiple
+   devices share the same bandwidth.
+ - Switches and bridges help to reduce collision domains by creating separate segments for
+   each connected device, allowing for full-duplex communication and minimizing collisions.
+ - Understanding collision domains is important for network design and performance optimization,
+   as excessive collisions can lead to network congestion and reduced efficiency.

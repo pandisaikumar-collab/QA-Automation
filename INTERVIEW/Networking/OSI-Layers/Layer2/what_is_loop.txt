@@ -1,0 +1,7 @@
+Loop:
+ - Frame circulates endlessly in a network
+ - Caused by redundant paths in Layer 2 networks
+ - Can lead to network congestion and broadcast storms
+ - Prevented by protocols like Spanning Tree Protocol (STP)
+ - Symptoms include slow network performance and high CPU usage on switches
+ - Detection methods include monitoring MAC address tables and using network analyzers

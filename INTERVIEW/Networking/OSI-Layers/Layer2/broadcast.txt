@@ -1,0 +1,7 @@
+Broadcast:
+ - Sending to all devices on the network
+ - Uses a special broadcast address (e.g., FF:FF:FF:FF:FF:FF for MAC addresses)
+ - Common in Layer 2 (Data Link Layer) of the OSI model
+ - Examples: ARP requests, DHCP discovery messages
+ - Can lead to network congestion if overused
+ - Typically limited to the local network segment (does not cross routers)

@@ -1,0 +1,5 @@
+> Which devices work at layer 2:
+ - Switches and Bridges
+    - Switches and Bridges operate at Layer 2 (Data Link Layer) of the OSI model.
+      They are responsible for forwarding data based on MAC addresses and managing
+      traffic within a local area network (LAN).

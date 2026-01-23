@@ -1,0 +1,4 @@
+> What happens if destination MAC address is unknown in a local network:
+ - The sending device will broadcast an ARP (Address Resolution Protocol) request to all devices on the local network,
+ - asking for the MAC address associated with the known IP address. Once the device with the matching IP address responds
+ - with its MAC address, the sending device can then update its ARP table and send the data to the correct destination.

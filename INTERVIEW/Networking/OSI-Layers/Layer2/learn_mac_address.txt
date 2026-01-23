@@ -1,0 +1,6 @@
+Learn Mac Address:
+ - From source MAC of incoming frames
+ - Using ARP (Address Resolution Protocol) requests and replies
+ - By monitoring network traffic (promiscuous mode)
+ - Through network management tools and software
+ - Via DHCP (Dynamic Host Configuration Protocol) logs

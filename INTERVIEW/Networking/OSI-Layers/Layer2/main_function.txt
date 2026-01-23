@@ -1,0 +1,6 @@
+> Main Functions:
+    Data Link Layer (Layer 2) is responsible for node-to-node data transfer.
+    - Framing: It encapsulates network layer packets into frames for transmission.
+    - Mac addressing: It adds physical addresses (MAC addresses) to frames for proper delivery within a local network.
+    - Error detection and correction: It detects and may correct errors that occur in the physical layer
+    - Switching: It manages how data is sent to devices on the same network segment.
