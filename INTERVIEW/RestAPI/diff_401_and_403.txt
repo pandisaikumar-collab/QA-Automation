@@ -1,0 +1,29 @@
+q) what is the difference between 401 and 403:
+
+ - 401 Unauthorized: this statu code indicates authentication failed
+ - 403 Forbidden: this status code indicates authenticated but access denied
+
+
+Example:
+
+import requests
+import json
+
+url = "https://api.example.com/protected-resource"
+headers = {
+    "Authorization": "Bearer YOUR_ACCESS_TOKEN"
+}
+
+response = requests.get(url, headers=headers)
+if response.status_code == 401:
+    print("Authentication failed: Invalid or missing credentials.")
+elif response.status_code == 403:
+    print("Access denied: You do not have permission to access this resource.")
+else:
+    print("Resource accessed successfully:", response.json())
+
+
+
+result:
+ - 401 Unauthorized: this statu code indicates authentication failed
+ - 403 Forbidden: this status code indicates authenticated but access denied

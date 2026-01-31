@@ -1,0 +1,11 @@
+q) what are the main components:
+
+ - Methods: (GET, POST, PUT, DELETE, PATCH) define the action to be performed on the resource.
+ - URL/Endpoints: (with parameters) specify the location of the resource.
+ - Headers: provide metadata about the request/response (e.g., content type, authorization).
+ - Body/Payload: contains the data sent to the server (mainly in POST, PUT, PATCH requests).
+ - Status Codes: indicate the result of the request (e.g., 200 OK, 404 Not Found, 500 Internal Server Error).
+ - Query Parameters: used to filter or modify the request (e.g., ?id=123).
+ - Authentication: mechanisms to verify the identity of the client (e.g., API keys, OAuth tokens).
+ - Response: the data returned from the server, often in JSON or XML format.
+ - Rate Limiting: controls the number of requests a client can make in a given time period to prevent abuse.

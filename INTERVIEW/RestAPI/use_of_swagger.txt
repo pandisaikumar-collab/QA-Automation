@@ -1,0 +1,9 @@
+q) what is the use of Swagger:
+
+ - API documentation
+ - Try out endpoints directly
+ - Generate client/server code
+ - Validate requests and responses
+ - Standardize API design
+
+

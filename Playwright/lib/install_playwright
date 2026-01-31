@@ -1,0 +1,6 @@
+> install playwright:
+
+pip install playwright (it will install the latest version by default)
+playwright install (it will download browser binaries)
+pip install pytest-playwright (optional, for pytest integration)
+

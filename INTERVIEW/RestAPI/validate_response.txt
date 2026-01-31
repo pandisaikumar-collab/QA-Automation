@@ -1,0 +1,52 @@
+q) How do you validate response data in API testing:
+
+ - check status codes
+ - validate headers
+ - check response body content
+ - use schema validation
+ - response time verification
+
+
+Example:
+
+import requests
+import json
+
+url = "https://api.example.com/data"
+response = requests.get(url)
+
+# Validate status code
+if response.status_code == 200:
+    print("Status code is valid")
+else:
+    print("Invalid status code:", response.status_code)
+
+# Validate headers
+expected_content_type = "application/json"
+if response.headers.get("Content-Type") == expected_content_type:
+    print("Content-Type header is valid")
+else:
+    print("Invalid Content-Type header:", response.headers.get("Content-Type"))
+
+# Validate response body content
+response_data = response.json()
+if "expected_key" in response_data:
+    print("Response body contains expected key")
+else:
+    print("Response body missing expected key")
+
+# Use schema validation
+from jsonschema import validate, ValidationError
+schema = {
+    "type": "object",
+    "properties": {
+        "expected_key": {"type": "string"},
+    },
+    "required": ["expected_key"]
+}
+
+try:
+    validate(instance=response_data, schema=schema)
+    print("Response body matches schema")
+except ValidationError as e:
+    print("Schema validation error:", e)

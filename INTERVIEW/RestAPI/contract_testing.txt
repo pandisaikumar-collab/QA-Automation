@@ -1,0 +1,9 @@
+q) what is the contract testing in REST API:
+
+ - testing whether the API adheres to the defined contract between the client and server.
+ - structure follows the agreed contract (endpoints, request/response formats, data types).
+
+Eg: OpenAPI/Swagger
+    - ensures backward compatibility when changes are made to the API.
+    - helps identify breaking changes early in the development process.
+    - can be automated using tools like Postman, Pact, or Dredd.

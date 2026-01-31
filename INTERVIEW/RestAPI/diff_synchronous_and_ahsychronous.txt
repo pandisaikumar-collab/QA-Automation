@@ -1,0 +1,5 @@
+q) what is the difference between synchronous and asynchronous REST API calls:
+
+ - Synchronous REST API: (Immediate response)
+ - Asynchronous REST API: (Delayed response)
+

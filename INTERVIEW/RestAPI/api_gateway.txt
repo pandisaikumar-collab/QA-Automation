@@ -1,0 +1,6 @@
+API gateway:
+
+ - manages API traffic
+ - authenticates and authorizes API requests
+ - routing requests to appropriate backend services
+ - rate limiting and throttling

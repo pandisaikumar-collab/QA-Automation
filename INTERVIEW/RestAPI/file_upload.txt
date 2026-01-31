@@ -1,0 +1,23 @@
+q) How to test file upload:
+
+  - use form-data in postman or use a curl command to upload a file to the server endpoint.
+  - verify the response status code (e.g., 200 OK or 201 Created).
+  - check the response body for any confirmation messages or file metadata.
+
+  Example:
+    curl -X POST http://example.com/upload \
+         -F 'file=@/path/to/your/file.txt
+
+import requests
+import json
+
+url = 'http://example.com/upload''
+files = {'file': open('/path/to/your/file.txt', 'rb')}}
+response = requests.post(url, files=files)
+
+if response.status_code == 200:
+    print("File uploaded successfully")
+    print("Response:", response.json())
+else:
+    print("File upload failed with status code:", response.status_code)
+    print("Response:", response.text)

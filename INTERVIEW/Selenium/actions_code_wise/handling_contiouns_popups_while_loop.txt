@@ -1,0 +1,56 @@
+# How to handle continuous popups using Selenium with a while loop
+# interview perspective:
+  > How to check if a page is loaded
+  > How to handle popups continuously until there are no more popups
+
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+def is_redbus_page_loaded(self):
+    """
+    Check if the RedBus page is loaded
+    """
+    is_loaded = False
+    try:
+        home_eles = WebDriverWait(self.driver, 30).until(
+            EC.visibility_of_all_elements_located((By.XPATH, "//div[@class='home-wid']"))
+        )
+        if home_eles:
+            is_loaded = True
+        return is_loaded
+    except:
+        return False
+        print("RedBus page did not load within the given time.")
+
+def click_button(self):
+    """
+    Click the button
+    """
+    button_ele = self.driver.find_element(By.XPATH, "//button[@id='popup-close']")
+    return button_ele.click()
+
+def click_done_button(self):
+    """
+    Click the done button
+    """
+    done_button_ele = self.driver.find_element(By.XPATH, "//button[text()='Done']")
+    return done_button_ele.click()
+
+def handle_continuous_popups(self):
+    """
+    Handle continuous popups on the RedBus page using a while loop
+    """
+    if self.is_redbus_page_loaded():
+        while True:
+            next_button = self.click_button()
+            if not next_button:
+                print("No more popups to handle.")
+                self.click_done_button()
+                break
+
+
+
+

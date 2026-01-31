@@ -1,0 +1,33 @@
+q) how to validate date and time fields in a REST API request:
+
+ - use regex or schema validation to check format (eg. ISO 8601 for date-time)
+ - ensure date is within acceptable range (eg. not in the past for future events)
+ - check time zone validity if applicable
+
+Example:
+    - date: "2023-10-15" (YYYY-MM-DD)
+    - time: "14:30:00" (HH:MM:SS)
+    - date-time: "2023-10-15T14:30:00Z" (ISO 8601)
+
+    - return appropriate error messages for invalid inputs
+    - consider using libraries (eg. moment.js, date-fns) for robust validation
+
+
+Code Example:
+
+import re
+from datetime import datetime
+
+def validate_date(date_str):
+    try:
+        datetime.strptime(date_str, "%Y-%m-%d")
+        return True
+    except ValueError:
+        return False
+
+def validate_time(time_str):
+    try:
+        datetime.strptime(time_str, "%H:%M:%S")
+        return True
+    except ValueError:
+        return False

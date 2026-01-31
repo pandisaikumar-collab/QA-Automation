@@ -1,0 +1,4 @@
+q) what is an api key and how is it different from a bearer token:
+
+ - API key: static string for identification, sent in requests.
+ - Bearer token: dynamic, time-limited token for authentication, often via OAuth.

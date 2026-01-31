@@ -1,0 +1,6 @@
+# install selenium
+
+pip install selenium (it will install the latest version of selenium)
+
+pip install selenium==4.10.0 (to install a specific version of selenium, here 4.10.0 is an example)
+

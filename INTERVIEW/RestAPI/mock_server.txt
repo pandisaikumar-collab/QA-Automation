@@ -1,0 +1,6 @@
+q) what is mock server:
+
+ - A fake server that mimics real api responses for testing purposes.
+ - when backend services are unavailable or still in development.
+ - allows frontend developers to work independently.
+ - useful for testing error handling and edge cases.

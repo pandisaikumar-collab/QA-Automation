@@ -1,0 +1,5 @@
+q) what is backward compatibility in REST API:
+
+ - backward compatibility ensures that old clients still work when the API is updated.
+ - test by running older test cases again the new version of the API.
+ - avoid breaking changes like removing fields or changing response formats.

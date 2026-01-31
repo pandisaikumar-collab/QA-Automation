@@ -1,0 +1,49 @@
+q) How do you validate API pagination:
+
+ - Check limit, offset, page number parameters
+ - Ensure no duplicate records across pages
+ - Verify response structure
+ - Test boundary conditions
+ - Ensure consistent data across pages
+ - Validate total count accuracy
+
+Example: (requests)
+
+import requests
+import json
+
+def validate_pagination(api_url, limit=10):
+    page = 1
+    all_records = []
+    total_count = None
+
+    while True:
+        params = {'limit': limit, 'page': page}
+        response = requests.get(api_url, params=params)
+        data = response.json()
+
+        # Validate response structure
+        assert 'results' in data, "Missing 'results' in response"
+        assert 'total_count' in data, "Missing 'total_count' in response"
+
+        # Capture total count on first request
+        if total_count is None:
+            total_count = data['total_count']
+
+        records = data['results']
+
+        # Check for duplicate records
+        for record in records:
+            assert record not in all_records, "Duplicate record found across pages"
+            all_records.append(record)
+
+        # Break if no more records
+        if len(records) < limit:
+            break
+
+        page += 1
+
+    # Validate total count accuracy
+    assert len(all_records) == total_count, "Total count does not match the number of records retrieved"
+
+    print("Pagination validation successful!")
