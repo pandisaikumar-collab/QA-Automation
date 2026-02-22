@@ -1,0 +1,18 @@
+import copy
+
+list1 = [1, 2, [4, 5]]
+
+## shallow copy: it will change in the original nested list
+list1_copy = copy.copy(list1)
+print('before chaging: ', list1_copy)
+list1_copy[2][1] = 100
+print('after chaning copy list:', list1_copy)
+print('after changing original list1: ', list1)
+
+
+## deepcopy: it will not change in the original nested list
+list1_deep = copy.deepcopy(list1)
+print("deep copy list: ", list1_deep)
+list1_deep[2][1] = 200
+print('after deep copy list changed the original: ', list1)
+print('after deep copy list changed: ', list1_deep)
