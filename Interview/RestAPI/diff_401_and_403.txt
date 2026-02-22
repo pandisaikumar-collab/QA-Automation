@@ -1,6 +1,8 @@
 q) what is the difference between 401 and 403:
 
- - 401 Unauthorized: this statu code indicates authentication failed
+ - 400 Bad Request: this status code indicates that the server cannot process the request
+                    like invalid syntax, missing parameters, invalid url
+ - 401 Unauthorized: this status code indicates authentication failed
  - 403 Forbidden: this status code indicates authenticated but access denied
 
 

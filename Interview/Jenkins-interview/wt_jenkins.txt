@@ -1,0 +1,5 @@
+# what is jenkins: /human explanation
+
+i. jenkins is an open-source automation server which helps to automate integration and deployment of software project.
+ii. it is allowed to build, test and deploy software project continuously.
+iii. it is a java-based application which can be run on any platform which supports java.

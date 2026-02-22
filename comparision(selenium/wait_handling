@@ -1,0 +1,15 @@
+> Waiting Handling:
+
+ Selenium:
+ - implicit wait: it is used ot set a default waiting time for the entire testcase
+ - explicit wait: it is used to wait for a specific condition
+ - fluent wait: it is used to wait for specific condition with a specific polling time
+
+
+ Playwright:
+ - Not needed as Playwright has built-in waiting mechanism that automatically waits for elements to be ready before performing actions on them.
+ - It eliminates the need for explicit waits and provides a more efficient and reliable way to handle waiting in tests.
+
+ - wait_for_selector: it is used to wait for a specific element to be
+    visible on the page before performing actions on it.
+ - wait_for_load_state: it is used to wait for the page to load completely before performing actions on it.

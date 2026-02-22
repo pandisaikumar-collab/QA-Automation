@@ -1,0 +1,9 @@
+> How to build a job:
+
+- Go to the jenkins dashboard
+- Select new item
+- Enter the name of the job and select the type of job (e.g. Freestyle project, Pipeline, etc.)
+- Click OK
+- Configure the job by adding the necessary build steps, such as:
+  - Source code management (e.g. Git, SVN)
+  - Add parameters (if needed)

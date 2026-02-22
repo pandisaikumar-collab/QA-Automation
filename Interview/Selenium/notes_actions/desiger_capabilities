@@ -1,0 +1,11 @@
+what is designer capabilities in selenium:
+
+i. Designer capabilities in selenium refer to test with different browser and different operating system.
+ii. It allows testers to create and execute tests across various browser and operating system combination.
+iii. It helps in ensuring that the application under test works correctly across different platforms and environments.
+
+Example:
+========
+Chrome, Firefox, Edge
+Operating System: Windows, Mac
+Platform: Desktop

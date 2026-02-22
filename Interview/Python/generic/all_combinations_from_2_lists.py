@@ -1,6 +1,8 @@
 list1 = ['hello', 'take']
 list2 = ['care', 'sir']
 
+#output: ['hellocare', 'hellosir', 'takecare', 'takesir']
+
 combinations = []
 for item1 in list1:
     for item2 in list2:

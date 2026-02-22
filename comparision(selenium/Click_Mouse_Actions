@@ -1,0 +1,21 @@
+> Click and Mouse Actions:
+
+  Single Click:
+  - Selenium: click()
+  - Playwright: click()
+
+  Double Click:
+  - Selenium: ActionChains.double_click(element).perform()
+  - Playwright: dblclick()
+
+  Right Click (Context Click):
+  - Selenium: ActionChains.context_click(element).perform()
+  - Playwright: click(button='right')
+
+  Hover:
+  - Selenium: ActionChains.move_to_element(element).perform()
+  - Playwright: hover()
+
+  Drag and Drop:
+  - Selenium: ActionChains.drag_and_drop(source, target).perform()
+  - Playwright: drag_and_drop(source, target)

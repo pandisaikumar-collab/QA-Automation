@@ -1,0 +1,35 @@
+How do create pipline in jenkins:
+
+1. Open Jenkins dashboard and click on "New Item" to create a new pipeline.
+2. Enter a name for your pipeline and select "Pipeline" as the project type, then click "OK".
+3. In the pipeline configuration page, scroll down to the "Pipeline" section.
+4. In the "Definition" dropdown, select "Pipeline script".
+5. In the "Script" text area, you can write your pipeline script using the Jenkins
+6. By using Groovy syntax.
+
+Example:
+========
+
+pipeline {
+    agent any
+    stages {
+        stage('job1') {
+            steps {
+                echo 'Building...'
+                // Add your build steps here
+            }
+        }
+        stage('job2') {
+            steps {
+                echo 'Testing...'
+                // Add your test steps here
+            }
+        }
+        stage('job3') {
+            steps {
+                echo 'Deploying...'
+                // Add your deploy steps here
+            }
+        }
+    }
+}

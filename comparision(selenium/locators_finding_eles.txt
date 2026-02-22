@@ -1,0 +1,21 @@
+> Locators (finding elements):
+
+  - Find single element:
+    Selenium - driver.find_element(By.ID, "id")
+    Playwright - page.locator("#id")
+
+  - Find multiple elements:
+    Selenium - driver.find_elements(By.XPATH, "//div[@class='class']")
+    Playwright - page.query_selector_all("xpath=//div[@class='class']")
+
+  - By ID:
+    Selenium - driver.find_element(By.ID, "id")
+    Playwright - page.locator("#id")
+
+  - By Name:
+    Selenium - driver.find_element(By.NAME, "name")
+    Playwright - page.locator("[name='name']")
+
+  - By Class Name:
+    Selenium - driver.find_element(By.CLASS_NAME, "class")
+    Playwright - page.locator(".class")

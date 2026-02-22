@@ -1,5 +1,8 @@
+# task: given two dicts, store in a new dict the keys and values that are not common in both dicts
 d1 = {'a': 1, 'b': 2, 'c': 3}
 d2 = {'b': 3, 'c': 4, 'd': 5}
+
+# output should be {'a': 1, 'd': 5}
 
 result = {}
 for k in d1:
