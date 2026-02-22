@@ -1,0 +1,9 @@
+What is selenium grid:
+
+i. Selenium grid is a tool that allows you to run our testcases
+   on different machines and browsers at the same time.
+
+example: if you have 100 testcases and you want to run them on 5 different browsers,
+         you can use selenium grid to run them in parallel, which will save a lot of time.
+
+Ex: seleniumbox.com (third party tool that provides selenium grid as a service)
