@@ -1,0 +1,94 @@
+> what are edge cases in API testing:
+
+    - Edge cases in API testing are scenarios that test the
+    - API with boundary values, invalid inputs
+    - or unusual conditions to ensure the API behaves correctly at the limit,
+
+    Example: include null inputs, maximum length data,
+             invalid data types, duplicate requests and rate limiting.
+
+Example: suppose an api accepts age between 18 to 60
+
+    Normal test cases: age = 20, age = 40 passes
+    Edge cases: 18 minimum boundary, 60 maximum boundary
+    Invalid edge cases: 17 and 61 ages,
+
+    * so these helps verify whether the API properly validates boundary values.
+
+
+
+Common Edge cases:
+
+#Boundary Value Testing:
+
+    POST /createuser
+    {'age': 18}
+
+    Edge cases:
+        age=17
+        age=18
+        age=60
+        age=61
+
+#Empty or Null inputs:
+example request:
+    {'username': " "} or {'username': null}
+    check if API returns proper error message
+
+
+#Maximum Length Inputs:
+- if API accepts username up to 50 characters
+Edge cases:
+    49 char
+    50 char
+    51 char
+
+#Invalid Data Types:
+Expected - age: integer
+Edge case:
+    {'age': 'twenty'} or {'age': []}
+
+
+#Special characters:
+ username = %$#@!
+ check if API handles special characters
+
+
+#Large Payloads:
+- upload very lage JSON body
+- upload large files
+check if API handles performance and memory limits
+
+#Missing Required files
+- {'email': 'test@gmail.com'}
+if username is required, API should return proper error.
+
+#Duplicate Requests:
+- create user twice with same email
+expected: api should reject duplicate entry
+
+#Rate Limit/ Too Many Requests
+- send many requests quickly (429)
+
+#Authorization Edge cases:
+- Expired token, Invalid token, Missing token, Wrong role access
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,33 @@
+> You only execute test cases or you also analyze the feature,
+  perform impact analysis, and identify edge cases through root cause thinking:
+
+    - whenever we get a New feature or Enhancement, the first step i follow is to understand
+      the requirement, API contracts and related modules.
+
+    - then identify which components or areas might get impacted by the change
+
+Example:
+    - in our project automation, when a change was introduced in a configuration API,
+      i checked not only the main API but also related APIs, UI flows and dependent services
+
+    - based on that, i create my test plan focusing first on the impacted ares.
+      after validating the main functionality, design negative scenarios, boundary cases, and edge cases
+
+    - i check invalid inputs, missing parameters, incorrect authentication, and other
+      unusual conditions to make sure the API behaves correctly.
+
+
+so overall, my approach is:
+    1. understand the requirement and feature change
+       [product requirement documentation, user stores/jira ticket,
+       api contract or swagger documentation, expected bh and acceptance criteria]
+    2. perform impact analysis on related modules/APIs
+        [check other areas may be affected by this change,
+        dependent apis, ui components, database changes,
+        authonitication and authorization changes, existing automation test cases]
+    3. prepare test plan focusing on impacted areas
+        [functional tests: verify api works as expected, regression tests:
+        verify existing functionality still works.]
+    4. cover positive, negative and edge cases
+    5. do root cause analysis if failures occur
+

@@ -1,0 +1,6 @@
+> How do you automate API testing:
+
+    - automate API testing by using python requests library,
+    - create functions to send API requests and validate responses,
+    - verify status codes, response time, headers and JSON data
+    - also use assertions in pytest to validate expected results.

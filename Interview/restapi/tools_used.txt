@@ -1,0 +1,6 @@
+> What tools do you use for API testing:
+
+    - for manual testing used POSTMAN/BRUNO
+    - for automation used python requests library
+    - git for version control and jenkins for CI/CD
+

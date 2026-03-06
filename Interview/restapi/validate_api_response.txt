@@ -1,0 +1,7 @@
+> how do you validate API responses:
+
+    - validate the response by checking status code,
+    - response body, response headers and JSON values,
+    - compare expected data with actual API response using assertions
+
+Example: checking user id, name and response messages

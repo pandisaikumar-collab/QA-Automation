@@ -1,0 +1,4 @@
+> How do you integrate API tests with CI/CD:
+
+    - we integrate tests with jenkins, whenever code is pushed to Github
+      jenkins trigger the test suite automatically and generates reports.

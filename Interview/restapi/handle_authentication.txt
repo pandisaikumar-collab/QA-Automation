@@ -1,0 +1,10 @@
+> How do you handle authentication in API:
+
+    - for authentication we use tokens like bearer token or api key
+    - first send a login API request to get the jwt token,
+    - then pass the token in the request header for other API calls
+
+
+Example:
+
+    headers = {'Authorization': 'Bearer token value'}

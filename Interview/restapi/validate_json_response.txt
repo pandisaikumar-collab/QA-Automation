@@ -1,0 +1,9 @@
+> How do you validate JSON response:
+
+    - convert the API response into JSON format and verify specific fields and values
+
+
+Example:
+
+   data = response.json()
+   assert data['status'] = 'success'

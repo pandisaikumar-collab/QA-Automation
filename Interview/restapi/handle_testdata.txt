@@ -1,0 +1,4 @@
+> How do you handle test data in API testing:
+
+    - i store data in JSON files or python dictionaries,
+    - then helps to run data-driven tests with multiple input values
