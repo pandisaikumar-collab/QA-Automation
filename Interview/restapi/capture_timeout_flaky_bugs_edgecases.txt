@@ -1,0 +1,95 @@
+> How capture timeout issues, flaky bugs, and edge cases in API:
+
+    - have seen similar scenarios where API sometimes fail due to
+      timeouts, high traffic, or backend delays.
+    - these issues can be tricky because they don't always happen consistently,
+    - to handle these type of problems, usually follow a few strategies during testing:
+
+    Example:
+        - check how the API behaves when response time increases
+        - verify if the API times out after configured time limit
+        - validate the timeout response
+
+    > if the system expects a response within 3 seconds, i check:
+        - what happens if backend processing take 5-6 seconds
+        - does it API return timeout errors
+        - does the client handle the response properly
+
+
+> Run tests multiple times to detect flaky behavior:
+    - sometimes an API works 9 times fail once.
+    To detect this:
+        - run the same test multiple times
+        - execute tests in loop
+        - run automation in CI pipelines repeatedly
+
+    - run the API request 50-100 times and check:
+        response time
+        failure time
+        intermittent errors
+
+
+> Simulate production-like traffic:
+    - if production handles 200 requests per second, try to simulate similar
+      traffic in the QA:
+      timeout, server overloaded, rate limiting, queue delays
+
+   example:
+        1. send 500 or 1000 requests per seconds
+        2. check if API returns 429 too many requests
+        3. verify whether the system recover properly
+
+> Monitor response metrics:
+    during testing also track:
+        - response time
+        - error rate
+        - status codes
+        - time failures
+
+> Validate rate limiting:
+    if the system supports rate limiting, i verify:
+        - maximum requests allowed
+        - response when limit is exceeded (429 Too Many Requests)
+
+> Analyze Logs for Root Cause:
+    when failures occur, i analyze:
+        - API request payload
+        - response body
+        - application logs
+        - timestamp patterns
+
+    many flaky issues occur due to:
+        - network latency
+        - database lock deleys
+        - chache synchronization
+        - concurrent requests
+
+> Capture Evidence for Dev:
+    when reporting such issues, i provide:
+        - request payload
+        - response logs
+        - response time
+        - reproduction steps
+        - failure frequency
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
