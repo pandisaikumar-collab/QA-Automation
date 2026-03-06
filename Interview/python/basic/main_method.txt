@@ -1,0 +1,62 @@
+
+> In python, every file which write is called a module
+> when you run a python file directly, python automatically sets
+  a special variable: __name__
+> if you run the python file directly, python sets: __name__ = '__main__'
+> means: Run this code only when this file is executed directly.
+
+Why:
+ > we want some code to run when file is executed directly,
+ > but we don't want that code to run when the file is imported into another file
+
+file1.py:
+
+def m1():
+    print('hello')
+
+print('file is running')
+if __name__ == '__main__':
+    m1()
+
+* Run file directly-- python file1.py
+* because __name__ == '__main__' - True
+
+* import file into another file:
+* file2.py, import file1
+* file1 is running but not m1 method
+* because when imported __name__ == 'file1'
+* so condition become False
+
+
+>> Why important in real project:
+ - prevents unwanted code execution
+ - makes files re-usable
+ - used in automation scripts
+ - so used to check whether the file is being run directly or imported
+ - if it is run directly, the code inside this block executes
+ - if imported, it does not execute
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
