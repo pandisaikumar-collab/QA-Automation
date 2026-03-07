@@ -1,0 +1,58 @@
+> Can we have multiple conftest files:
+
+    - Yes, we can have multiple conftest.py files in pytest.
+    - this is actually a normal practice in large projects.
+
+> How it works:
+
+    - conftest.py is used to share fixtures across multiple test files without
+      importing them.
+
+    - pytest automatically discovers conftest.py files based on the directory structure.
+
+    - you can place different conftest.py files in different folders.
+
+project/
+│
+├── conftest.py
+│
+├── tests/
+│   ├── conftest.py
+│   ├── test_login.py
+│   └── test_logout.py
+│
+└── api_tests/
+    ├── conftest.py
+    └── test_user_api.py
+
+** conftest files:
+    1. project level
+    2. tests folder
+    3. api_test folder
+
+*** pytest used them: pytest follows fixture lookup hierarchy,
+    test file
+       ↑
+    same folder conftest.py
+       ↑
+    parent folder conftest.py
+       ↑
+    root conftest.py
+
+    - so pytest searches upward in the directory tree.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

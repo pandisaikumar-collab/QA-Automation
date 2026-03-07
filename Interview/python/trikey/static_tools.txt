@@ -1,0 +1,58 @@
+> What static tools have you used:
+
+    - static tools analyzes the source code without executing the program
+    - it checks:
+        1. code quality
+        2. coding standards
+        3. security issues
+        4. complexity
+
+Example:
+
+    - suppose when you wrote python code:
+    - A static tool can detect:
+        1. unused variables
+        2. syntax issues
+        3. bad coding practice
+
+Common Static Tools:
+
+    - Pylint
+    - Flake8
+    - Bandit
+    - SonarQube
+
+    pylint test_file.py
+
+* It will show warnings like:
+
+    unused variables
+    line too long
+    missing docstring
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

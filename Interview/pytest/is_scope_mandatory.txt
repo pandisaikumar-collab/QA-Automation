@@ -1,0 +1,85 @@
+> is scope mandatory in pytest fixtures:
+
+    - No, scope is not mandatory in pytest fixtures
+    - if you do not specify scope, pytest will use the default scope = function
+
+import pytest
+@pytest.fixture
+def setup():
+    print('setup executed')
+    return 10
+
+def test_one(setup):
+    print('Test 1', setup)
+
+def test_two(setup):
+    print('Test 2', setup)
+
+output:
+-------
+    Setup executed
+    Test 1 10
+    Setup executed
+    Test 2 10
+
+## autouse=True, means the fixture will run automatically for tests without explicity calling it.
+## normally, you must pass the fixture name inside the test function
+
+Example:(normal)
+    @pytest.fixture
+    def setup():
+        print("Setup executed")
+
+    def test_one(setup):
+        print("Test 1")
+
+Using autouse=True:
+    import pytest
+    @pytest.fixture(autouse=True)
+    def setup():
+        print("setup executed")
+
+    def test_one():
+        print('Test 1')
+
+    def test_two():
+        print('Test 2')
+
+Output:
+    Setup executed
+    Test 1
+    Setup executed
+    Test 2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
