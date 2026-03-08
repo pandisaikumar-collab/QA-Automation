@@ -1,0 +1,27 @@
+> Validations:
+==============
+    > status - status_code
+        [200]
+    > headers - Content-Type, Auth, RateLimit
+        ['application/json']
+    > body - JSON structure, keys, data types
+        [keys, data types]
+    > performance - response time
+        [response.elapsed.total_seconds() < 2]
+    > security - unauthorized access
+        [unauthorized access - access protected endpoint without token]
+    > boundary - invalid input, wrong method
+        [invalid input, wrong method]
+    > schema - JSON schema validation
+        [from jsonschema import validate
+        schema = {
+            "type": "object",
+            "properties": {
+                "id": {"type": "string"},
+                "type": {"type": "string"}
+            },
+            "required": ["id", "type"]
+        }
+        validate(instance=data[0], schema=schema)]
+
+
