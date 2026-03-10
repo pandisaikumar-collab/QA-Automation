@@ -1,5 +1,5 @@
 """
-How AI tools (chatgpt/ms copilot/VScode copilot)
+How AI tools (chatgpt/copilot/VScode copilot)
 Help in Automation/Manual takes
 """
 

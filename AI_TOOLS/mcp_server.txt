@@ -1,0 +1,38 @@
+> MCP (Model context protocol):
+    - it is a way for AI models (like chatgpt or other LLMS) to connect
+      with external tools, APIs, databases, and systems through a
+      standardized server
+
+    - it helps:
+        access databases
+        call apis
+        read files
+        execute functions
+        use external tools
+        github access
+        (without MCP, AI is limited to its training knowledge)
+
+> How MCP works:
+    - user asks AI a question: Get latest sales from database
+    - AI detects it needs external data
+    - AI calls MCP tool
+    - MCP client sends request to MCP server
+    - MCP server executes the tools
+    - results is sent bac to AI
+    - AI formats response and shows to user
+
+> Why MCP:
+    - standard way to connect AI to tools
+    - secure access to external systems
+    - works with multiple tools
+    - real-time data access
+    - extensible architecture
+
+> Why AI companies use MCP:
+    - because AI alone cannot access live systems
+    - automate workflows
+    - perform actions
+
+
+* MCP server is a tool server that allows AI models to securely interact with
+  external systems like APIs, database, and files.

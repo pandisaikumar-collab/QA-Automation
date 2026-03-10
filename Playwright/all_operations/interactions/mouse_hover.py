@@ -1,7 +1,11 @@
+"""
+method: hover
+"""
 import time
 from playwright.sync_api import sync_playwright
 
 MAX_WAIT = 60000
+
 
 class DemoQATest:
 
@@ -31,8 +35,8 @@ class DemoQATest:
         elements_card.click()
         time.sleep(2)
 
-    def select_text_box(self):
-        text_box_ele = self.page.locator("//span[text()='Text Box']")
+    def select_buttons(self):
+        text_box_ele = self.page.locator("//span[text()='Buttons']")
         text_box_ele.click()
         time.sleep(2)
 
@@ -41,36 +45,14 @@ class DemoQATest:
             document.querySelectorAll("iframe").forEach(el => el.remove());
         """)
 
-    def handle_alerts(self):
-        self.page.on('dialog', lambda dialog: dialog.accept())
-
-    def enter_text(self, userName):
-        username_ele = self.page.locator("//input[@id='userName']")
-        username_ele.fill(userName)
-        time.sleep(2)
-
-    def submit(self):
-        self.page.keyboard.press('Enter')
-
-    def select_check_box_menu(self):
-        checkbox_ele = self.page.locator("//span[text()='Check Box']")
-        checkbox_ele.click()
-        time.sleep(2)
-
-    def check_and_uncheck(self, flag):
-        checkbox_ele = self.page.locator("//span[contains(@class, 'checkbox') and @aria-label='Select Home']")
-        if flag == True:
-            print("Clicking on check box")
-            checkbox_ele.check()
-
-        elif flag == False:
-            print("Disable checkbox")
-            checkbox_ele.uncheck()
+    def hover_on_click_me(self):
+        click_me_ele = self.page.locator("//button[text()='Click Me']")
+        if click_me_ele.hover():
+            print("hover click me")
+        else:
+            print("not hover click me")
 
         time.sleep(2)
-
-
-
 
 
 if __name__ == '__main__':
@@ -78,14 +60,9 @@ if __name__ == '__main__':
     demo_obj.launch_browser()
     demo_obj.navigate_to_homepage("https://demoqa.com/")
     demo_obj.select_elements_tab()
-    demo_obj.select_text_box()
-    #demo_obj.handle_alerts()
+    demo_obj.select_buttons()
     demo_obj.remove_ads()
-    demo_obj.enter_text("Saikumar")
-    demo_obj.submit()
-    demo_obj.select_check_box_menu()
-    demo_obj.check_and_uncheck(True)
-
+    demo_obj.hover_on_click_me()
 
     demo_obj.close_browser()
 

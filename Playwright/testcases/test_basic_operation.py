@@ -1,9 +1,11 @@
+import sys
 import time
-
 from playwright.sync_api import sync_playwright
 from lib.open_browser import OpenBrowser
 from lib.page_loaded import PageLoaded
 from lib.elements import Elements
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 class TestBasicOperation:
     """ Testcase to Perform Basic Operations"""
@@ -12,13 +14,11 @@ class TestBasicOperation:
         with sync_playwright() as playwright:
             open_browser_obj = OpenBrowser(playwright)
             page = open_browser_obj.open_browser(browser_type='chromium', headless=False)
-
             print("*********** Browser Launched ***********")
             page.goto("https://demoqa.com/")
             print("*********** Lib objects initialized ***********")
             page_obj = PageLoaded(page)
             elements_obj = Elements(page)
-
             if page_obj.is_page_loaded():
                 print(f"Is Page Loaded Completely")
             elements_obj.click_on_elements_tab()
