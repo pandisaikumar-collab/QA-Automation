@@ -1,0 +1,4 @@
+> what does -s option:
+
+    - it shows print statements in console output
+    - pytest -s

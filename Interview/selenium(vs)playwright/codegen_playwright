@@ -1,0 +1,9 @@
+> What is codegen in playwright:
+
+    - playwright can auto-generate test scripts
+
+    command: playwright codegen
+
+        - it records actions and generates code
+        - selenium does not have this built-in
+

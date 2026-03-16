@@ -1,0 +1,5 @@
+> What is xfail:
+
+    - expected failure
+
+    @pytest.mark.xfail
