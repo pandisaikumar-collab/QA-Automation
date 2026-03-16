@@ -1,0 +1,8 @@
+> What is playwright trace:
+
+    - trace records:
+        screenshots
+        dom snapshots
+        network logs
+
+    * useful for debugging

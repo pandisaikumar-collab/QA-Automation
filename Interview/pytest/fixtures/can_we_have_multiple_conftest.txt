@@ -1,0 +1,5 @@
+> Can we have multiple conftest.py:
+
+    Yes.
+    pytest loads them based on directory hierarchy
+

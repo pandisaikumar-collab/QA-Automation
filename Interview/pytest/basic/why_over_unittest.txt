@@ -1,0 +1,9 @@
+> Why pytest is preferred over unittest:
+
+    Advantages:
+    -----------
+    - less boilerplate code
+    - automatic test discovery
+    - powerful fixtures
+    - parameterization support
+    - large plugin ecosystem

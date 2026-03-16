@@ -1,0 +1,9 @@
+> What is playwright locator:
+
+    - locator is used to find elements in reliable way
+
+    example:
+    --------
+    page.locator('xpath')
+
+    * better than selenium: driver.find_element(By.XPATH, 'xpath')

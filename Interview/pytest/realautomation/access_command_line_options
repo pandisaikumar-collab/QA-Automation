@@ -1,0 +1,3 @@
+> How to access command line options:
+
+    request.config.getoption('--env')

@@ -1,0 +1,10 @@
+> How do you organize a pytest framework:
+
+    typical structure:
+    ------------------
+    tests/
+    pages/
+    utiles/
+    conftest.py/
+    pytest.ini
+

@@ -1,0 +1,9 @@
+> What is headless mode:
+
+    - headless mode runs the browser without UI.
+
+    example:
+    --------
+    browser = playwright.chromium.launch(headless=True)
+
+    this makes tests faster in CI/CD

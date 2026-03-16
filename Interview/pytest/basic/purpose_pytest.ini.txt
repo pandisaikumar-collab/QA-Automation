@@ -1,0 +1,14 @@
+> What is the purpose of pytest.ini:
+
+    - it is a configuration file used to define
+
+        test paths
+        markers
+        default options
+        plugins
+
+    example:
+    --------
+    [pytest]
+    addopts = -v
+    testpaths = tests

@@ -1,0 +1,15 @@
+> What is auto wait in playwright:
+
+    - playwright automatically waits for elements to be:
+
+        visible
+        enabled
+        stable
+
+    example:
+    --------
+    page.click('xpath')
+    playwright wait automatically.
+
+    in selenium we must write: WebDriverWait(driver, 10)
+

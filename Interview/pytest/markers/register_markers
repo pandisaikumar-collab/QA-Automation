@@ -1,0 +1,7 @@
+> How to register markers:
+
+    - in pytest.ini
+
+    markers =
+        smoke
+        regression

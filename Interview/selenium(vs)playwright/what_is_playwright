@@ -1,0 +1,11 @@
+> What is Playwright:
+
+    - playwright is an end-to-end automation framework for web testing
+      developed by microsoft
+
+    - it supports Chromium, Firefox and WebKit with a single API and allows
+      fast, reliable UI testing
+
+    * unlike selenium, playwright communicates directly with the browsers using
+      browser protocol instead of WebDriver
+

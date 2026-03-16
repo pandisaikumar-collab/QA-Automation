@@ -1,0 +1,6 @@
+> How to run tests in parallel:
+
+    - using xdist plugin
+
+    pip install pytest-xdist
+    pytest -n 4

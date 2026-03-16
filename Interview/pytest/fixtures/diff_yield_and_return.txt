@@ -1,0 +1,10 @@
+> Difference between yield and return in fixtures:
+
+    yield:
+        supports teardown
+        used for cleanup
+
+    return:
+        no teardown
+        only setup
+

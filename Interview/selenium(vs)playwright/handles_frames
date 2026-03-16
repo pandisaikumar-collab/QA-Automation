@@ -1,0 +1,5 @@
+> How playwright handles frames:
+
+    - frame = page.frame(name='frame1')
+
+    selenium: driver.switch_to.frame()

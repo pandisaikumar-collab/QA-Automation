@@ -1,0 +1,12 @@
+> does playwright require webdriver:
+
+    - no, playwright does not use webdriver
+    - it communicates directly with the browser using browser automation protocols,
+
+    selenium requires:
+    -----------------
+    test script -> webdriver -> browser driver -> browser
+
+    playwright:
+    -----------
+    test script -> playwright api -> browser

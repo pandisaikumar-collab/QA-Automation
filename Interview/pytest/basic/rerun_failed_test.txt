@@ -1,0 +1,3 @@
+> How to rerun failed tests:
+
+    using plugin: pytest-rerunfailures

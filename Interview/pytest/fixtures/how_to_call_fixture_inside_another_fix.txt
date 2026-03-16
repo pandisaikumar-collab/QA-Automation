@@ -1,0 +1,5 @@
+> How to call fixture inside another fixture:
+
+    @pytest.fixture
+    def login(browser):
+        pass

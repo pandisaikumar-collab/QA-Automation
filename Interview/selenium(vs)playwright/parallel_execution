@@ -1,0 +1,6 @@
+> Does playwright supports parallel execution:
+
+    - yes, parallel testing is built into the framework
+
+    - selenium requires: pytest-xdict
+    - testng parallel

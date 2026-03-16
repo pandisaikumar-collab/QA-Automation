@@ -1,0 +1,9 @@
+> How do you integrate pytest with selenium:
+
+    - use fixture for browser
+
+    @pytest.fixture
+    def driver():
+        driver = webdriver.Chrome()
+        yield driver
+        driver.quit()

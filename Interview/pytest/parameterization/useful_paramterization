@@ -1,0 +1,4 @@
+> Why parameterization is useful:
+
+    - avoid duplicate tests
+    - improves test coverage

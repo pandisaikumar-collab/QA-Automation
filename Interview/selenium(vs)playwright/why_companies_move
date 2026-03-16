@@ -1,0 +1,11 @@
+> Why companies move from selenium to playwright:
+
+    - companies prefer playwright because:
+
+        faster execution
+        built in waits
+        parallel testing
+        multi-browser support
+        network mocking
+        better debugging tools
+

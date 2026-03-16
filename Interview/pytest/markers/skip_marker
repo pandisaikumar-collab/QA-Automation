@@ -1,0 +1,4 @@
+> What is skip marker:
+
+    - used to skip tests
+    @pytest.mark.skip

@@ -1,0 +1,6 @@
+> How to pass command line arguments:
+
+    - using pytest_addoption
+
+    def pytest_addoption(parser):
+        parser.addoption('--env')

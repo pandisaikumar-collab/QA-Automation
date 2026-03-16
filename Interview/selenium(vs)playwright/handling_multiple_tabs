@@ -1,0 +1,11 @@
+> How playwright handles multiple tabs:
+
+    - playwright handles tabs easily:
+
+    example:
+    --------
+    new_page = context.wait_for_event('page')
+
+    selenium:
+    ---------
+    driver.switch_to.window()

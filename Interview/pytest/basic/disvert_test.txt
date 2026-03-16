@@ -1,0 +1,7 @@
+> How does pytest discover tests:
+
+    - pytest automatically discovers:
+
+        Files -> test_*py or _test.py
+        Classes -> Test*
+        Functions -> test_*

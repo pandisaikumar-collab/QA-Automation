@@ -1,0 +1,3 @@
+> What is conftest.py
+
+    - it is used to store shared fixtures across multiple test files

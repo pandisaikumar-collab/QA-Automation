@@ -1,0 +1,4 @@
+> How do you use a fixture:
+
+    def test_login(setup):
+        pass

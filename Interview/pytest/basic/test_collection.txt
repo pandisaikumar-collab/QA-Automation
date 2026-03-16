@@ -1,0 +1,5 @@
+> What is test collection:
+
+    - pytest collects all test files and functions before execution
+
+

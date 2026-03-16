@@ -1,0 +1,3 @@
+> How to stop execution after first failure:
+
+    pytest -x

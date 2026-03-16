@@ -1,0 +1,6 @@
+> Can we have multiple fixtures in a test:
+
+    - Yes
+
+    def test_example(db, browser):
+        pass

@@ -1,0 +1,14 @@
+> what is browser context:
+
+    - browser context is an isolated session
+
+    example:
+    --------
+    multiple users
+    separate cookies
+    independent sessions
+
+    code example:
+    -------------
+    context = browser.new_context()
+    page = context.new_page()

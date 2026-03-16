@@ -1,0 +1,7 @@
+> What are pytest plugins:
+
+    - plugins extend pytest functionality
+
+    pytest-html
+    pytest-xdist
+    pytest-cov

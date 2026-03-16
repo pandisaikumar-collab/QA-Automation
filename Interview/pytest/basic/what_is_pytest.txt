@@ -1,0 +1,5 @@
+> What is pytest:
+
+    - pytest is a python testing framework used to write simple and
+      scalable testcases
+    - it supports fixtures, parameterization, plugins and powerful assertions

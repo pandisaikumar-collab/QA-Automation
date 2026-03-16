@@ -1,0 +1,6 @@
+> What is the use of pytest.main():
+
+    - it allows running pytest programmatically from a python script
+
+        import pytest
+        pytest.main()

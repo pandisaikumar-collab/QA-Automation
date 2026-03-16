@@ -1,0 +1,11 @@
+> What are fixture scopes:
+
+    - scopes define lifetime of fixture
+
+    function
+    class
+    module
+    package
+    session
+
+    @pytest.fixture(scope='session')

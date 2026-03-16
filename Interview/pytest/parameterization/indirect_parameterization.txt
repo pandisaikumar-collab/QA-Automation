@@ -1,0 +1,3 @@
+> What is indirect parameterization:
+
+    - used when parameter values are passed to fixtures

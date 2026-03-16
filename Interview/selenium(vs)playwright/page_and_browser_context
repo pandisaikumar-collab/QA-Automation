@@ -1,0 +1,18 @@
+> Differance between page and browser context:
+
+    browser context:
+    ----------------
+    1. browser context is an isolated browser session
+    2. each context has it's own:
+        - cookies
+        - local storage
+        - cache
+        - session data
+    - it behaves like a separate browser profile or incognito window
+    context = browser.new_context()
+
+    page:
+    -----
+    1. page represents a single tab inside the browser context
+    page = context.new_page()
+

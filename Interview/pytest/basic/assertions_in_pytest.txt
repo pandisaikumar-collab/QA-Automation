@@ -1,0 +1,4 @@
+> What is assertions in pytest:
+
+    - pytest automatically provides detailed failure message
+    assert a == b

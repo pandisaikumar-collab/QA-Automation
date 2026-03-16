@@ -1,0 +1,19 @@
+> Key difference between playwright and selenium:
+
+    playwright:
+    -----------
+    - direct browser communication
+    - faster
+    - auto-wait built in
+    - chromium, firefox and webkit
+    - navigate support
+    - no separate driver needed
+
+   selenium:
+   ---------
+    - uses webdriver
+    - slower comparatively
+    - manual waits required
+    - many browsers
+    - complex handling
+    - need driver

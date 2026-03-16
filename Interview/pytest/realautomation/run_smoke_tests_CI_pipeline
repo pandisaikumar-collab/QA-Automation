@@ -1,0 +1,3 @@
+> How to run smoke tests in CI pipeline:
+
+    pytest -m smoke

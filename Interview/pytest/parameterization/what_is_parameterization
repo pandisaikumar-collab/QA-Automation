@@ -1,0 +1,7 @@
+> What is parameterization:
+
+    - running the same test with multiple inputs
+
+    @pytest.mark.parametrize("a,b", [(1,4), (3,4)]
+    def test_add(a,b):
+        assert a + b

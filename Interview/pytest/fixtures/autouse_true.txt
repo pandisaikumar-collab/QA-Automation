@@ -1,0 +1,4 @@
+> What is autouse=True:
+
+    - it automatically runs for all tests without explicitly calling it.
+    @pytest.fixture(autouse=True)

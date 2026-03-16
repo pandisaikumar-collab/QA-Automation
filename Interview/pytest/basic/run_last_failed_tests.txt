@@ -1,0 +1,3 @@
+> How to run last failed tests:
+
+    pytest --lf

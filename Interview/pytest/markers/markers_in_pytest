@@ -1,0 +1,5 @@
+> What are markers in pytest:
+
+    - markers help group and run specific tests
+
+    @pytest.mark.smoke

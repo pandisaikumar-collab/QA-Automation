@@ -1,0 +1,9 @@
+> What is fixture in pytest:
+
+    - Fixtures are used to setup and teardown test environments:
+
+        @pytest.fixture
+        def setup():
+            print('setup')
+            yield
+            print('teardown')
