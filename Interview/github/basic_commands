@@ -1,0 +1,78 @@
+> Setup and Configuration:
+
+    git config --global user.name "your name"
+    git config --global user.email "your name"
+    git config --list ---> check config
+
+> Repository Initialization:
+
+    git init --> create new repo
+    git clone repo_url --> copy existing repo
+
+> File tracking:
+
+    git status --> check file status
+    git add --> add specific file
+    git add. --> add all files
+
+> Commit changes:
+
+    git commit -m 'message' --> save changes
+    git commit -am 'message' --> add + commit (tracked files only)
+
+> Branching:
+
+    git branch --> list branches
+    git branch <name> --> create branch
+    git checkout <branch> --> switch branch
+    git checkout -b <branch> --> create + switch
+    git switch <branch> --> modern way to switch
+
+> Merging:
+
+    git merge <branch> --> merge into current branch
+
+> Remote repository:
+
+    git remote add origin <url>
+    git remote -v --> check remote
+
+> Push and Pull:
+
+    git push origin <branch> --> upload code
+    git pull origin <branch> --> fetch + merge
+    git fetch --> get latest changes (no merge)
+
+> Undo changes:
+
+    git restore <file> --> undo changes
+    git reset <file> --> unstage file
+    git reset --hard --> remove all local changes
+    git revert <commit> --> undo commit safely
+
+> Logs and History:
+
+    git log --> full history
+    git log --oneline --> short view
+
+> Stashing (temporary save):
+    git stash --> save changes temporarily
+    git stash pop --> restore changes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

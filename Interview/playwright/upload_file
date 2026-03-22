@@ -1,0 +1,4 @@
+> How do you upload file in playwright:
+
+    - self.page.locator('xpath).set_input_files('file path') #single
+    - self.page.locator("input[type=file]").set_input_files(["path/to/file1.txt", "path/to/file2.txt"]) #multiple

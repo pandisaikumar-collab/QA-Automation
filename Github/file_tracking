@@ -1,0 +1,5 @@
+> File tracking:
+
+    git status --> check file status
+    git add --> add specific file
+    git add. --> add all files

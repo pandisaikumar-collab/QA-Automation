@@ -1,0 +1,4 @@
+> Commit changes:
+
+    git commit -m 'message' --> save changes
+    git commit -am 'message' --> add + commit (tracked files only)

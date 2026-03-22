@@ -1,0 +1,4 @@
+> Remote repository:
+
+    git remote add origin <url>
+    git remote -v --> check remote

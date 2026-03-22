@@ -1,0 +1,4 @@
+> Useful extras:
+
+    git diff --> see changes
+    git show <commit> --> view commit details

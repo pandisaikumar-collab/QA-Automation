@@ -1,0 +1,4 @@
+> Logs and History:
+
+    git log --> full history
+    git log --oneline --> short view

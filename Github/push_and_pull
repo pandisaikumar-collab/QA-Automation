@@ -1,0 +1,5 @@
+> Push and Pull:
+
+    git push origin <branch> --> upload code
+    git pull origin <branch> --> fetch + merge
+    git fetch --> get latest changes (no merge)

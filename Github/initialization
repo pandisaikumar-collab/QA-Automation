@@ -1,0 +1,4 @@
+> Repository Initialization:
+
+    git init --> create new repo
+    git clone repo_url --> copy existing repo

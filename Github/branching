@@ -1,0 +1,7 @@
+> Branching:
+
+    git branch --> list branches
+    git branch <name> --> create branch
+    git checkout <branch> --> switch branch
+    git checkout -b <branch> --> create + switch
+    git switch <branch> --> modern way to switch

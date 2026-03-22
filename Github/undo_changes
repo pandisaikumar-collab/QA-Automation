@@ -1,0 +1,6 @@
+> Undo changes:
+
+    git restore <file> --> undo changes
+    git reset <file> --> unstage file
+    git reset --hard --> remove all local changes
+    git revert <commit> --> undo commit safely
