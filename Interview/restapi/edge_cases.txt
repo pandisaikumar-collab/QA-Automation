@@ -1,5 +1,4 @@
 > what are edge cases in API testing:
-
     - Edge cases in API testing are scenarios that test the
     - API with boundary values, invalid inputs
     - or unusual conditions to ensure the API behaves correctly at the limit,

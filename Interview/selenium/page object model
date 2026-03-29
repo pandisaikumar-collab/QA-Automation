@@ -1,0 +1,32 @@
+> Page Object Model:
+
+    - page object model is design pattern which is used in automation framework
+      which helps to organize our code
+
+    - in automation, if we write everything in one file, it becomes difficult to maintain
+
+    - for example, if a locator changes, we have to update it in multiple places,
+      so because of this, maintenance becomes complex
+
+    - in page object model we will create separate classes for each page,
+      and each class contains web elements and related methods
+
+    - if i explain further:
+        - yaml locator file contains all xpath locators
+        - class contains action methods
+        - test class contains test scenarios
+
+    - for example, interface page:
+        - all locators contains in yaml file
+        - all actions methods contains in page file
+
+        Methods:
+        --------
+            - page is loaded
+            - filter attributes
+            - create interface
+            - edit interface
+            - delete interface
+            - get table status
+
+    * so whenever UI changes, we update only in page file, not in all testcases

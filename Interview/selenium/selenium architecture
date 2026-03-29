@@ -1,0 +1,61 @@
+> Explain about Selenium Architecture:
+
+    - so basically, selenium architecture explains how our test scripts interact
+      with the browser to perform automation,
+      so it defines the flow test code to browser execution
+
+    - first we write testscript using python with selenium webdriver
+    - then these commands are sent to the browser driver like chromedriver
+    - finally, the browser driver interacts the actual browser and performs the actions
+
+
+    Components:
+    -----------
+    a) test script:
+        - we write automation script using selenium webdriver
+        - these script contain commands like click, send_keys and validations
+
+    b) webdriver api:
+        - selenium webdriver acts as an interface between test scripts and browser driver
+        - in the other hand words, it converts our commands into instructions understandable
+          by the browser
+
+    c) browser api:
+        - each browser has it's own driver like chromedriver or geckodriver
+        - these drivers receive commands from webdriver and execute them
+
+    d) real browser:
+        - finally, the actual browser performs actions like opening url,
+          clicking elements and validating results
+
+
+    Communication:
+    --------------
+    - selenium uses JSON-based communication between webdriver and browser drivers
+    - so when we write a command, it gets convert into a request, sent to the driver
+      and executed in the browser
+
+    Real Example:
+    -------------
+    For example: when i write self.driver.click(),
+    the command goes to webdriver, then to chromedriver, and finally the browser performs the click action.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

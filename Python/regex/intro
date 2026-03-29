@@ -1,0 +1,5 @@
+> Why regex is important:
+
+    - validating text (email, ip, logs)
+    - extracting values (ui tables, api response)
+    - searching patterns (logs, cli output)

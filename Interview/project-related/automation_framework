@@ -1,0 +1,15 @@
+> Explain your automation framework:
+
+    - so basically, in my project we have hybrid automation framework using
+      python, selenium and pytest
+
+    - we are following the page object model design pattern, where each page
+      is maintained as a separate class
+
+    - so it helps into organize our code by separating page elements and test logic.
+
+    - if i talk about the framework structure, we have separate folders for page/models,
+       testcases and utilities
+
+    - all the locators and page actions are maintained in page class yaml and page classes
+      ,and test logic is written in test files
