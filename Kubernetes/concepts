@@ -1,0 +1,7 @@
+
+    - what is pod, deployment
+    - why kubernetes is used
+    - basic commands:
+
+        kubectl get pods
+        kubectl describe pod

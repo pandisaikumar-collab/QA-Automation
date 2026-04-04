@@ -1,0 +1,23 @@
+> Imagine if you don't have any issues, you just receive information
+  that you don't have access to this file, how you will give access to this:
+
+  - so basically, if i don't have access to a file, first i would check the current
+    permissions of the file
+
+  - for example, i would use ls -l <file_name> to see the read, write, and execute
+    permissions
+
+  - based on that, if i have permission to modify it, i can use chmod to add the required
+    access, like read or execute permission
+
+  - if the issue is related to ownership, i can check the owner and group, and if
+    required update it using chown
+
+  - if i don't have sufficient privileges, i would use sudo or request access from
+    the administrator
+
+
+    ls -ls file - check permissions
+    chmod +x file - give execute
+    chmod 755 file - full control
+    chown user file - change owner

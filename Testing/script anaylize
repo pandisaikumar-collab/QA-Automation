@@ -1,0 +1,32 @@
+> Imagine you would like to execute a script and it doesn't work for your,
+  and like, what you will check first, why such script code doesn't work:
+
+  - so basically, if a script is not executing, my approach would be to check
+    step by step
+
+  - first, i would check if the script has proper execution permissions
+
+  - for example, i would verify using ls -l and if needed, i would give permission
+    using chmod +x script.sh
+
+  - next, i would check if the correct interpreter is defined, like that shebang line
+    #!/bin/bash at the top of the script
+
+  - then, i would try to execute the script using bash script.sh to see if any erros
+    are displayed
+
+  - from my experience, error messages usually help to identify the issue quickly
+
+  - i would also check for syntax errors in the script, especially if there are missing
+    brackets or incorrect commands
+
+  - if the script depends on any external files or environment variables, i would verify
+    those as well
+
+  - additionally, i would check logs or console output to understand where it is failing
+
+  - if needed, i would run the script in debug mode using bash -x script.sh to trace
+    execution step by step
+
+  - so basically, i check permissions, interpreter, syntax, dependencies, and logs
+    identify and fix the issue

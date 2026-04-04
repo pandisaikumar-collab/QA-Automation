@@ -1,0 +1,30 @@
+> Let's say that you have a list of features that need to be tested for
+  our next release, how would you approach and understand what to test:
+
+    - so basically, when i get a list of features to test, my approach would
+      be first understand the requirements clearly
+
+    - to begin with, i would go through the requirement documents or user stories
+      to understand the functionality and expected behavior
+
+    - then i would identify the critical and high-priority features, especially
+      those that have maximum business impact
+
+    - from my experience, this helps in focusing on what is most important for the release
+
+    - next, i would break down the features into test scenarios and testcases,
+     covering both positive and negative cases
+
+    - at the same time, i would check dependencies between features, because some
+      functionalities may impact others
+
+    - then, i would decide which scenarios can be automated and which should be tested
+      manually
+
+    - i would also ensure regression coverage for existing functionalities to avoid
+      any side effects
+
+    - if needed, i would discuss with developers or product owners to clarify any doubts
+
+    - so my approach is to understand prioritize, design test cases, and then
+      execute efficiently to ensure quality coverage

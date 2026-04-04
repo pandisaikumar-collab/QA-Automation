@@ -1,0 +1,15 @@
+
+    - what is containerization
+    - build docker image (file)
+    - run container
+
+    - commands:
+
+        docker build
+        docker run
+        docker ps
+        docker ps
+
+    - access container:
+
+        docker exec -it <container> bash

@@ -1,0 +1,25 @@
+> so talking about automation, how do you decide what to automate
+  and what to test manually and how much test should be automated:
+
+    - so basically, deciding what to automate depends on multiple factors
+      like frequency of execution, stability, and business impact
+
+    - to begin with, i usually prefer to automate repetitive and stable test cases
+      ,especially regression scenarios, because they are executed frequently and
+      save a lot of time.
+
+    - from my experience, critical functionalities like login, navigation and core
+      workflows are good candidates for automation
+
+    - on the other hand, i prefer to keep dynamic or frequently changing features
+      for manual testing, because automation maintenance becomes high
+
+    - ideally, we focus on automating around 60-80% of stable and high-priority
+      scenarios, especially regression and critical paths
+
+    - the remaining scenarios can be tested manually based on need
+
+    - so basically, the goal is to balance automation and manual testing
+      to achieve maximum efficiency and coverage
+
+

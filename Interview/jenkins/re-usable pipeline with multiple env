@@ -1,0 +1,32 @@
+> we will run that pipeline on different environments, there will be
+  different authentications to different systems, how would you set that
+  we can have like a re-usable pipeline that we can use for multiple cases
+  what would be kind of your thoughts in designing:
+
+    - so basically, to design a reusable pipeline for multiple environments,
+      my approach would be to make the pipeline parameterized and modular
+
+    - to begin with, i would create a single piepline where environment details
+      like Dev, QA or staging are passed as parameters
+
+    - based on the selected environment, the pipeline can dynamically pick configurations
+      like URL, credentials, and test data
+
+    - for handling different automations, i would use jenkins credentials managements,
+      where sensitive data like usernames, passwords, or tokens are stored securely and
+      accessed during execution
+
+    - from my experience, this avoids hardcoding and improves security,
+
+    - next, i would maintain environment-specific configurations in separate files,
+      like config files or property files, so that the pipeline logic remains
+      the same while only configurations change
+
+    - also, i would design the pipeline in modular way using reusable stages, so common
+      steps like build, test, and report execution can be reused across environments
+
+    - if needed, i would use shared libraries in jenkins to reuse common functions
+      across multiple pipelines
+
+    - so basically, by using parameterization, secure credentials handling and modular design,
+      we can create a reusable pipeline that works across multiple environments efficiently

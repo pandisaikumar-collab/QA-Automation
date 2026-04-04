@@ -1,0 +1,15 @@
+> how will you analyze logs, do you know any commands to list logs to...:
+
+    - basically, to analyze logs, i follow a step-by-step approach
+
+    - first, i identify the correct log file location, which could be application
+      logs or system logs
+
+    - then, instead of opening the entire file, i use commands to filter and view relevant data
+
+    - for example, i use tail -f <logifle> to monitor logs in realtime
+
+    - if i want to search for specific error, i use grep like grep -e error which help in quickly identifying issues
+
+    - from i use head and tail to view the beginning or end of the logs
+

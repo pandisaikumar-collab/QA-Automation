@@ -1,0 +1,47 @@
+> Imagine you have like a test server or like a general server,
+  and the application on this server stops working, what will
+  by your steps to check, to verify why it dosen't work and how
+  to probably fix it: what will you do:
+
+  - so basically, if an application on a server stops working, my approach would
+    be to troubleshoot step by step
+
+  - first i would check whether the server itself is up and reachable, for example
+    by pinging or trying to access it
+
+  - if the server is up, then i would check if the application services is running or not
+
+  - if it is not running, i would try to restart the service and see if it comes back up
+
+  - next, i would check the application logs and system logs to identify an errors or failure message
+
+  - from my experience, logs usually give the exact root cause
+
+  - then, i would verify if there are any recent changes, like deployments or configuration
+    updates, which could have caused the issues
+
+  - i would also check system resources like CPU, memory and disk space, because
+    sometimes the application may fail due to resource issues
+
+  - if the issue is related to connectivity, i would check network configurations, ports and
+    dependencies like database or external services
+
+  - So basically, my approach is to check server status, application service, logs, resources,
+    and dependencies, and then resolve the issue step by step.
+
+
+
+> Ok, and if the part on which you would like to run an application is busy,
+  so you know any, like way to stop the process on this part:
+
+  - so basically, if the port or process is already in use, first i would identify which
+    process is using it,
+
+  - for that, I can use commands like netstat -tulnp or lsof -i :<port_number> to find the process ID
+
+
+
+
+
+
+

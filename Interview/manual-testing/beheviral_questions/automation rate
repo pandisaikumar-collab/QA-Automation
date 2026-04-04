@@ -1,0 +1,16 @@
+> what's like the best automation rate in your opinion:
+
+    - so basically, there is no fixed best automation rate, because it depends
+      on the project, application stability and requirements
+
+    - from my experience, a good practical range is around 60 t0 80 percent
+      automation, mainly covering stable and high-priority scenarios.
+
+    - we should focus on automating regression and critical workflows, because
+      they provide the maximum value
+
+    - at the same time, trying to automate 100 percent is not always efficient,
+      because it increases maintenance effort, especially for frequently changing features
+
+    - so in my opinion, the best automation rete is not about the number, but
+      about achieving that right balance between automation and manual testing

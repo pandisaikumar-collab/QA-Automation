@@ -1,0 +1,53 @@
+> So let's say that you find when you run some testcases,
+  you find a critical bug, and how would you go about to
+  sort of communicate it to the development team, or what's
+  your approach, let's say it's late in the release cycle
+  and you find a critical bug:
+
+
+    - so basically, if i find a critical bug, especially late in the release cycle,
+      my approach would be to act quickly and communicate clearly
+
+    - first, i would validate the issue to make sue it reproducible and not environment- related problem
+
+    - once confirmed, i would immediately log the defect with necessary details like steps
+      to reproduces, logs, screenshots, and impact
+
+    - at the same time, i would directly communicate with the development team,
+      either through a call or chat, to highlight severity and urgency
+
+    - from my experience, early communication helps in faster resolution
+
+    - i would clearly explain the business impact, especially if it affect critical
+      functionality
+
+    - then, i would work closely with developers to help in debugging by sharing logs
+      or additional inputs
+
+    - if needed, i would also inform stakeholders or managers so that proper decisions
+      can be taken regarding the release
+
+    - once the fix is provided, i would validate it quickly and ensure no regression
+      issues are introduced
+
+    - so basically, my approach is quick validation, immediate communication and close
+      collaboration to resolve the issue as soon as possible
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
