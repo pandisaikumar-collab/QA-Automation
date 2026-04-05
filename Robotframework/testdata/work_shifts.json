@@ -1,0 +1,14 @@
+[
+  {
+    "name": "General",
+    "from": "08:00 AM",
+    "to": "05:00 PM",
+    "hours": "9.00"
+  },
+  {
+    "name": "Twilight",
+    "from": "02:00 PM",
+    "to": "11:00 PM",
+    "hours": "9.00"
+  }
+]

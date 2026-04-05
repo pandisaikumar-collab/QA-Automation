@@ -1,8 +1,11 @@
 *** Settings ***
-Resource    ../resources/home_keywords.robot
+Resource    ../resources/login_keywords.robot
 
 *** Test Cases ***
-Verify Users Can Navigate To Elements Section
-    [Documentation]    Opens DemoQA and clicks the Element card.
-    Open DemoQA Website
-    Click On Elements Card
+Launch The Website
+    [Documentation]    Open the browser and Launch the website
+    Launch The Website
+    Enter Credentials
+    Admin Operations
+    Validate Work Shift Table
+    Close The Browser
