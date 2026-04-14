@@ -1,0 +1,11 @@
+What is service:
+----------------
+    service = one functionality
+    Example:
+    --------
+        Google Driver --> storage service
+        Gmail --> email service
+        Uber --> transport service
+        Swiggy --> food ordering service
+
+        So: AWS = 200 + services combined together

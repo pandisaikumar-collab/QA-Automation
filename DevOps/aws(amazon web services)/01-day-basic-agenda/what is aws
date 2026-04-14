@@ -1,0 +1,12 @@
+What is AWS: (Amazon web services)
+-----------------------------------
+    - AWS is a collection of services
+    - AWS is a cloud computing platform that provides many services over the internet
+
+    Even simpler:
+    -------------
+    Think like this:
+        Google driver --> storage service
+        Gmail --> email service
+        Uber --> transport service
+        - AWS = collection of many services (storage, servers, database, etc..)
