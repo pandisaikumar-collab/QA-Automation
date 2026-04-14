@@ -1,1 +1,5 @@
-![img.png](img.png)
+https://app.diagrams.net/ (website)
+![traditional_comparision.png](img.png)
+![table_comparision.png](img_1.png)
+![what_is_docker.png](img_2.png)
+![notepad_diagram.png](img_3.png)
