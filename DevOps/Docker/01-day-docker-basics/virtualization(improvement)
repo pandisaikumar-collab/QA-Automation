@@ -1,0 +1,35 @@
+> Virtualization (improvement):
+
+    Idea: split one big machine into multiple virtual machines (VMs)
+
+    how it works:
+    -------------
+    Hardware -> Hypervisor -> VM1, VM2, VM3
+    Each VM -> OS -> APP
+        - each VM has its own OS,
+        - its own resources
+        - full isolation
+
+        Good things:
+        ------------
+        - full isolation
+        - better resource usage
+        - multiple apps on one machine
+
+        Problems:
+        ---------
+        - heavyweight (each vm has full OS -> consumes RAM + CPU)
+        - slow (vm takes time to start (boot OS))
+        - works in DEV <-> Not working in QA
+
+        Why:
+        ----
+        - different OS versions
+        - missing configs
+        - dependency issues
+
+        Famous line:
+        -------------
+        - it works on my machine
+        - it works in my environment
+        - it works in my local

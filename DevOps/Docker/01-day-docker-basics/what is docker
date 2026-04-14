@@ -1,0 +1,8 @@
+What is Docker:
+
+    - Docker is a containerization platform(software) using docker
+      we can build, ship(move) and run applications as containers
+
+    - container is nothing but a light weight virtual machine
+
+    - docker is a tool to build, ship, and run containers

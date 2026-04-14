@@ -1,0 +1,12 @@
+Program Agenda:
+---------------
+    - introduction
+    - virtualization and containerization
+    - virtual machine and docker
+    - installation
+    - docker file, docker image and container
+    - docker commands
+    - build the docker file
+    - create docker custom images and containers, push to docker hub
+    - docker compose
+    - docker swarm

@@ -1,54 +1,10 @@
 import os 
-import yaml 
 import time 
 import pytest 
 import logging 
 
-from selenium import webdriver  
-
-from models.demohome import DemoHome
-from models.elements import Elements
-from models.elements import Buttons
-from models.widgets import ProgressBar
-
 log = logging.getLogger(os.path.dirname(__file__))
 log.setLevel(logging.INFO)
-
-
-@pytest.fixture(scope='session')
-def config():
-    config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'config', 'config.yaml')
-    with open(config_path) as file:
-        return yaml.safe_load(file)
-
-
-@pytest.fixture(scope='session')
-def driver(config):
-    if config['browser'] == 'chrome':
-        driver = webdriver.Chrome()
-    elif config['browser'] == 'firefox':
-        driver = webdriver.Firefox()
-    else:
-        raise Exception("Unsupported browser in config file.")
-
-    driver.get(config['base_url'])
-    driver.maximize_window()
-    time.sleep(5)
-    log.info("Waiting 5 seconds for website to stabilize")
-    yield driver
-    driver.quit()
-
-@pytest.fixture()
-def home_obj(driver):
-    return DemoHome(driver)
-
-@pytest.fixture()
-def elements_obj(driver):
-    return Elements(driver)
-
-@pytest.fixture()
-def progress_bar(driver):
-    return ProgressBar(driver)
 
 
 def test_demo_home_page(driver, config, home_obj, elements_obj, progress_bar):

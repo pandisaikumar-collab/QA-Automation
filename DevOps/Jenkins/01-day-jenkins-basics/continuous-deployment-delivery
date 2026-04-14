@@ -1,0 +1,64 @@
+CD- Continuous Delivery / Continuous Deployment:
+------------------------------------------------
+CI - build + test
+CD - Deploy
+
+
+Continuous Delivery vs Continuous Deployment:
+---------------------------------------------
+
+	1. Continuous Delivery (manual approval required):
+
+		- developer pushes code
+		- jenkins builds & tests
+		- code goes to dev - qa
+		- before production:
+			manual approval needed (Client / QA sign-off)
+		- then you manually trigger deployment
+
+		keypoint: deployment is automated, but trigger is manual
+
+		Example:
+		---------
+		QA team says: All tests passed
+		Client gives aproval
+		You got to jenins and click 'Build/Deploy' manually
+
+
+	2. Continuous Deployment (Fully Automated):
+
+		- developer pushes code
+		- jenkins:
+			build, test, deploy to dev - qa - prod automatically
+
+		keypoint: everything is automated end-to-end
+
+		Example:
+		---------
+		code pushed, tests passed, automatically goes to production (ho human intervention)
+
+
+Internal vs External Porjects (Important Insight):
+--------------------------------------------------
+External projects (Clients like Facebook, Banking apps) -> Use Continuous Delivery:
+
+	Reason:
+		- need client approval
+		- cannot directly push to production
+
+
+Internal Projects (HRMS, Payroll): Use Continuous Deployment:
+
+	Reason:
+		- used inside compnay
+		- no strict approval needed
+		- faster releases
+
+
+Final Simple Summary:
+=====================
+CI - build + test automatically
+Continuous Delivery - Manual approval before production
+Continuous Deployment - Fully automatic deployment
+External apps - Delivery
+Internal apps - Deployment

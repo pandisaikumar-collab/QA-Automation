@@ -1,0 +1,24 @@
+Evolution of deployment:
+------------------------
+    Traditional -> Virtualization -> Containers
+
+    -) Traditional Deployment: Setup
+       Hardware -> OS -> Application
+
+       Example:
+       ---------
+       one server (big machine)
+       install OS (linux/windows)
+       deploy your app (war file)
+
+       Problem here:
+       -------------
+       you use very little resources
+        server = 128GB RAM
+        app uses only 4BG
+       can't run multiple apps safely
+
+       No isolation: (Example)
+       ------------------------
+       2 apps using same java (JVM)
+       one crashes --> other alos affected

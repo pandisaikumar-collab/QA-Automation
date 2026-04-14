@@ -1,0 +1,6 @@
+Jenkins:
+--------
+	- jenkins is an open source (written in java) used to automate tasks
+	  in software development
+
+	- instead of doing things manually (like building code, testing,  deploying) jenkins does it automatically

@@ -1,0 +1,15 @@
+
+What is Build:
+---------------
+	- build is nothing but creating the package
+	- build means converting your source code into a runnable application
+
+	Example:
+		- your write java code	-- .java files
+		- build tool converts it into -- .jar or .war file
+
+		it includes:
+			compiling code
+			resolving dependencies
+			packaging (creating deployable files)
+			(Code -> Compile -> Package -> Output file (jar/war))

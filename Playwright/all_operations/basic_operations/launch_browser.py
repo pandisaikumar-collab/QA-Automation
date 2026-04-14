@@ -26,3 +26,9 @@ class DemoQATest:
 demo_obj = DemoQATest()
 demo_obj.launch_browser()
 demo_obj.close_browser()
+
+
+
+
+
+

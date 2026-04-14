@@ -1,0 +1,126 @@
+Containerization(modern approach):
+----------------------------------
+    Idea: package everything together -> run anywhere
+
+    what is container:
+    ------------------
+    A container = Application + dependencies + configs + environment
+
+        real-life example:
+        ------------------
+        Like a tiffin box,
+        - food inside = your app
+        - box = container
+        - carry anywhere = works same
+
+    How it works:
+    -------------
+    Hardware -> OS -> Docker -> Containers
+
+        * no separate OS per container
+        * all containers share same OS
+        * each container has its own process space
+        * each container has its own file system
+        * each container has its own network space
+
+    Key Difference:
+    ---------------
+     > Virtual Machine:
+       VM = App + OS
+
+     > Container:
+       App only (uses host OS)
+
+    Why containers are better:
+    -------------------------
+    Light weight:
+        - no os inside container
+        - uses less memory
+    Fast:
+        - starts in seconds
+        - vm takes minutes
+
+    Portable: build once, run anywhere
+        works same in:
+            - laptop
+            - dev
+            - qa
+            - production
+
+    No works on my machine issue:
+    -----------------------------
+    because: dependencies are inside container
+
+    Better resource usage:
+    ----------------------
+    Containers share CPU/RAM dynamically
+
+    * Isolation:
+    -------------
+    Even though containers share same OS:
+    they are isolating using:
+        Namespaces - separate spaces
+        cgroups - resource control
+
+    simple understanding:
+    ---------------------
+    - same house
+    - different rooms
+    - everyone independent
+
+
+    | Feature        | Virtual Machine | Container      |
+    | -------------- | --------------- | -------------- |
+    | OS             | Each VM has OS  | No OS (shared) |
+    | Size           | Large (GBs)     | Small (MBs)    |
+    | Speed          | Slow            | Fast           |
+    | Resource usage | High            | Low            |
+    | Startup        | Minutes         | Seconds        |
+    | Isolation      | Hardware level  | OS level       |
+
+
+    AWS Example:
+    ------------
+    - EC2 instance = virtual machine
+      NOT container
+      if your install docker inside EC2 - then containers
+
+    Final Simple Understanding:
+    ---------------------------
+    Old:
+        one server + one app  --> waste resources
+
+    VM:
+        one server + multiple vms --> better but heavy
+
+    container:
+        one server --> multiple containers -> fast, lightweight, portable
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

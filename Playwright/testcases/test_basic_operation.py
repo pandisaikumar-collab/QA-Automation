@@ -1,16 +1,18 @@
+import os
 import sys
 import time
 from playwright.sync_api import sync_playwright
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 from lib.open_browser import OpenBrowser
 from lib.page_loaded import PageLoaded
 from lib.elements import Elements
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-
 class TestBasicOperation:
     """ Testcase to Perform Basic Operations"""
 
-    def test_check_page_loaded_completely(self):
+    def test_basic_operations(self):
         with sync_playwright() as playwright:
             open_browser_obj = OpenBrowser(playwright)
             page = open_browser_obj.open_browser(browser_type='chromium', headless=False)
@@ -43,6 +45,11 @@ class TestBasicOperation:
             print("*********** Closing Browser ***********")
             page.context.browser.close()
             print("*********** Browser Closed ***********")
+
+
+if __name__ == "__main__":
+    test_obj = TestBasicOperation()
+    test_obj.test_check_page_loaded_completely()
 
 
 

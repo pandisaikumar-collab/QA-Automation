@@ -1,52 +1,10 @@
 import os
-import yaml
 import time
 import pytest
 import logging
-from selenium import webdriver
-from models.demohome import DemoHome
-from models.elements import Elements
-from models.elements import Buttons
 
 log = logging.getLogger(os.path.basename(__file__))
 log.setLevel(logging.INFO)
-
-# Load config once per session
-@pytest.fixture(scope='session')
-def config():
-    config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'config', 'config.yaml')
-    with open(config_path) as file:
-        return yaml.safe_load(file)
-
-# Use a single browser session for all tests
-@pytest.fixture(scope='session')
-def driver(config):
-    if config['browser'] == 'chrome':
-        driver = webdriver.Chrome()
-    elif config['browser'] == 'firefox':
-        driver = webdriver.Firefox()
-    else:
-        raise Exception("Unsupported browser in config.")
-
-    driver.get(config['base_url'])
-    driver.maximize_window()
-    time.sleep(5)
-    log.info("Waiting 10 seconds for website to stabilize")
-    yield driver
-    driver.quit()
-
-
-@pytest.fixture()
-def home_obj(driver):
-    return DemoHome(driver)
-
-@pytest.fixture()
-def elements_obj(driver):
-    return Elements(driver)
-
-@pytest.fixture()
-def buttons_obj(driver):
-    return Buttons(driver)
 
 def test_demo_home_page(driver, config, home_obj, elements_obj):
     if home_obj.is_demoqa_page_loaded():

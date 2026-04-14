@@ -1,0 +1,28 @@
+Continous Integration (CI):
+---------------------------
+	- CI is the process of automating the build and testing the code everytime
+	  when a developer push the code to version control system
+	- Developers write the code daily
+	- Every time code is pushed, jenkins:
+		build the code,
+		runs tests,
+		check if everything is working fine
+
+	Sample Example:
+	---------------
+		- 5 developers are working
+		- everyone pushes code to git
+		- jenkins automatically:
+			combines all code (integration)
+			build it
+			runs tests
+		so no manual checking needed,
+		CI = automatically merge + build + test code continuously
+
+
+CI-Benefits:
+------------
+	- immediate bug detection
+	- no integration step in the software depelopement lifecycle
+	- a deployable system at any given point
+	- record of evolution of the project
