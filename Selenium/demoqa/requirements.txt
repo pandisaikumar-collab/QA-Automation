@@ -8,5 +8,6 @@ requests
 pytest
 pyyaml
 pytest-html
+allure-pytest
 
 
