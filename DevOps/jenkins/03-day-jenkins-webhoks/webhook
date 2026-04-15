@@ -1,0 +1,7 @@
+What is Webhook:
+----------------
+    - webhooks automatically trigger when code is pushed instead of
+      clicking manually build now
+
+    - to configure webhooks should have admin access for github
+      Developer pushes code → GitHub → Webhook → Jenkins Job Triggered → Tests Run → Reports Generated

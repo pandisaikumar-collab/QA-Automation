@@ -1,0 +1,10 @@
+> Repository Configuration:
+---------------------------
+    - Add repository URL
+    - Add credentials (PAT Token) for private repo
+
+    Branch Selection:
+    -----------------
+        default master
+        real-time:
+            use development, main, qa for environment

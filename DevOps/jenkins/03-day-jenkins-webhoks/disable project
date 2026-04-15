@@ -1,0 +1,7 @@
+Disable Project(When server is down):
+--------------------------------------
+    Enable:
+        Disable project
+    Used when:
+        - test env down
+        - deployment blocked

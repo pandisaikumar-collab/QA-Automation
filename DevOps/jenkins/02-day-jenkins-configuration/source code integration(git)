@@ -1,0 +1,10 @@
+> Source Code Integration (Git):
+--------------------------------
+    - use git option under source code management
+    - works for:
+        Github
+        Gitlab
+        Bitbucket
+
+    important: jenkins needs git installed on server
+               command: yum install git -y

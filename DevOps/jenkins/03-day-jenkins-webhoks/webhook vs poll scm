@@ -1,0 +1,8 @@
+| Feature        | Webhook | Poll SCM        |
+| -------------- | ------- | --------------- |
+| Trigger Type   | Instant | Scheduled       |
+| Resource Usage | Low     | High            |
+| Efficiency     | Best    | Not preferred   |
+
+* Webhook is better because it triggers instantly and does not consume
+  unnecessary jenkins resources

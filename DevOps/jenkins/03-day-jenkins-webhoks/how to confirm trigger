@@ -1,0 +1,4 @@
+How to confirm trigger
+----------------------
+    jenkins -> build -> console output
+    Started by GitHub push

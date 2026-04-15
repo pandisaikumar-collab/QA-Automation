@@ -1,0 +1,9 @@
+Auto Delete Old Builds:
+-----------------------
+    Configure -> General:
+        Enable: Discard old builds
+
+    Set:
+        Max builds to keep: 5
+
+    Prevents: disk space issues, jenkins slowdown

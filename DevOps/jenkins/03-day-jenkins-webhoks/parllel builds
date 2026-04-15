@@ -1,0 +1,6 @@
+Parallel Builds (Executors):
+----------------------------
+    Manage Jenkins -> Configure system
+    # of executors = 2 (default)
+    we can increase 3, 5 etc = Allows multiple test jobs in parallel
+

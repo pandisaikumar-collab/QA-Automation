@@ -1,0 +1,4 @@
+Add Timestamps:
+---------------
+    Add timestamps to console output
+    helps in execution time, slow tests

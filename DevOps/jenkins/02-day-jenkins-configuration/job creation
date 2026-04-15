@@ -1,0 +1,10 @@
+> Job Creation:
+---------------
+    - A task/project in jenkins
+    - executes automation steps (build, test, deploy)
+
+   steps:
+   ------
+        1. got to dashboard --> new item
+        2. give job name
+        3. select Freestyle project
