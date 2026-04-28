@@ -1,0 +1,5 @@
+When do we restart Jenkins:
+---------------------------
+    - after installing external plugins
+    - when jenkins is stuck/hung
+    - when plugin changes require reload

@@ -1,0 +1,12 @@
+Plugin Installation Methods:
+----------------------------
+    From Jenkins UI: Manage Jenkins --> Manage Plugins --> Available Tab
+
+    External Plugin installation: Advanced tab --> upload.hpi file
+        * external plugins require restart
+
+    Restart Jenkins: http://jenkins-url/restart
+        immediately restarts, Running may stop
+
+    Safe Restart: http://jenkins-url/safeRestart
+    Only admin users can do this

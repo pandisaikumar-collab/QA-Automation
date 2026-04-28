@@ -1,0 +1,59 @@
+Commonly used plugins:
+----------------------
+    Deployment plugins:
+    -------------------
+        deployment to container plugin, deploys apps to servers like WebLogic, Jboss, GlassFish
+        WebLogin/ WebSphere/ WildFly plugins
+        server-specific deployments
+
+    * Most widely used = Deploy to container plugin (high adoption)
+
+    Build Dependency Tools:
+    -----------------------
+        Maven integration plugin: build java projects using maven
+
+    Notification Plugin:
+    --------------------
+        Email extension plugin: send customized email notifications (failure/success)
+
+    Slack Integration (vai plugin):
+    -------------------------------
+        Send build alerts to slack
+
+    Code Quality:
+    -------------
+        Integrates jenkins with sonarqube for code analysis
+
+    Monitoring & Audit:
+    -------------------
+        Tracks: who created jobs, who deleted jobs, who modified configs
+        Limitation: cannot create restore deleted jobs
+
+    Recovery & History:
+    -------------------
+        Job configuration history plugin: tracks config changes, can restore deleted jobs
+
+    Build Management:
+    -----------------
+        next build number plugin: change build numbers manually
+        Real use case: After jenkins crash -> new server -> avoid version conflicts
+
+    Backup:
+    -------
+        ThinBackup plugin: backup jenkins configs and jobs
+
+    UI Enhancement:
+    ---------------
+        Blue Ocean Plugin: Modern UI for pipelines
+
+    Scheduling:
+    -----------
+        Schedule Build Plugin: Run job one time at a specific time
+
+    File Transfer:
+    --------------
+        Publish over SSH plugin: transfer files between servers
+
+    Build Customization:
+    --------------------
+        Build Name Setter: Customize build names (e.g, dev_1, instead of #1)
