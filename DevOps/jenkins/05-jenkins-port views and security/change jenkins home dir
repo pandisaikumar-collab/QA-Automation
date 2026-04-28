@@ -1,0 +1,6 @@
+Jenkins Home Directory:
+-----------------------
+    default path: /var/lib/jenkins
+
+    change home directory: update in config file
+        JENKINS_HOME="/new/path"

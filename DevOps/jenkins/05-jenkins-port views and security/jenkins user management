@@ -1,0 +1,7 @@
+Jenkins User Management:
+------------------------
+    Create Users:
+    -------------
+        go to: manage jenkins --> manage users --> create user
+        fill: username, password, email (mandatory)
+        observation: by default all users get admin access

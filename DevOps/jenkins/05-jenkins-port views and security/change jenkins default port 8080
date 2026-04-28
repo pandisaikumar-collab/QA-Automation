@@ -1,0 +1,59 @@
+Change Jenkins Default Port 8080:
+---------------------------------
+    default behavior: jenkins runs on port 8080 by default
+
+    File location (based on OS):
+    ----------------------------
+    RHEL/CENTOS     /etc/sysconfig/jenkins
+    Ubuntu/Debian   /etc/default/jenkins
+
+    Steps to change port:
+    ---------------------
+    cd /etc/sysconfig
+    vi jenkins
+
+    OR(Ubuntu): cd /etc/default
+    vi jenkins
+
+    Modify Port:
+    ------------
+    JENKINS_PORT="8080"
+    JENKINS_PORT="9999"
+
+    Restart Jenkins:
+    ----------------
+    sudo systemctl restart jenkins
+    sudo systemctl status jenkins
+
+    - change won't apply without restart
+    - in newer jenkins versions, config file behavior may differ
+    if not working:
+        check service file:
+            /usr/lib/systemd/system/jenkins.service
+        reload daemon:
+            sudo systemctl daemon-reexec
+            sudo systemctl daemon-reload
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

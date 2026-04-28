@@ -1,0 +1,28 @@
+Jenkins Backup (Thin Backup Plugin):
+------------------------------------
+    install plugin:
+    ---------------
+        manage jenkins --> manage plugins --> Thin Backup Plugin
+
+    Config Backup:
+    --------------
+        manage jenkins --> Thin Backup --> Settings
+
+    Manual Backup:
+    --------------
+        Backup Now
+
+    Automatic Backup:
+    -----------------
+    Cron format:
+        ******
+        Runs every minute(for demo)
+
+    Backup Types:
+    -------------
+        Type: Full (complete backup)
+        Differential (Only changes)
+
+        - user hourly backups in real-time
+        - maintain limited backup (e.g 50)
+        - avoid frequent backups --> save disk space

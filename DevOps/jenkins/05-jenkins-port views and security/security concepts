@@ -1,0 +1,101 @@
+Jenkins Security (Authorization):
+---------------------------------
+    Manage jenkins --> config global -> security
+
+    Security Concepts:
+    ------------------
+    security realm: jenkins own database (default)
+    LDAP: (realtime usage)
+
+    authorization strategies:
+    --------------------------
+    Logged-in users: Full access (Not recommended)
+    Matrix-based: Fine-grained control
+    Project-based matrix: job-level access
+    Role-based: recommended for real-time
+
+    install role-based plugin:
+    --------------------------
+    manage jenkins --> manage plugins --> install --> Role-Based Authorization Strategy
+
+    Matrix-Based Authorization:
+    ---------------------------
+        Steps:
+            select - project-based matrix authorization
+            add user
+            assign permissions
+
+        Permissions Types:
+            overall:
+                admin
+                read
+
+            job:
+                build
+                configure
+                delete
+                create
+
+            view:
+                create/delete/read
+
+        Example:
+        --------
+        User: Admin (Full)
+        Developer: Read only
+        Devops: Build + Configure
+
+        * if user is not added -- cannot login (even if valid user)
+
+    Project-Level Security:
+    ------------------------
+    Requirement: user sees only specific jobs
+        steps:
+            go to job -config
+            enable: project-based security
+            add user
+            assign permissions
+
+        example:
+        --------
+            Mithun  Facebook jobs only
+            Rithvik Maven jobs only
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

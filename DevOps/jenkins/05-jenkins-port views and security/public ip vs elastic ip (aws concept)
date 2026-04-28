@@ -1,0 +1,11 @@
+Public IP vs Elastic IP (AWS Concept):
+--------------------------------------
+    Problem: Restart server - Public IP changes
+    Solution: Use Elastic IP
+
+    Benefits:
+    ---------
+    - static ip (doesn't change after restart)
+    - avoid manual updates in tools like:
+        - SonarQube
+        - Nexus

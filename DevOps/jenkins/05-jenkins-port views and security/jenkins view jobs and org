@@ -1,0 +1,33 @@
+Jenkins Views (Job Organization):
+---------------------------------
+    problem: large projects --> 100+ jobs
+    difficult to navigate
+
+    solution: views help group jobs logically
+
+    Create View:
+    ------------
+        click + (New View)
+        enter name (e.g facebook project)
+        select List View
+        add required jobs
+        save
+
+    Example:
+    --------
+    View Name: Facebook project
+    Jobs: FB-Login, FB-payment
+
+    View Name: Maven project
+    Jobs: Build, Test
+
+    Features:
+    ----------
+        - easy navigation
+        - organize jobs by project/team
+        - no limit on number of views
+
+    Limitations:
+    ------------
+        - No sub views
+        - No search bar in dashboard
