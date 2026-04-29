@@ -1,0 +1,15 @@
+Key Differences (Scripted vs Declarative)
+-----------------------------------------
+    Scripted:
+    ---------
+        used node {}
+        flexible
+        more complex
+        used groovy fully
+
+    Declarative:
+    -----------
+        uses pipeline {}
+        structured
+        easy & readable
+        limited syntax

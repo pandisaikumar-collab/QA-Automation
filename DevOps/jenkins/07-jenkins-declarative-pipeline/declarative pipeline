@@ -1,0 +1,50 @@
+What is Declarative Pipeline:
+-----------------------------
+     - a structured way to write jenkins pipeline scripts
+     - easier and more readable than scripted pipeline
+     Uses predefined blocks like:
+        pipline
+        agent
+        stages
+        steps
+
+    Basic systax structure:
+    ------------------------
+    pipeline {
+        agent any
+
+        stages{
+            stage('Stage Name') {
+                steps {
+                    // commands
+                }
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

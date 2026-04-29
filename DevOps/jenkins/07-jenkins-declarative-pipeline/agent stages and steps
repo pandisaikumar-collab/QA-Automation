@@ -1,0 +1,13 @@
+Agent (where pipeline runs):
+----------------------------
+    agent any - runs on any available node (default master)
+    to run on specific node:
+        agent {
+            label 'node_name'
+        }
+
+Stages & Steps:
+---------------
+    stages - main blocks of pipeline
+    stage - each phase (checkout, build, test, deploy)
+    steps - actual commands to execute

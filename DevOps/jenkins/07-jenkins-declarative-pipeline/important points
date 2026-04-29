@@ -1,0 +1,6 @@
+Important Points:
+-----------------
+    - declarative is preferred in real-time
+    - no nested stages allowed
+    - always use correct tools versions
+    - pipeline script usually stored in: Jenkinsfile inside repository

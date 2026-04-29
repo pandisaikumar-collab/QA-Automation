@@ -1,0 +1,10 @@
+Multi-Branch Pipeline:
+---------------------
+    - Automatically creates jobs for each branch
+    - Requires Jenkinsfile in each branch
+
+    How it works:
+    -------------
+    - scans repository
+    - finds branches with Jenkinsfile
+    - creates jobs automatically
