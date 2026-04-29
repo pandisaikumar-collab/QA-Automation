@@ -1,0 +1,13 @@
+====> for new installation:
+# python -m venv venv 
+# Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+# .\venv\Scripts\Activate
+# pip install -r requirements.txt
+# navigate to .\Demoqa_automation
+# python -m pytest testcases/test_demohome.py 
+    (\Demoqa_automation> python -m pytest testcases/test_demohome.py)
+
+====> For execution steps:
+cd Demoqa_automation
+venv\Scripts\Activate
+python -m pytest testcases\test_demohome.py
