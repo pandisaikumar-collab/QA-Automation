@@ -1,0 +1,7 @@
+Important Points:
+-----------------
+    - no nested stages
+    - each stage must be separate
+    - use snippet generator if needed
+    - pipeline = flow of stage
+    - practice important

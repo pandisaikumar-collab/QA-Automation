@@ -1,0 +1,12 @@
+Jenkinsfile:
+------------
+    - store pipeline script in Git
+    Default Name: Jenkinsfile
+
+    Configure Job:
+    --------------
+    select --> pipeline script from SCM
+    provide:
+        - repo url
+        - branch
+        - script path

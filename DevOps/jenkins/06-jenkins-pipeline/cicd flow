@@ -1,0 +1,3 @@
+CI/CD Flow:
+-----------
+    Github --> Jenkins --> Build --> SonarQube --> Nexus --> Tomcat

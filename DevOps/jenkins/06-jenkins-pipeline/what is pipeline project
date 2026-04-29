@@ -1,0 +1,71 @@
+What is Pipeline Project:
+-------------------------
+
+    - advanced jenkins job type
+    - uses pipeline script (code-based)
+    - replaces Freestyle & Maven jobs
+
+    Advantages:
+    -----------
+        - customize full CI/CD flow
+        - reusable scripts
+        - easy integration with tools
+        - widely used in real-time
+
+    Types of Pipeline:
+    ------------------
+        - scripted pipeline
+        - declarative pipeline (next session)
+
+    Basic Structure:
+    ----------------
+    node {
+        // stages here
+    }
+        - Runs on master node by default
+        - Options:
+            node('master')  {}
+
+    Stage Concept:
+    --------------
+        - piepline is divided into stages
+        - each stage represents one step in CI/CD
+
+        Groovy:
+        -------
+            stage('Stage Name') {
+                //steps
+            }
+
+    Stage 1: Checkout Code:
+    -----------------------
+    stage('Checkout Code') {
+        git branch: 'development', url: 'repo-url'
+    }
+        - default branch --> master
+        - specify branch if needed
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

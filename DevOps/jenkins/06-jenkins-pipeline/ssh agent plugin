@@ -1,0 +1,7 @@
+SSH Agent Plugin:
+-----------------
+    Required for deployment:
+        - install plugin: SSH Agent
+        - add credentials:
+            Type: SSH username with private key
+            Use .pem file
