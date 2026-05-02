@@ -1,0 +1,6 @@
+Important Tips:
+---------------
+    - don't hardcode values in scripts
+    - use config files for reusability
+    - learn linux (grep, cut, pipe | )
+    - CLI improves efficiency + scalability

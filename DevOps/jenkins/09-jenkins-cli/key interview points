@@ -1,0 +1,10 @@
+Key Interview Points
+--------------------
+    - CLI is used for automation
+    - supports script-based job management
+    - jenkins-cli.jar is required
+    - parameters can be passed using -p
+
+    Migration requires:
+    -------------------
+    save jenkins version, copy jenkins home directory

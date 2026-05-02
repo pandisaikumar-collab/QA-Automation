@@ -1,0 +1,19 @@
+Shell script automation:
+-----------------------
+    - instead of running commands manually --> write .sh scripts
+
+    Example:
+    --------
+    echo "Displaying Jobs"
+    java -jar jenkins-cli.jar -s $URL -auth $USER: $TOKEN list.jobs
+
+    Dynamic Input in Scripts:
+    -------------------------
+    Use read command: read jobname
+
+    Avoid Hardcoding:
+    ----------------
+    Store values in config file:
+        JENKINS_URL=http://localhost:8080
+        JENKINS_USER=saikumar
+        JENKINS_TOKEN=1234567890

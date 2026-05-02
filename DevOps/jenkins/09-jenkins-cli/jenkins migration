@@ -1,0 +1,22 @@
+Jenkins Migration
+----------------
+    - move jenkins from one server (AWS) -> another server (Azure)
+
+    Method1:
+    --------
+    - install same jenkins version on new server
+    - stop jenkins
+    - backup existing directory:
+        /var/lib/jenkins --> jenkins_backup
+    - copy old server data:
+        /var/lib/jenkins (old) --> new server
+    - start jenkins
+        results: all jobs, config restored
+
+    Method2:
+    --------
+    - use Job Import Plugin
+    - provide:
+        source jenkins URL
+        username & password
+        import jobs directly

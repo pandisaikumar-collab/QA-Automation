@@ -1,0 +1,9 @@
+Passing Parameters in CLI:
+--------------------------
+    Use -p option
+        build job-name -p key=value
+
+    Example:
+    --------
+    build Facebook -p branch=master -p name=Tech
+

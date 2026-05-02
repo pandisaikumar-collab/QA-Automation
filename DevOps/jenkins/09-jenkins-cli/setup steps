@@ -1,0 +1,7 @@
+Setup steps
+-----------
+
+    - open jenkins url / cli
+    - download jenkins cli jar file
+    - run commands using:
+        java -jar jenkins-cli.jar -s <jenkins_URL> -auth <username: token> <command>

@@ -1,0 +1,9 @@
+Common CLI commands:
+-------------------
+
+    list jobs: list-jobs
+    build jobs: build <job-name>
+    delete job: delete-job <job-name>
+    create job: create-job <job-name>
+    Get job config: get-job <job-name>
+    Delete node: delete-node <node-name>

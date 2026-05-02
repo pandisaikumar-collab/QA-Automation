@@ -1,0 +1,11 @@
+Jenkins CLI (command line interface)
+------------------------------------
+
+    - a command-line tool to interact with jenkins
+    - allows performing all GUI tasks using scripts (shell/python/java)
+
+    why:
+    ----
+    - automate respective tasks
+    - faster than GUI
+    - useful for bulk operations (e.g 100 jobs/users)
