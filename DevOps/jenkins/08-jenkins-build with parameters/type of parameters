@@ -1,0 +1,41 @@
+Type of Parameters:
+------------------
+    1. Choice Parameter:
+        - used for predefined values (e.g branch names, environment names, etc.)
+        Example:
+        --------
+            development
+            master
+            QA
+            production
+
+    2. String Parameter:
+        - user enters value manually
+        Example:
+        --------
+            Name = person_name
+
+    3. Boolean Parameter:
+        - True/False option
+
+    How it works:
+    -------------
+    Enable: this project is parameterized
+    Use variable:
+    ------------
+        ${branch_name}
+
+    Example (Freestyle job)
+    -----------------------
+    Branch selection: ${branch_name}
+
+    Shell script:
+    ------------
+    echo "Branch selected: ${branch_name}"
+
+    Output Behavior:
+    ----------------
+    select value during build
+    job runs with selected inputs
+
+

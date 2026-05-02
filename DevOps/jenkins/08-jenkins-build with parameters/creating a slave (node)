@@ -1,0 +1,28 @@
+Creating a slave (node):
+------------------------
+    Steps:
+        - create new linux server
+        - install java
+        - Got to Jenkins:
+            Manage Jenkins --> Manage Nodes --> New Node
+        Select: Permanent Agent
+        Provide:
+            Name
+            Remote directory
+            IP Address
+            Credentials (PEM key)
+
+    Connection Type:
+        SSH
+
+    Verify:
+        Status --> Online
+        Logs show:
+            Agent successfully connected
+
+    Executors:
+    ----------
+        Number of jobs that can run parllely
+        Example: 5 --> 5 jobs can run at same time
+
+    !! Depends on: Server CPU, RAM

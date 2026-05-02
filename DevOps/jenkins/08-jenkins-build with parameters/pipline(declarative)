@@ -1,0 +1,23 @@
+In Pipeline (Declarative):
+-------------------------
+
+    pipeline {
+        agent any
+        parameters {
+            choice(name: 'BRANCH',
+            choices: ['main', 'dev', 'test'],
+            description: 'Select branch to build')
+                string(name: 'NAME',
+                defaultValue: 'Sai', description: 'Enter name')
+            )
+
+            stages{
+                stage('Checkout') {
+                    steps {
+                        echo "Branch is $ {params.BRANCH}"
+                        echo "Name is $ {params.NAME}"
+                    }
+                }
+            }
+        }
+    }

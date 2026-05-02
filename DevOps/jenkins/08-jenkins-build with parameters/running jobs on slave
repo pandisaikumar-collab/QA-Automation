@@ -1,0 +1,18 @@
+Running Jobs On Slave:
+----------------------
+    Freestyle job:
+        Enable: restrict where this project can run
+        Enter: label_name OR node_name
+
+    Pipeline job:
+        agent any
+
+    agent {agent label 'slave'}
+
+
+Common Errors:
+---------------
+    Git Not installed on Slave
+    Error occurs during build
+    Fix:
+        yum install git -y

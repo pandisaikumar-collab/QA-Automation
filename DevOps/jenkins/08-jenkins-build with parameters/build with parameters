@@ -1,0 +1,12 @@
+Build With Parameters:
+----------------------
+    - used to pass values dynamically while triggered a job
+    - avoid creating multiple jobs for different environments (Dev/QA/Prod)
+    - can be used to pass values like branch name, environment name, build version, etc.
+
+    why:
+    ----
+    instead of:
+    - 3 jobs --> Dev/QA/Prod
+    we create:
+        1 job + dynamic parameters

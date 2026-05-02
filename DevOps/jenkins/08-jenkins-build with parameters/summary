@@ -1,0 +1,7 @@
+Summary:
+---------
+    Build with parameters --> dynamic inputs
+    Master-Slave --> performance optimization
+    Executors --> parallel jobs
+    Label --> flexible job routing
+    Slave --> execute builds

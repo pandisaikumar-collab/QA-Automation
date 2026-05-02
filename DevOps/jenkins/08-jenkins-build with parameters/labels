@@ -1,0 +1,20 @@
+Label:
+------
+    Logical group of nodes
+
+    Example:
+        slave1 --> label: linux
+        slave2 --> label: linux
+
+    Advantage:
+    ----------
+    Job runs on any available node in that label
+
+    Node vs Label:
+    ------------
+    Type: Node name
+    Behavior: Runs on specific node
+
+    Type: Label
+    Behavior: Runs on any node in group
+

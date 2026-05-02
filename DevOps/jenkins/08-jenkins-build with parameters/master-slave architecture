@@ -1,0 +1,71 @@
+Master-Slave Architecture:
+--------------------------
+    Master (controller)
+    Slave (Agents/Nodes)
+
+    why:
+    ----
+    improve performance
+    run multiple jobs efficiently
+    distribute workload
+
+    problem without slaves:
+    -----------------------
+    100 jobs --> all run on master
+    slower execution
+
+    solution:
+    ---------
+    distribute jobs:
+        slave1 --> 20 jobs
+        slave2 --> 20 jobs
+        slave3 --> 20 jobs
+        slave4 --> 20 jobs
+        slave5 --> 20 jobs
+        etc
+
+    Key Concepts:
+    -------------
+    Master Responsibilities:
+        - stores job configurations
+        - manages builds
+        - schedules jobs
+    Location:
+        JENKINS_HOME/jobs
+
+    Slave Responsibilities:
+    -----------------------
+        - executes jobs
+        - downloads code
+        - runs build
+
+    Important Points:
+    ----------------
+        - jenkins NOT installed on slave
+        - Only java required
+        Uses agent.jar to connect
+
+    Where Code is Stored:
+    ---------------------
+    Job config --> master
+    source code --> slave
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

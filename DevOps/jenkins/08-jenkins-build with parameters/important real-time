@@ -1,0 +1,10 @@
+Important Real-Time Points:
+---------------------------
+    Slaves can be:
+        Linux
+        Windows
+        Mac
+
+    Use cases:
+        One slave --> Node.js apps
+        One slave --> Client-specific jobs
