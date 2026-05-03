@@ -1,0 +1,19 @@
+Upstream and downstream jobs:
+-----------------------------
+    upstream job - triggers another job
+    downstream job - get triggered automatically
+
+    Example Flow:
+    ------------
+        Dev job --> QA job --> Prod job
+
+    Why use it:
+    -----------
+        - automates pipeline flow
+        - avoids manual triggering
+        - ensures order of execution
+
+    In pipeline script:
+    -------------------
+        instead of GUI triggers:
+            build job: 'QA-Job'

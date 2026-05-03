@@ -1,0 +1,25 @@
+Parallel Execution
+------------------
+    Stages run onb-by-one --> slow pipeline
+
+    Solution:
+    ---------
+        Run independent stages at same time
+
+        stage('Parallel Stage') {
+            parallel {
+                stage {
+                    steps {
+                        sh 'mvn clean package'
+                    }
+                }
+                stage {
+                    steps {
+                        sh 'mvn clean package'
+                    }
+                }
+            }
+        }
+
+    - only use when tasks are independent
+    - if dependent --> keep sequential

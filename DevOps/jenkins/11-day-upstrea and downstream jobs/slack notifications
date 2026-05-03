@@ -1,0 +1,21 @@
+Slack Notifications:
+--------------------
+    - send build status to team (success, failure, aborted)
+
+    Flow:
+    -----
+        create slack chanel
+        install slack plugin in jenkins
+        configure token
+        use in pipeline
+
+    Declarative Example:
+    --------------------
+        post {
+            success {
+                slackSend message: "Build Success"
+            }
+            failure {
+                slackSend message: "Build Failed"
+            }
+        }

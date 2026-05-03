@@ -1,0 +1,35 @@
+Try-Catch-Finally in pipeline:
+------------------------------
+    Handle failures and send notifications properly:
+        try {
+            //pipeline stages
+        }   catch (err) {
+            currentBuild.result = 'FAILURE'
+            //send notifications
+        }   finally {
+            notify(currentBuild.result)
+        }
+
+
+    Declarative Block (Cleaner Way):
+    --------------------------------
+    instead of try-catch, use:
+        post {
+            always {
+                echo "Always runs"
+            }
+            success {
+                echo "Success"
+            }
+            failure {
+                echo "Failure"
+            }
+        }
+
+    Pipeline Execution Type:
+    ------------------------
+    Type: Sequential
+    Behavior: One stage after another
+
+    Type: Parallel
+    Behavior: All stages run in parallel

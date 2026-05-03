@@ -1,0 +1,20 @@
+Key Interview Questions from this topic:
+-----------------------------------------
+
+    you will definitely get these:
+
+        what is shared library:
+            - reusable pipeline code stored in Git
+
+        different between upstream and downstream jobs:
+            - one job triggers another job
+
+        how to send slack notification:
+            slack plugin + pipeline script
+
+        how to speed up jenkins pipeline:
+            use parallel
+
+        how to handle failures:
+            try-catch or post block
+
