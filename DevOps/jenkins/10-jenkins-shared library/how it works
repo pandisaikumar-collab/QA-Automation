@@ -1,0 +1,10 @@
+How it works:
+--------------
+    - jenkins read library from Github
+    - looks inside vars/
+    - matches function name with file name
+
+    Example:
+    --------
+    File: build.groovy
+    Call: build('clean')

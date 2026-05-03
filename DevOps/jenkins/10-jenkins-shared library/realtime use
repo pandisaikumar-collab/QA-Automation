@@ -1,0 +1,27 @@
+Real-Time Use Case:
+-------------------
+
+    - multiple microservices
+    - same pipeline steps:
+        build
+        test
+        deploy
+        notifications
+
+    instead of copying code --> store in shared library and reuse
+
+    Folder Structure:
+    -----------------
+    (shared-library-repo)
+    Var/
+        - build.groovy
+    src/
+        - com/
+    resources/
+
+    Key points:
+    -----------
+    vars/ - contains reusable functions
+    src/ - groovy classes (advanced)
+    resources/ - files like configs
+

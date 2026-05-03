@@ -1,0 +1,18 @@
+Example Pipeline:
+-----------------
+    @Library('shared-lib') _
+    pipeline {
+        agent any
+            stages {
+                stage('Clean') {
+                    steps {
+                        build('Clean')
+                    }
+                stage('Build') {
+                    steps {
+                        build('build')
+                    }
+                }
+
+            }
+    }

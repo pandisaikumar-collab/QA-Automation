@@ -1,0 +1,7 @@
+Common use Case:
+----------------
+    - build logic (maven/gradle)
+    - test execution
+    - deployment scripts
+    - slack/email notifications
+    - docker build/push

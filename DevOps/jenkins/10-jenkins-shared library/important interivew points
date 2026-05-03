@@ -1,0 +1,24 @@
+Important Interview Points:
+--------------------------
+    - shared library = code reuse in jenkins
+    - stored in Git repository
+    - vars/directory is mandatory
+    - used via @Library
+    - reduces duplication
+    - supports multiple teams/projects
+
+    key Advantage:
+    --------------
+    reusability
+    maintainability
+    standardization
+    scalability
+
+    Important Tip:
+    ---------------
+    Use shared library for:
+        common stages
+        notification
+        build logic
+
+        don't repeat pipeline code in every job

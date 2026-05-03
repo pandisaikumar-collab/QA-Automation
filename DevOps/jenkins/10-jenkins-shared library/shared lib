@@ -1,0 +1,23 @@
+What is Shared Library:
+-----------------------
+
+    - jenkins shared library = reusable pipeline code stored in a version control system (like Github)
+    - used by multiple pipeline/projects by just referencing it
+    - write pipeline code once --> reuse everywhere
+
+
+    why shared library:
+    -------------------
+        Without shared library:
+            - same pipeline code repeated in multiple projects
+            - hard to maintain
+            - duplicate code
+
+        With shared library:
+            - reusable code
+            - centralized management
+            - easy updates
+            - used across teams & projects
+
+
+

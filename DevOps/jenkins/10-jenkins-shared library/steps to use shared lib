@@ -1,0 +1,35 @@
+Steps to Use Shared Library:
+----------------------------
+    Create Library:
+    ---------------
+        - create repo in Github
+        - add vars/build.groovy
+
+        Example:
+        --------
+            def call(String stageName) {
+                if(stageName == "clearn") {
+                    sh "mvn package"
+                }
+            }
+
+
+    Configure in Jenkins:
+    ---------------------
+        Go to:
+            manage jenkins --> configure system --> global pipeline libraries
+
+    Add:
+    ----
+        Name: shared-lib
+        Default version: main(branch name)
+        Repository URL
+        Credentials
+
+    Use in pipeline:
+    ----------------
+    @Library('shared-lib')
+    call function:
+        build('clean')
+        build('build')
+
