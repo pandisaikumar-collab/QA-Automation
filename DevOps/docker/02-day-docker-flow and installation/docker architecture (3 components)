@@ -1,0 +1,16 @@
+Docker Architecture (3 components):
+-----------------------------------
+    Docker Client:
+        - CLI (terminal commands like docker run, docker pull, docker push)
+        - Used by developers/Devops engineers
+
+    Docker daemon:
+        - actual engine
+        - executes commands from docker client
+        - creates containers/images
+
+    Docker registry:
+        - storage for images
+        Example:
+            Public: Docker Hub
+            Private: Nexus, ECR, ACR

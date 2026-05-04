@@ -1,0 +1,8 @@
+Containers vs Virtual Machines:
+------------------------------
+    Feature:          VM:            Container:
+    --------------------------------------------
+    OS               Full           No full OS
+    Size             Heavy          Lightweight
+    Boot time        Slow           Fast
+    Performance      Less efficient More efficient

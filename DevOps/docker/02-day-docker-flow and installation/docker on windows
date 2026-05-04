@@ -1,0 +1,7 @@
+Docker on Windows:
+------------------
+    To run Linux commands on Windows:
+    1. Install WS (Windows Subsystem for Linux) or Hyper-V
+    2. Create small Linux VM internally
+
+    That's why Linux containers run on Windows

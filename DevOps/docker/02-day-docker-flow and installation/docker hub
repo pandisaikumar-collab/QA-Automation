@@ -1,0 +1,8 @@
+Docker Hub:
+-----------
+    Think like Play Store for Docker images,
+    You can pull ready-made images like:
+        nginx
+        mysql
+        node
+        tomcat

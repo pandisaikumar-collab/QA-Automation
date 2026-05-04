@@ -1,0 +1,16 @@
+Full Docker Flow:
+-----------------
+    This is the core you must remember:
+        Dockerfile --> Image --> Container
+
+    step1: Dockerfile
+        - text file with instructions
+        Example: install java, copy code
+
+    step2: Image
+        - build using dockerfile
+        - contains everything needed to run app
+
+    step3: Container
+        - running instance of image
+        - your app is LIVE here

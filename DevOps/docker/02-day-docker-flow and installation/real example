@@ -1,0 +1,11 @@
+Real Example (Very Important):
+-----------------------------
+    Without Docker:
+        install java
+        install tomcat
+        configure everything
+        deploy app
+
+    With Docker:
+        all include in image
+        just run: docker run my-app

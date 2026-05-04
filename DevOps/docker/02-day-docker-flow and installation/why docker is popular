@@ -1,0 +1,7 @@
+Why Docker is Popular:
+----------------------
+    Consistency: same app everywhere
+    Fast Deployment: no need to install software manually
+    Lightweight: uses OS kernel --> no full OS needed
+    Scalable: run multiple containers easily
+    CI/CD friendly: works perfectly with CI/CD pipelines

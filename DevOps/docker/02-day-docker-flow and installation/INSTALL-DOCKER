@@ -1,0 +1,235 @@
+Install Docker:
+----------------
+    1. First check your Windows version (winver)
+    2. Enable WSL manually (since command not found)
+        - Open PowerShell as Administrator and run:
+            dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+    3. Then enable Virtual Machine Platform:
+        - Open PowerShell as Administrator and run:
+            dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+    4. Restart your system
+    5. wsl --install
+    6. Install Ubuntu from Microsoft Store or (wsl --install -d Ubuntu)
+       wsl --install -d Ubuntu
+    7. Set up your Linux username and password
+           PS C:\WINDOWS\system32> wsl --install
+            Downloading: Windows Subsystem for Linux 2.6.3
+            Installing: Windows Subsystem for Linux 2.6.3
+            Windows Subsystem for Linux 2.6.3 has been installed.
+            The operation completed successfully.
+            Downloading: Ubuntu
+            Installing: Ubuntu
+            Distribution successfully installed. It can be launched via 'wsl.exe -d Ubuntu'
+            Launching Ubuntu...
+            Provisioning the new WSL instance Ubuntu
+            This might take a while...
+            Create a default Unix user account: saikumar
+            New password:
+            Retype new password:
+            passwd: password updated successfully
+            To run a command as administrator (user "root"), use "sudo <command>".
+            See "man sudo_root" for details.
+
+            saikumar@DESKTOP-PERFU3J:/mnt/c/WINDOWS/system32$
+
+    8. install Docker inside Ubuntu:
+        sudo apt update
+            saikumar@DESKTOP-PERFU3J:/mnt/c/WINDOWS/system32$ sudo apt update
+            [sudo] password for saikumar:
+            Hit:1 http://archive.ubuntu.com/ubuntu noble InRelease
+            Get:2 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+            Get:3 http://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+            Get:4 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [1625 kB]
+            Get:5 http://archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+            Get:6 http://archive.ubuntu.com/ubuntu noble/universe amd64 Packages [15.0 MB]
+            Get:7 http://security.ubuntu.com/ubuntu noble-security/main Translation-en [259 kB]
+            Get:8 http://security.ubuntu.com/ubuntu noble-security/main amd64 Components [21.9 kB]
+            Get:9 http://security.ubuntu.com/ubuntu noble-security/main amd64 c-n-f Metadata [11.0 kB]
+            Get:10 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1182 kB]
+            Get:11 http://security.ubuntu.com/ubuntu noble-security/universe Translation-en [227 kB]
+            Get:12 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Components [74.2 kB]
+            Get:13 http://security.ubuntu.com/ubuntu noble-security/universe amd64 c-n-f Metadata [23.1 kB]
+            Get:14 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [2844 kB]
+            Get:15 http://security.ubuntu.com/ubuntu noble-security/restricted Translation-en [666 kB]
+            Get:16 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Components [212 B]
+            Get:17 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 c-n-f Metadata [544 B]
+            Get:18 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [28.8 kB]
+            Get:19 http://security.ubuntu.com/ubuntu noble-security/multiverse Translation-en [7172 B]
+            Get:20 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Components [208 B]
+            Get:21 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 c-n-f Metadata [396 B]
+            Get:22 http://archive.ubuntu.com/ubuntu noble/universe Translation-en [5982 kB]
+            Get:23 http://archive.ubuntu.com/ubuntu noble/universe amd64 Components [3871 kB]
+            Get:24 http://archive.ubuntu.com/ubuntu noble/universe amd64 c-n-f Metadata [301 kB]
+            Get:25 http://archive.ubuntu.com/ubuntu noble/multiverse amd64 Packages [269 kB]
+            Get:26 http://archive.ubuntu.com/ubuntu noble/multiverse Translation-en [118 kB]
+            Get:27 http://archive.ubuntu.com/ubuntu noble/multiverse amd64 Components [35.0 kB]
+            Get:28 http://archive.ubuntu.com/ubuntu noble/multiverse amd64 c-n-f Metadata [8328 B]
+            Get:29 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1946 kB]
+            Get:30 http://archive.ubuntu.com/ubuntu noble-updates/main Translation-en [348 kB]
+            Get:31 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [177 kB]
+            Get:32 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 c-n-f Metadata [17.1 kB]
+            Get:33 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1685 kB]
+            Get:34 http://archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [324 kB]
+            Get:35 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [386 kB]
+            Get:36 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 c-n-f Metadata [34.5 kB]
+            Get:37 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [3095 kB]
+            Get:38 http://archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [715 kB]
+            Get:39 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Components [212 B]
+            Get:40 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 c-n-f Metadata [480 B]
+            Get:41 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [44.4 kB]
+            Get:42 http://archive.ubuntu.com/ubuntu noble-updates/multiverse Translation-en [10.2 kB]
+            Get:43 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
+            Get:44 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 c-n-f Metadata [656 B]
+            Get:45 http://archive.ubuntu.com/ubuntu noble-backports/main amd64 Packages [64.5 kB]
+            Get:46 http://archive.ubuntu.com/ubuntu noble-backports/main Translation-en [9172 B]
+            Get:47 http://archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [5772 B]
+            Get:48 http://archive.ubuntu.com/ubuntu noble-backports/main amd64 c-n-f Metadata [368 B]
+            Get:49 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [34.1 kB]
+            Get:50 http://archive.ubuntu.com/ubuntu noble-backports/universe Translation-en [18.2 kB]
+            Get:51 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [10.5 kB]
+            Get:52 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 c-n-f Metadata [1484 B]
+            Get:53 http://archive.ubuntu.com/ubuntu noble-backports/restricted amd64 Components [212 B]
+            Get:54 http://archive.ubuntu.com/ubuntu noble-backports/restricted amd64 c-n-f Metadata [116 B]
+            Get:55 http://archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 Packages [748 B]
+            Get:56 http://archive.ubuntu.com/ubuntu noble-backports/multiverse Translation-en [340 B]
+            Get:57 http://archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 Components [212 B]
+            Get:58 http://archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 c-n-f Metadata [116 B]
+            Fetched 41.9 MB in 11s (3717 kB/s)
+            Reading package lists... Done
+            Building dependency tree... Done
+            Reading state information... Done
+            95 packages can be upgraded. Run 'apt list --upgradable' to see them.
+            saikumar@DESKTOP-PERFU3J:/mnt/c/WINDOWS/system32$
+
+    9. Install docker io
+            saikumar@DESKTOP-PERFU3J:~$ sudo apt install docker.io -y
+            Reading package lists... Done
+            Building dependency tree... Done
+            Reading state information... Done
+            The following additional packages will be installed:
+              bridge-utils containerd dns-root-data dnsmasq-base iptables libip4tc2 libip6tc2 libnetfilter-conntrack3 libnfnetlink0 libnftables1 libnftnl11 nftables pigz runc
+              ubuntu-fan
+            Suggested packages:
+              ifupdown aufs-tools btrfs-progs cgroupfs-mount | cgroup-lite debootstrap docker-buildx docker-compose-v2 docker-doc rinse zfs-fuse | zfsutils firewalld
+            The following NEW packages will be installed:
+              bridge-utils containerd dns-root-data dnsmasq-base docker.io iptables libip4tc2 libip6tc2 libnetfilter-conntrack3 libnfnetlink0 libnftables1 libnftnl11 nftables pigz
+              runc ubuntu-fan
+            0 upgraded, 16 newly installed, 0 to remove and 95 not upgraded.
+            Need to get 74.8 MB of archives.
+            After this operation, 283 MB of additional disk space will be used.
+            Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 pigz amd64 2.8-1 [65.6 kB]
+            Get:2 http://archive.ubuntu.com/ubuntu noble/main amd64 libip4tc2 amd64 1.8.10-3ubuntu2 [23.3 kB]
+            Get:3 http://archive.ubuntu.com/ubuntu noble/main amd64 libip6tc2 amd64 1.8.10-3ubuntu2 [23.7 kB]
+            Get:4 http://archive.ubuntu.com/ubuntu noble/main amd64 libnfnetlink0 amd64 1.0.2-2build1 [14.8 kB]
+            Get:5 http://archive.ubuntu.com/ubuntu noble/main amd64 libnetfilter-conntrack3 amd64 1.0.9-6build1 [45.2 kB]
+            Get:6 http://archive.ubuntu.com/ubuntu noble/main amd64 libnftnl11 amd64 1.2.6-2build1 [66.0 kB]
+            Get:7 http://archive.ubuntu.com/ubuntu noble/main amd64 iptables amd64 1.8.10-3ubuntu2 [381 kB]
+            Get:8 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libnftables1 amd64 1.0.9-1ubuntu0.1 [359 kB]
+            Get:9 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 nftables amd64 1.0.9-1ubuntu0.1 [69.8 kB]
+            Get:10 http://archive.ubuntu.com/ubuntu noble/main amd64 bridge-utils amd64 1.7.1-1ubuntu2 [33.9 kB]
+            Get:11 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 runc amd64 1.3.4-0ubuntu1~24.04.1 [9574 kB]
+            Get:12 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 containerd amd64 2.2.1-0ubuntu1~24.04.2 [28.1 MB]
+            Get:13 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 dns-root-data all 2024071801~ubuntu0.24.04.1 [5918 B]
+            Get:14 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 dnsmasq-base amd64 2.90-2ubuntu0.1 [376 kB]
+            Get:15 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 docker.io amd64 29.1.3-0ubuntu3~24.04.1 [35.5 MB]
+            Get:16 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 ubuntu-fan all 0.12.16+24.04.1 [34.2 kB]
+            Fetched 74.8 MB in 16s (4785 kB/s)
+            Preconfiguring packages ...
+            Selecting previously unselected package pigz.
+            (Reading database ... 40805 files and directories currently installed.)
+            Preparing to unpack .../00-pigz_2.8-1_amd64.deb ...
+            Unpacking pigz (2.8-1) ...
+            Selecting previously unselected package libip4tc2:amd64.
+            Preparing to unpack .../01-libip4tc2_1.8.10-3ubuntu2_amd64.deb ...
+            Unpacking libip4tc2:amd64 (1.8.10-3ubuntu2) ...
+            Selecting previously unselected package libip6tc2:amd64.
+            Preparing to unpack .../02-libip6tc2_1.8.10-3ubuntu2_amd64.deb ...
+            Unpacking libip6tc2:amd64 (1.8.10-3ubuntu2) ...
+            Selecting previously unselected package libnfnetlink0:amd64.
+            Preparing to unpack .../03-libnfnetlink0_1.0.2-2build1_amd64.deb ...
+            Unpacking libnfnetlink0:amd64 (1.0.2-2build1) ...
+            Selecting previously unselected package libnetfilter-conntrack3:amd64.
+            Preparing to unpack .../04-libnetfilter-conntrack3_1.0.9-6build1_amd64.deb ...
+            Unpacking libnetfilter-conntrack3:amd64 (1.0.9-6build1) ...
+            Selecting previously unselected package libnftnl11:amd64.
+            Preparing to unpack .../05-libnftnl11_1.2.6-2build1_amd64.deb ...
+            Unpacking libnftnl11:amd64 (1.2.6-2build1) ...
+            Selecting previously unselected package iptables.
+            Preparing to unpack .../06-iptables_1.8.10-3ubuntu2_amd64.deb ...
+            Unpacking iptables (1.8.10-3ubuntu2) ...
+            Selecting previously unselected package libnftables1:amd64.
+            Preparing to unpack .../07-libnftables1_1.0.9-1ubuntu0.1_amd64.deb ...
+            Unpacking libnftables1:amd64 (1.0.9-1ubuntu0.1) ...
+            Selecting previously unselected package nftables.
+            Preparing to unpack .../08-nftables_1.0.9-1ubuntu0.1_amd64.deb ...
+            Unpacking nftables (1.0.9-1ubuntu0.1) ...
+            Selecting previously unselected package bridge-utils.
+            Preparing to unpack .../09-bridge-utils_1.7.1-1ubuntu2_amd64.deb ...
+            Unpacking bridge-utils (1.7.1-1ubuntu2) ...
+            Selecting previously unselected package runc.
+            Preparing to unpack .../10-runc_1.3.4-0ubuntu1~24.04.1_amd64.deb ...
+            Unpacking runc (1.3.4-0ubuntu1~24.04.1) ...
+            Selecting previously unselected package containerd.
+            Preparing to unpack .../11-containerd_2.2.1-0ubuntu1~24.04.2_amd64.deb ...
+            Unpacking containerd (2.2.1-0ubuntu1~24.04.2) ...
+            Selecting previously unselected package dns-root-data.
+            Preparing to unpack .../12-dns-root-data_2024071801~ubuntu0.24.04.1_all.deb ...
+            Unpacking dns-root-data (2024071801~ubuntu0.24.04.1) ...
+            Selecting previously unselected package dnsmasq-base.
+            Preparing to unpack .../13-dnsmasq-base_2.90-2ubuntu0.1_amd64.deb ...
+            Unpacking dnsmasq-base (2.90-2ubuntu0.1) ...
+            Selecting previously unselected package docker.io.
+            Preparing to unpack .../14-docker.io_29.1.3-0ubuntu3~24.04.1_amd64.deb ...
+            Unpacking docker.io (29.1.3-0ubuntu3~24.04.1) ...
+            Selecting previously unselected package ubuntu-fan.
+            Preparing to unpack .../15-ubuntu-fan_0.12.16+24.04.1_all.deb ...
+            Unpacking ubuntu-fan (0.12.16+24.04.1) ...
+            Setting up libip4tc2:amd64 (1.8.10-3ubuntu2) ...
+            Setting up libip6tc2:amd64 (1.8.10-3ubuntu2) ...
+            Setting up libnftnl11:amd64 (1.2.6-2build1) ...
+            Setting up runc (1.3.4-0ubuntu1~24.04.1) ...
+            Setting up dns-root-data (2024071801~ubuntu0.24.04.1) ...
+            Setting up bridge-utils (1.7.1-1ubuntu2) ...
+            Setting up pigz (2.8-1) ...
+            Setting up libnfnetlink0:amd64 (1.0.2-2build1) ...
+            Setting up containerd (2.2.1-0ubuntu1~24.04.2) ...
+            Created symlink /etc/systemd/system/multi-user.target.wants/containerd.service → /usr/lib/systemd/system/containerd.service.
+            Setting up libnftables1:amd64 (1.0.9-1ubuntu0.1) ...
+            Setting up nftables (1.0.9-1ubuntu0.1) ...
+            Setting up libnetfilter-conntrack3:amd64 (1.0.9-6build1) ...
+            Setting up iptables (1.8.10-3ubuntu2) ...
+            update-alternatives: using /usr/sbin/iptables-legacy to provide /usr/sbin/iptables (iptables) in auto mode
+            update-alternatives: using /usr/sbin/ip6tables-legacy to provide /usr/sbin/ip6tables (ip6tables) in auto mode
+            update-alternatives: using /usr/sbin/iptables-nft to provide /usr/sbin/iptables (iptables) in auto mode
+            update-alternatives: using /usr/sbin/ip6tables-nft to provide /usr/sbin/ip6tables (ip6tables) in auto mode
+            update-alternatives: using /usr/sbin/arptables-nft to provide /usr/sbin/arptables (arptables) in auto mode
+            update-alternatives: using /usr/sbin/ebtables-nft to provide /usr/sbin/ebtables (ebtables) in auto mode
+            Setting up docker.io (29.1.3-0ubuntu3~24.04.1) ...
+            info: Selecting GID from range 100 to 999 ...
+            info: Adding group `docker' (GID 108) ...
+            Created symlink /etc/systemd/system/multi-user.target.wants/docker.service → /usr/lib/systemd/system/docker.service.
+            Created symlink /etc/systemd/system/sockets.target.wants/docker.socket → /usr/lib/systemd/system/docker.socket.
+            Setting up dnsmasq-base (2.90-2ubuntu0.1) ...
+            Setting up ubuntu-fan (0.12.16+24.04.1) ...
+            Created symlink /etc/systemd/system/multi-user.target.wants/ubuntu-fan.service → /usr/lib/systemd/system/ubuntu-fan.service.
+            Processing triggers for man-db (2.12.0-4build2) ...
+            Processing triggers for dbus (1.14.10-4ubuntu4.1) ...
+            Processing triggers for libc-bin (2.39-0ubuntu8.7) ...
+            saikumar@DESKTOP-PERFU3J:~$
+
+    10. After installation completes
+       Start Docker: sudo service docker start
+       Check Docker Version: docker --version
+
+    11. Optional (but important for you)
+        Avoid typing sudo every time:
+            sudo usermod -aG docker $USER
+            Exit Ubuntu: exit
+            wsl --shutdown
+            Open Ubuntu again:
+                saikumar@DESKTOP-PERFU3J:~$ groups
+                saikumar adm cdrom sudo dip plugdev users docker
+                saikumar@DESKTOP-PERFU3J:~$
+
+
+

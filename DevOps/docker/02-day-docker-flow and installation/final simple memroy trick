@@ -1,0 +1,6 @@
+Final Simple Memory Trick:
+--------------------------
+    Remember:
+        Dockerfile = recipe
+        Image = package food
+        Container = eating food (running)

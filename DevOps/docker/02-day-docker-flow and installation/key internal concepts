@@ -1,0 +1,5 @@
+Key Internal Concepts;
+----------------------
+    Namespaces: isolation (network, process, file system)
+    Cgroups(Control Groups):
+        Limit CPU, memory usage

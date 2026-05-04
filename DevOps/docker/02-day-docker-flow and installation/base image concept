@@ -1,0 +1,4 @@
+Base Image Concept:
+-------------------
+    Example: FROM tomcat
+    Means: use existing tomcat image, add your application on top of it

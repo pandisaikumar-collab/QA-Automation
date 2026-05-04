@@ -1,0 +1,22 @@
+What is Containerization:
+-------------------------
+    Containerization = pack your application + everything it needs into one box
+    That box = container
+
+    Inside Container:
+        - Application
+        - Libraries
+        - Dependencies
+        - Configuration
+        - Environment variables
+
+        so whenever you run it --> it behaves the same:
+            (no more 'works in my laptop but not in server' problem)
+
+What is a Container:
+--------------------
+    Think like this:
+        Container = running application
+        Image = application package
+        Docker file = recipe to create package
+

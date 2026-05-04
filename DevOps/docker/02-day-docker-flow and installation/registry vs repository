@@ -1,0 +1,10 @@
+Registry vs Repository:
+-----------------------
+    Registry: Big storage (like GitHub)
+    Repository:
+        inside registry
+        stores versions of same image
+        Example:
+            Registry: Docker Hub
+            Repository: nginx
+            Tags: V1, V2, latest
