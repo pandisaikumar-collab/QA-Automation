@@ -1,0 +1,13 @@
+CI/CD Flow:
+-----------
+    Jenkins pipeline flow:
+        Clone repo
+        Build docker image
+        Push docker image
+        Run docker container
+
+        Commands:
+            docker build -t <image_name> .
+            docker login
+            docker push <image_name>
+            docker run <image_name>

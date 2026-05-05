@@ -1,0 +1,18 @@
+Image vs Container:
+--------------------
+    Image = Package
+    Contains:
+        python 3.10
+        selenium
+        pytest
+        your testcases
+        dependencies (requirements.txt)
+
+    Container = Running Image
+    When you run:
+        docker run sai/demoqa-selenium:1
+        it becomes:
+            running python process
+            running pytest
+            executing your tests
+

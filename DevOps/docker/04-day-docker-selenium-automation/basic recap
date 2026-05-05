@@ -1,0 +1,7 @@
+Basic Recap:
+------------
+    What you did:
+        - git cloned python selenium automation project
+        - built Docker image
+        - Ran it as container
+        - optional (push to docker Hub)

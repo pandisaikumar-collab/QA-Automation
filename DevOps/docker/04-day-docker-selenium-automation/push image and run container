@@ -1,0 +1,15 @@
+Push Image and Container:
+-------------------------
+    push image:
+        docker push sai/demoqa-selenium:1
+        now you can run same tests on ANY machine
+
+    run container:
+        docker run sai/demoqa-selenium:1
+
+    What happens:
+    ------------
+    pull image (if not local)
+    create container
+    run CMD
+    execute pytest

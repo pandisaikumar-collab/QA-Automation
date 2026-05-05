@@ -1,0 +1,31 @@
+Dockerfile (Your Selenium Automation Version):
+----------------------------------------------
+    dockerfile:
+        FORM python:3.10
+        WORKDIR /app
+        COPY ./app
+        RUN pip install -r requirements.txt
+        CMD ["ptest", "testcases", "--junitxml", "junit.xml"] # or html reports
+
+    Understand the Context:
+    ------------------------
+    FROM python 3.10:
+        base image form Docker Hub
+        contains python runtime
+
+    COPY ./app:
+        copies:
+            selenium scripts
+            api testcases
+            requirements.txt
+
+    RUN pip install:
+        selenium
+        pytest
+        requests (API)
+
+    CMD:
+    CMD ["pytest", "testcases/"]
+    This is important:
+        Run all tests
+

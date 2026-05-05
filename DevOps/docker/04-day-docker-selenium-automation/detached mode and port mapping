@@ -1,0 +1,16 @@
+Detached Mode and Port Mapping:
+-----------------------------
+
+    docker run -d sai/demoqa-selenium:1
+        with -d: runs in background
+        without -d: runs in foreground(you see logs)
+
+    Port Mapping (-p):
+    ------------------
+        docker run -p 8080:80 image
+
+        Needed only if:
+            running web app
+            running selenium grid
+
+

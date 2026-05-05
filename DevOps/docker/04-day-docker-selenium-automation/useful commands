@@ -1,0 +1,11 @@
+Useful Commands:
+----------------
+
+    List images: docker images
+    Run container: docker run
+    List running containers: docker ps
+    List all containers: docker ps -a
+    Stop container: docker stop
+    Remove container: docker rm
+    Remove image: docker rmi
+    logs: docker logs <container_id>

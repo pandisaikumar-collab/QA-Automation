@@ -1,0 +1,9 @@
+Repository Types:
+----------------
+    Public:
+        Push --> Login required
+        Pull --> No login required
+
+    Private:
+        Push --> Login required
+        Pull --> Login required

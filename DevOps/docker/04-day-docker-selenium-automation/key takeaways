@@ -1,0 +1,7 @@
+Key Takeaways:
+--------------
+    - docker runs your FULL automation
+    - CMD controls execution
+    - No need to manually run pytest
+    - same image works everywhere
+    - no dependency issues
