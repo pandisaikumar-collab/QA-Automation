@@ -1,0 +1,5 @@
+Push Images to Docker Hub:
+--------------------------
+    Login: docker login
+    Push: docker push sai/demoqa-selenium:1
+

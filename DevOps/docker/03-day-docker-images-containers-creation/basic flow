@@ -1,0 +1,16 @@
+Basic Flow: (Important for interview)
+-------------------------------------
+  Developer ->
+  Github ->
+  Build ->
+  Docker Image ->
+  Registry ->
+  Deployment
+
+  Step-by-Steps:
+  ==============
+  1. code pushed to Github
+  2. build happens (pytest/packaging)
+  3. docker image created
+  4. push to docker hub
+  5. deploy container anywhere

@@ -1,0 +1,41 @@
+Docker Deployment For Selenium:
+-------------------------------
+    > Why docker for selenium:
+          Before Docker:
+          ---------------
+            - install manually
+              python
+              chrome
+              chromedriver
+              dependencies
+
+            - problems:
+              - works in your system -> fails in QA/Prod
+              - version mismatch issues
+              - setup time is high
+
+          With Docker (Containerization):
+          -------------------------------
+          Package everything together
+            - your selenium code
+            - python
+            - browser
+            - dependencies
+
+          Results:
+          --------
+          Runs same everywhere (Ubuntu, Jenkins, Cloud)
+          No setup issues
+          Easy CI/CD integration
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,18 @@
+Key Interview Questions:
+------------------------
+    > what is dockerization:
+      Packaging app + dependencies into container
+
+    > Difference: VM vs Docker:
+      VM: Heavy weight, OS required, slow
+      Docker: Light weight, uses host OS, fast
+
+    > what is docker image:
+      read-only template to create containers
+
+    > what is docker file:
+      script to build docker image
+
+    >
+
+

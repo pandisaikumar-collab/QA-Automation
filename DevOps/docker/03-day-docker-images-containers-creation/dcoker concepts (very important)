@@ -1,0 +1,18 @@
+Docker Concepts:
+----------------
+
+    Docker Image:
+    ------------
+    Buildprint of app
+    Contains:
+        Python
+        Dependencies
+        Selenium code
+
+    Docker Container:
+    -----------------
+    Running instance of image
+
+    Docker file:
+    ------------
+    Folder from where docker reads files

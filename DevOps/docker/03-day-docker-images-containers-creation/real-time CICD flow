@@ -1,0 +1,7 @@
+Real-Time CICD Flow (Jenkins)
+-----------------------------
+    Github push ->
+    Jenkins Pipeline ->
+    Docker Build ->
+    Docker Push ->
+    Docker Run (test execution)

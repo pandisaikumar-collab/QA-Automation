@@ -1,0 +1,8 @@
+Mapping to DevOps Learning:
+---------------------------
+    Step:                        Your Work:
+    Code                         Selenium tests
+    Build                        pytest
+    Package                      Docker image
+    Store                        Docker Hub
+    Deploy                       docker run

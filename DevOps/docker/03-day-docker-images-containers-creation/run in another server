@@ -1,0 +1,7 @@
+Run in another server:
+----------------------
+    docker run -d sai/demoqa-selenium:1
+
+    No setup needed,
+    No python install,
+    No chrome install
