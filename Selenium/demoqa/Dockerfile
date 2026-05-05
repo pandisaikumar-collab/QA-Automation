@@ -1,5 +1,9 @@
-FROM python:3.10 # Base image
-WORKDIR /app # Set working directory
-COPY . /app # Copy project files
-RUN pip install --no-cache-dir -r requirements.txt # Install dependencies
-CMD ["pytest", "testcases/", "--html=htmlreports/report.html"] # Run pytest
+FROM python:3.10
+
+WORKDIR /app
+
+COPY . /app
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+CMD ["pytest", "testcases/", "--html=htmlreports/report.html"]
