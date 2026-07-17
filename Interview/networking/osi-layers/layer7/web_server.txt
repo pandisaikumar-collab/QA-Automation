@@ -1,8 +1,0 @@
-Web server:
- > A system that serves web requests.
-
-Example:
- > Apache HTTP Server, Nginx, Microsoft IIS.
-
-Keywords:
- > Server, Hosting, HTTP, HTTPS, Web Content, Client-Server Model.

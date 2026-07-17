@@ -1,2 +1,0 @@
-> Encryption from sencer to receiver
-> Data is encrypted at the sender's side and decrypted at the receiver's side

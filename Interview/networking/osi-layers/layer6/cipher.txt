@@ -1,1 +1,0 @@
-> Algorithm used for encryption and decryption of data in the OSI model.

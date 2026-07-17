@@ -1,6 +1,0 @@
-1. Defines the data format and structure for communication.
-2. Examples include HTML, JSON, XML, and multimedia formats.
-3. Ensures that the data is presented in a way that the application can understand and process.
-4. Responsible for data encoding, encryption, and compression.
-5. Facilitates interoperability between different software applications by standardizing data representation.
-6. Works closely with application layer protocols like HTTP, FTP, SMTP, and DNS to deliver content to end-users.

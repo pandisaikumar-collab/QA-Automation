@@ -1,2 +1,0 @@
-> Encoding - readability
-> Encryption - security

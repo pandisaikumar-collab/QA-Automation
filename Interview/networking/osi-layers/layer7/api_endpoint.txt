@@ -1,3 +1,0 @@
-1. A specific URL or URI that allows access to a web service or application.
-
-Keyword: Endpoint

@@ -1,3 +1,0 @@
-> To reduce bandwidth usage and improve data transmission efficiency.
-
-Example: Compression API responses in web applications to decrease load times.

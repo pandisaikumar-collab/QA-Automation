@@ -1,8 +1,0 @@
-1. A device or app that requests services from a server.
-2. Examples include web browsers, email clients, and FTP clients.
-3. Operates at the Application Layer (Layer 7) of the OSI model.
-4. Responsible for initiating communication and presenting data to the user.
-5. Communicates with servers to access resources and services over a network.
-6. Uses protocols such as HTTP, FTP, SMTP, and DNS to interact with servers.
-
-Example: Browser (like Chrome or Firefox) requesting a webpage from a web server.

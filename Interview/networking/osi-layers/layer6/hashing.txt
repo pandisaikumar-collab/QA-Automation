@@ -1,3 +1,0 @@
-> One-way encryption
-
-Example: Password storage using hashing algorithms like SHA-256.

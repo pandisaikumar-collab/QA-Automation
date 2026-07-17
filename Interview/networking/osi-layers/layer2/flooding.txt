@@ -1,3 +1,0 @@
-> Flooding:
- - Sending frame to all ports except source port
- - Used in switches when MAC address is unknown

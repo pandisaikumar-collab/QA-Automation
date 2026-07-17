@@ -1,3 +1,0 @@
-> TCP resends the data.
-> In case data is not acknowledged, TCP will retransmit the data after a timeout period.
-> This ensures reliable data delivery in TCP connections.

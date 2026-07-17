@@ -1,7 +1,0 @@
-1. A continuous interaction between client and server.
-2. Manages sessions in network communication.
-3. Establishes, maintains, and terminates connections.
-4. Provides synchronization and dialog control.
-
-Example: Logged-in session on a website.
-Keywords: Session Management.

@@ -1,6 +1,0 @@
-1. API towards the data center infrastructure, such as switches, routers, and firewalls.
-2. Used for managing and configuring network devices.
-3. Examples include RESTful APIs, NETCONF, and SNMP.
-4. Enables automation and orchestration of network functions.
-5. Facilitates communication between network management systems and physical or virtual network devices.
-6. Often used in Software-Defined Networking (SDN) architectures to control network behavior.

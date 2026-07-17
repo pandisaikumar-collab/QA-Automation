@@ -1,4 +1,0 @@
-1. Stores session info on client side
-
-Example: Remember Login
-Keywords: Session Tracking

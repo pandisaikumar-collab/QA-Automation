@@ -1,3 +1,0 @@
-Access Port:
- - Belongs to a single VLAN
- - Used for end devices like computers and printers

@@ -1,7 +1,0 @@
-> A protocol that sends data without making a connection
-Connectionless Protocols:
- - Protocols that do not establish a dedicated end-to-end connection before data is sent.
- - Each data packet is treated independently, with no guarantee of delivery, order, or error checking
-
-Example:s:
- - User Datagram Protocol (UDP)

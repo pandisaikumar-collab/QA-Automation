@@ -1,4 +1,0 @@
-> Encodes binary data into text format using Base64 encoding scheme.
-
-Example: Encodes binary data into text
-Keyword: API tokens

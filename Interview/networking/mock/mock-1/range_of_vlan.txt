@@ -1,4 +1,0 @@
-q) what could be the range of VLAN:
-
- - the vlan range by default there is 1 vlan
- - the vlan range is from 1 to 4094

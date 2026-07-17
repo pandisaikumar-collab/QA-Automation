@@ -1,9 +1,0 @@
-1. An intermediate server between client and internet.
-2. Forwards client requests to target servers.
-
-Example:
- - Company internet proxy server.
- - Web proxy for content filtering.
-
-Keywords: Forwarding, Caching, Filtering, Anonymity.
-

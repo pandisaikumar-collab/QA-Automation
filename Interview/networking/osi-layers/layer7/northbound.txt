@@ -1,6 +1,0 @@
-1. API exposed to users
-2. User interfaces
-3. Application services (e.g., email, file transfer)
-4. Data representation and encoding
-5. End-user protocols (e.g., HTTP, FTP, SMTP)
-6. Interaction with software applications

@@ -1,6 +1,0 @@
-1. Collecting metrics:
-    - Application performance metrics (e.g., response time, throughput)
-    - User behavior metrics (e.g., session duration, click paths)
-    - Error rates and types (e.g., HTTP status codes, application exceptions)
-    - Resource utilization (e.g., CPU, memory usage by the application)
-    - Custom application-specific metrics (e.g., number of active users, transactions processed)

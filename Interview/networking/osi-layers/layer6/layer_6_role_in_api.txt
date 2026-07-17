@@ -1,1 +1,0 @@
-> Handle JSON data formatting and encryption.

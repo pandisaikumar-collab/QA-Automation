@@ -1,7 +1,0 @@
-> HTTP is a protocol used to transfer web pages from server to client.
-> It operates at Layer 7 (Application Layer) of the OSI model.
-> HTTP is stateless, meaning each request from client to server is independent.
-> Common HTTP methods include GET, POST, PUT, DELETE, and HEAD.
-> HTTP uses URLs to identify resources on the web.
-
-Keywords: request, response, stateless

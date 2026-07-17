@@ -1,2 +1,0 @@
-TCP is slow but safe
-UDP is fast but unsafe

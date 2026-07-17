@@ -1,6 +1,0 @@
-1. A structured data format used for storing and transporting data.
-2. Stands for extensible Markup Language.
-
-Example: Old SOAP APIs.
-
-Keywords: Markup Language, Data Interchange, Structured Data, Extensible, Transport Protocol

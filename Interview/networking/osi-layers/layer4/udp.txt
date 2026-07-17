@@ -1,3 +1,0 @@
-UDP (User Datagram Protocol):
- - UDP is a fast but unreliable protocol that sends data without checking delivery
- - It is used for applications that require speed over reliability, such as video streaming and online gaming

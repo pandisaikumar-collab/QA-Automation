@@ -1,2 +1,0 @@
-> Ensures data is not altered during transmission
-Layer 6 - Presentation Layer

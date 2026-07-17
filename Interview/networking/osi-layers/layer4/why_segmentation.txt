@@ -1,6 +1,0 @@
-> To make data easier to send and manage
-> To break down large data into smaller, manageable pieces
-> To ensure data integrity and proper sequencing during transmission
-> To optimize network performance and reduce congestion
-> To comply with protocol requirements and standards
-

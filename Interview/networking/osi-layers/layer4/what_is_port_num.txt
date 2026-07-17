@@ -1,9 +1,0 @@
-> A port number is like a door number that tells
-  data which application to go to on a computer.
-> It helps computers know where to send information.
-> Port numbers range from 0 to 65535.
-
-Example:
- - When you visit a website, your computer uses port 80 for HTTP or port 443 for HTTPS to connect to the web server.
- - If you're sending an email, your computer might use port 25 for SMTP.
- - Different applications use different port numbers to communicate over the internet.

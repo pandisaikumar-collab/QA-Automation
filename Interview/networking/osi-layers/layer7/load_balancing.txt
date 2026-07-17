@@ -1,9 +1,0 @@
-1. Load balancing is a technique used to distribute traffic based on content type.
-2. It operates at Layer 7 (Application Layer) of the OSI model.
-3. Layer 7 load balancers can make routing decisions based on application-level data, such
-    as HTTP headers, cookies, or URL paths.
-4. Common use cases for Layer 7 load balancing include web applications, APIs, and microservices.
-5. Layer 7 load balancers can perform SSL termination, offloading the encryption/decryption
-
-Example:
- - Routing traffic based on URL paths (e.g., directing /api requests to a specific server).

@@ -1,8 +1,0 @@
-1. Limits the number of requests a user can make to a server within a specified time frame.
-2. Helps prevent abuse and ensures fair usage of resources.
-3. Commonly implemented using techniques such as token buckets, leaky buckets, or fixed windows
-4. Can be applied at various levels, including IP address, user account, or API key.
-5. Often used in APIs to protect against DDoS attacks and to manage traffic spikes.
-6. Can return HTTP status codes like 429 (Too Many Requests) when limits are exceeded
-7. Important for maintaining service quality and availability for all users.
-8. Can be configured with different thresholds based on user roles or subscription plans.

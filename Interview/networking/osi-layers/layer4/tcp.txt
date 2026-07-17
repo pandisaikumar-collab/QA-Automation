@@ -1,5 +1,0 @@
-> TCP is reliable protocol, that ensures data is delivered completely and correctly.
-> It establishes a connection between sender and receiver before data transfer.
-> TCP breaks data into smaller packets, numbers them, and reassembles them at the destination.
-> It also manages flow control and error checking to ensure data integrity.
-> Common applications that use TCP include web browsing (HTTP/HTTPS), email (SMTP, IMAP), and file transfers (FTP).

@@ -1,5 +1,0 @@
-> A socket is a combination of IP address and port number.
-
-Example:
-- web server running on IP address
-

@@ -1,7 +1,0 @@
-> TCP will use when accuracy and reliability is more important than speed.
-
-Example:
- - File transfer applications like FTP use TCP to ensure that files are transferred accurately and completely.
- - Email protocols like SMTP, POP3, and IMAP use TCP to ensure that messages are delivered reliably.
- - Web browsing uses TCP to ensure that web pages are loaded completely and accurately.
- - Remote access applications like SSH and Telnet use TCP to ensure that commands and data are transmitted reliably.

@@ -1,8 +1,0 @@
-> It makes sure data reaches the correct application
-  in the right order, and without loss.
-
-Example:
-    - TCP (Transmission Control Protocol) ensures reliable data transmission
-        by establishing a connection, sequencing packets, and retransmitting lost packets.
-    - UDP (User Datagram Protocol) provides a faster, connectionless service
-        for applications that can tolerate some data loss, such as video streaming or online gaming.

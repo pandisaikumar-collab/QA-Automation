@@ -1,3 +1,0 @@
-1. Handles requests before they reach the backend servers.
-2. Can perform load balancing, caching, and SSL termination.
-3. Enhances security by hiding the backend servers' details.

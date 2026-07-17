@@ -1,2 +1,0 @@
-HTTP = Layer 7
-TLS = Layer 6

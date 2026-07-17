@@ -1,6 +1,0 @@
-1. Through REST APIs and UI
-2. Via web browsers and mobile apps
-3. Using protocols like HTTP, FTP, SMTP
-4. By sending and receiving data packets
-5. Through application-specific protocols (e.g., DNS, DHCP)
-6. Via cloud services and web services

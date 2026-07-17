@@ -1,8 +1,0 @@
-POP3: used to receive email from a remote server to a local client.
-IMAP: used to access and manage email on a remote server, allowing for synchronization across multiple devices.
-
-Example:
- > Outlook syncs emails using IMAP to keep messages consistent across devices.
-
-Keyword:
- > Mail Retrieval Protocols

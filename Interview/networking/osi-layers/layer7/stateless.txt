@@ -1,4 +1,0 @@
-Stateless: Each request is independent and does not rely on any previous interactions.
-Example: Server does remember previous requests from the same client.
-Keywords: Independent, No session, No memory, Each request standalone, Stateless protocol
-

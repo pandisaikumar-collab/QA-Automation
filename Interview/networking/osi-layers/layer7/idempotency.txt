@@ -1,4 +1,0 @@
-1. Same request gives same result
-2. No side effects on server
-3. Examples: GET, PUT, DELETE
-4. Non-idempotent: POST

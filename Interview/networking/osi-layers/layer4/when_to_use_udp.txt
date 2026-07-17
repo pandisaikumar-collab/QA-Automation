@@ -1,7 +1,0 @@
-> UDP will be using when speed matters more that reliability.
-
-Example:
- - live video or audio streaming
- - online gaming
- - DNS lookups
- - VoIP (Voice over IP) calls

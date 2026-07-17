@@ -1,6 +1,0 @@
-1. Check Logs,
-2. Verify Configurations,
-3. Test Connectivity,
-4. API response validation,
-5. Monitor Performance,
-6. Error codes analysis

@@ -1,8 +1,0 @@
-q) what is a VLAN:
-
-> VLAN (Virtual Local Area Network):
- - VLAN is the process of dividing large broadcast domains into single
-   logical domains.
-    - It helps in reducing broadcast traffic and improving network performance.
-    - So that it will isolate traffic between different VLANs.
-    - It will provide security by segregating sensitive data.

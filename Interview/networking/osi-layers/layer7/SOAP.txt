@@ -1,5 +1,0 @@
-1. A protocol used for exchanging structured information in web services.
-
-Example: Legacy enterprise apps
-
-Keywords: SOAP, XML
