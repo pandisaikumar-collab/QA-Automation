@@ -1,0 +1,73 @@
+1) How does ping work when PC1 pings PC2 for the first time:
+
+    - when PC1 wants to ping PC2 for the first, it will first check the destination IP address,
+    - it needs to determine whether the destination is in the same subnet or in a different subnet
+
+    1. Check the subnet:
+    --------------------
+    - if the destination IP is in the same subnet, PC1 knows that it can communicate directly
+      with PC2. it dose not need to send the packet to the default gateway
+
+    2. Check the ARP cache:
+    -----------------------
+    - next, PC1 will check its ARP cache to see whether the MAC address corresponding to the
+      destination IP is already available
+    "since this is the first ping, normally there will not be an ARP entry for the first IP address"
+
+    3. Send an ARP request:
+    -----------------------
+    - because the MAC address is not available, PC1 will generate an ARP request
+    - the ARP request is a broadcast frame because PC1 does not know which device owns the destination IP address
+    - the destination MAC address of the ARP request will be FF:FF:FF:FF:FF:FF, which is the broadcast MAC address
+
+    4. What the switch does:
+    ------------------------
+    - when the switch receives this broadcast frame, it will forward the frame to all the ports in the same VLAN
+      except the port on which it received the frame
+    - as a result, every device connected to that VLAN will receive the ARP request
+
+    5. PC2 replies:
+    ---------------
+    - every device will check the target IP address in the ARP request,
+    - Only PC2 will recognize that the requested IP address belongs to it.
+    - then PC2 will send an ARP reply back to PC1.
+    - Unlike the ARP request, the ARP replay is a unicast frame because PC2 already knows PC1's MAC address from teh received request
+
+    6. Update the ARP cache:
+    ------------------------
+    - after receiving the ARP replay, PC1 will update it's ARP cache by storing the mapping between the destination IP address and its MAC address
+
+    7. Send ping:
+    -------------
+    - once the MAC address is available, PC1 will create the ICMP Echo request, which is the
+     actual ping packet,
+    - the packet will be encapsulated into an Ethernet frame PC2's MAC address as the destination,
+      and the switch will forward it only to PC2
+
+    8. Receive the replay:
+    ----------------------
+    - after receiving the ICMP Echo request, PC2 will process it and send an ICMP Echo replay back to PC1,
+    - the switch will forward the replay to PC1, and the ping will be successful.
+
+    Closing Line:
+    =============
+    "so, during the first ping, the ARP process happens before the ICMP packet is sent,
+    form the second ping onwards, since the ARP entry is already present in the cache,
+    PC1 can send the ICMP packet directly without performing another ARP broadcast,
+    unless the ARP cache entry has expired"
+
+
+    First, PC1 will check...
+    If the destination is in the same subnet...
+    Next, it will verify...
+    Since this is the first communication...
+    If the MAC address is not available...
+    At this point, an ARP Request will be generated...
+    As a result, all devices in the VLAN will receive the broadcast.
+    Only the destination device will respond.
+    After receiving the reply...
+    Finally, the ICMP Echo Request will be sent.
+    From the second ping onwards...
+    This process reduces unnecessary broadcasts and improves communication efficiency.
+
+    ** if it is the different subnet need layer3 switch or router

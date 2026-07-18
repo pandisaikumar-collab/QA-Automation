@@ -1,0 +1,65 @@
+What is Broadcast:
+------------------
+    - A broadcast means sending one packet to every device in the same LAN (same broadcast domain)
+    - instead of sending the packet to one specific device, the sender says:
+      (I don't know who has this IP address, Everyone, please listen,
+      Whoever owns this IP, reply to me)
+
+      Example:
+      --------
+      Suppose:
+      PC1: 192.168.1.10, MAC: AA-AA-AA-AA-AA-AA-AA
+      PC2: 192.168.1.20, MAC: BB-BB-BB-BB-BB-BB-BB
+      PC3: 192.168.1.30, MAC: CC-CC-CC-CC-CC-CC-CC
+
+      All are connected to the same switch,
+      Now PC1 wants to send data to 192.168.1.20
+
+      Step1: Check ARP Cache
+            PC1 checks its ARP table,
+            is there any entry for 192.168.1.20?
+            No.
+
+      Step2: Send ARP Request(Broadcast)
+            PC1 creates an ARP request:
+            Who has IP address 192.168.1.20? Tell 192.168.1.10.
+            The Ethernet destination MAC is:
+            FF:FF:FF:FF:FF:FF: This is called the broadcast MAC address
+
+      Step3: Switch Receives It:
+            The switch sees the destination MAC is FF:FF:FF:FF:FF:FF
+            It Understands: This is a broadcast frame
+
+      So the switch copies the frame and sends it out of every port,
+      Except the one it came in on.
+
+      That Means:
+      -----------
+      PC2 receives it, PC3 receives it, Any other devices receive it
+
+      Step4: Only the Correct Device Replies:
+      PC2 checks: My IP is 192.168.1.20. This request is for me.
+
+      So PC2 sends an ARP replay (this is unicast, no broadcast):
+      192.168.1.20 is at BB-BB-BB-BB-BB-BB
+      PC1 stores this mapping in its ARP cache and can now send data directly to PC2.
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
