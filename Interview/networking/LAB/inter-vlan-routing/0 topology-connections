@@ -1,0 +1,47 @@
+Inter-Vlan-Routing:
+-------------------
+1-router
+1-switch
+2-PCs
+
+Physical connection:
+--------------------
+          PC0                    PC1
+           |                      |
+         Fa0                    Fa0
+           |                      |
+       Fa0/1                  Fa0/2
+          \                    /
+           \                  /
+            +---------------+
+            |   Switch2960  |
+            +---------------+
+                 Fa0/24
+                    |
+                    |
+             Gig0/0 |
+              +------------+
+              | Router2911 |
+              +------------+
+
+Why this Topology:
+------------------
+think of the switch as an apartment building
+PC0 is one resident
+PC1 is another resident
+
+The router acts like the main gate, whenever someone wants to go to a different,
+'building' (VLAN), they must go through the gate
+
+Connect the Cables:
+-------------------
+use Copper-Straight-Through cables
+Connect:
+    PC-0 to switch fa0/1
+    PC-1 to switch fa0/2
+    Switch fa0/24 to Router GigabitEthernet0/0
+
+Why Straight-Through:
+--------------------
+A PC and switch are different device types, so straight-through cable is used.
+Likewise, a switch and a router are different device types

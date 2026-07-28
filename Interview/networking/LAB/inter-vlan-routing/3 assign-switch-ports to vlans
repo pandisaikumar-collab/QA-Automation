@@ -1,0 +1,219 @@
+Assign Switch Ports to VLANs:
+-----------------------------
+We will tell the switch:
+    fa0/1 belongs to FINANCE (VLAN 10)
+    fa0/2 belongs to HR (VLAN 20)
+
+    Why: because the PCs are physically connected to these ports:
+    -------------------------------------------------------------
+        PC0 -------- Fa0/1 -------- Switch
+                          VLAN 10
+
+        PC1 -------- Fa0/2 -------- Switch
+                                  VLAN 20
+
+    * without assigning the ports, the switch doesn't know which VLAN the PCs belong to.
+
+    Configure fa0/1:
+    ----------------
+    enable
+    configure terminal
+    interface fastEthernet0/1
+    switchport mode access
+    switchport access vlan 10  (your telling to the switch whatever device is connected to fa0/1 belongs to VLAN 10)
+    no shutdown
+    exit
+
+    configure terminal
+    interface fastEthernet0/2
+    switchport mode access
+    switchport access vlan 20
+    no shutdown
+    exit
+
+    verify: show vlan brief
+    ------------------------
+    VLAN 10   Finance   Fa0/1
+    VLAN 20   HR        Fa0/2
+
+
+    Why: switchport mode access:
+    ----------------------------
+    A switch port can work in two modes:
+
+    1) Access Port: Carries traffic only one VLAN
+        PC -------- Switch
+           Access Port
+
+        * since a PC belongs to only one VLAN, we use Access Mode
+
+    2) Trunk Port: Carries traffic multiple VLANs
+        Switch ===== Router
+                Trunk
+
+
+    What did we just to:
+    --------------------
+    We told the switch:
+        PC0 -> VLAN 10
+        PC1 -> VLAN 20
+
+    - At this point, the PCs are isolated from each other because they are in different VLANs.
+
+    Think:
+    ------
+    1) If PC0 (VLAN 10) tries to ping PC1 (VLAN 20) right now, will it work? Why or why not:
+      - No, PC0 cannot ping PC1 because they belong to different VLANs,
+      - A VLAN creates a separate Layer 2 broadcast domain
+      - Even through both PCs are connected to teh same physical switch,
+        the switch treats VLAN 10 and VLAN 20 as separate logical switches
+      - since a layer 2 switch cannot route traffic between different VLANs,
+      - communication is not possible until Layer 3 device (Router or Layer 3 Switch)
+        performs inter-VLAN routing.
+
+
+    Now let's understand WHY:
+    -------------------------
+     +----------------------+
+     |      Switch          |
+     |                      |
+     |  VLAN 10   VLAN 20   |
+     |                      |
+     +----------------------+
+        |             |
+      PC0           PC1
+
+     suppose PC0 sends a frame:
+     will the switch send it to PC1 ?, NO
+
+     why: because the switch first checks: which VLAN did this frame come from
+     VLAN 10: then it asks, which ports belong to VLAN 10, only fa0/1
+     it never even looks at VLAN 20
+     so, the frame is never forwarded to PC1
+     this is why VLANs provided isolation
+
+How can we make them communicate:
+---------------------------------
+PC0 is in 192.168.10.0/24
+PC1 is in 192.168.20.0/24
+These are two different IP networks
+
+Who is responsible for moving packets between different networks:
+-----------------------------------------------------------------
+A switch
+A router
+A PC
+
+>> Router or L3 Switch
+
+
+Let's understand with an example:
+---------------------------------
+PC0
+IP : 192.168.10.10
+Mask : 255.255.255.0
+Gateway : 192.168.10.1
+
+↓
+
+Fa0/1
+
+↓
+
+Switch
+
+↓
+
+Fa0/2
+
+↓
+
+PC2
+IP : 192.168.10.20
+Mask : 255.255.255.0
+Gateway : 192.168.10.1
+
+Both PCs are:
+-------------
+Same VLAN (VLAN 10)
+Same subnet (192.168.10.0/24)
+
+Can they communicate: Yes
+-------------------------
+Because they are in the same network and same VLAN. The switch forwards the Ethernet frames directly after learning the destination MAC address.
+
+
+
+Now let's change only one thing:
+--------------------------------
+PC0
+192.168.10.10
+VLAN 10
+
+↓
+
+Switch
+
+↓
+
+PC1
+192.168.20.20
+VLAN 20
+
+
+Can they communicate: No
+------------------------
+Different VLANs
+Different IP networks
+
+The Layer 2 switch says: "I know how to switch frames inside one VLAN, but I don't know how to move packets between different IP networks
+So it needs help from a Router or a Layer 3 Switch.
+
+
+Suppose:
+--------
+PC0
+IP : 192.168.10.10
+Gateway : 192.168.10.1
+
+PC1
+IP : 192.168.20.20
+Gateway : 192.168.20.1
+
+PC0 wants to send data to 192.168.20.20:
+----------------------------------------
+A) Send the packet directly to PC1?
+B) Send the packet to its default gateway (192.168.10.1)?
+
+@B) Send the packet to its default gateway (192.168.10.1).
+
+Why: PC0 first checks:
+-----------------------
+"Is 192.168.20.20 in my network?"
+
+It compares:
+My network: 192.168.10.0/24
+Destination: 192.168.20.20
+
+They are different:
+This destination is outside my local network. I cannot send directly. I'll send it to my default gateway
+The default gateway (the router or Layer 3 switch) then decides how to reach 192.168.20.20
+
+We have only one cable between the switch and the router:
+---------------------------------------------------------
+           VLAN 10
+PC0 --------\
+             \
+              Switch ----------- Router
+             /
+PC1 --------/
+           VLAN 20
+
+Question: That one cable has to carry traffic for: VLAN 10, VLAN 20
+
+How will the router know:
+-------------------------
+"This packet belongs to VLAN 10."
+"This packet belongs to VLAN 20."
+
+That's exactly why we need a trunk port and 802.1Q VLAN tagging.

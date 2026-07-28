@@ -1,0 +1,184 @@
+1) DNS Process when you type google.com in browser:
+---------------------------------------------------
+    User enter the website name:
+    ----------------------------
+    - when a user enters a website name such as www.google.com into the browser and press enter,
+    - the browser first needs to determine the IP address associated with that domain name,
+    "since computers communicate using IP address rather than domain names,
+    the DNS resolution process begins"
+
+    Browser checks its DNS cache:
+    -----------------------------
+    - first, the browser will check its own DNS cache to determine whether it has already
+      resolved the domain name recently
+    - if the browser finds a valid entry in its cache, it will immediately use the cached IP
+      address without contacting the DNS server
+      ex: www.google.com -> 142.25.xx.xx.xxx
+
+    Operating System checks DNS cache:
+    ----------------------------------
+    - if the browser does not find the IP address, the request is passed to the operating system,
+    - the operating system will check it's local DNS cache to see whether the IP address is already available
+
+    Send DNS Query:
+    ---------------
+    - if the operating system also does not have the required information, it will send a DNS
+      query to the configured DNS server,
+    - unlike an ARP request, a DNS query is not a broadcast, it is unicast packet send
+      directly to the configured DNS server,
+      ex: PC1 -> DNS server (8.8.8.8)
+
+    DNS server checks it's cache:
+    -----------------------------
+    - when the DNS server receives the request, it will first check whether the requested
+      domain name is already present in its own cache
+    - if the entry exists, the DNS server immediately returns the corresponding IP address to the client
+
+    Recursive DNS lookup(if needed):
+    --------------------------------
+    - if the DNS server does not have the answer in its cache, it begins the recursive DNS lookup process
+    The DNS server:
+    ---------------
+    1. Root DNS server
+    2. Top-Level Domain (TLD) server (such as .com)
+    3. Authoritative DNS server
+
+    Client -> Local DNS -> Root DNS -> .com TLD -> Authoritative DNS -> IP address
+
+    Authoritative DNS server responds:
+    ----------------------------------
+    - the authoritative DNS server contains the official DNS records for the domain,
+    - it returns the IP address associated with www.google.com to the DNS server
+    Example: www.google.com -> 142.250.190.36
+
+    DNS server sends the replay:
+    ----------------------------
+    - after receiving the IP address, the DNS sends a DNS response back to the client
+    - the DNS server also stores this information in its cache so that future requests can be answered more quickly
+
+    Client stores the DNS entry:
+    ----------------------------
+    - the client receives the DNS response and stores the IP address in its local DNS cache
+      according to the record's Time To Live (TTL)
+    - as long as the TTL has not expired, future requests for the same domain can use the cached
+      entry without preforming another DNS lookup
+
+    Communication Starts:
+    ---------------------
+    - now that the client knows the destination IP address, it can establish communication with the web server
+    - if the web server is on the internet, the client will send the packet to its default gateway,
+      which forwards it towards the destination
+    - if HTTPS is being used, a TCP connection is established first, followed by the TLS handshake,
+      and only then does the browser send the HTTP request,
+
+        Example:
+        --------
+        User types -> Google.com -> Browser Cache -> OS DNS Cache -> DNS Server -> Root DNS -> .com TLD -> Authoritative DNS -> IP Address Returned -> Browser Receives IP -> TCP Connection -> TLS Handshake(HTTPS) -> HTTP Request -> Website Opens
+
+    ** (Interview)
+    - when a user enters a website name such as www.google.com,
+    - the browser first checks its local DNS cache,
+    - if the IP address is not found,
+    - the operating system checks its DNS cache,
+    - if the entry is still unavailable, the client sends a unicast DNS query to the configured DNS server,
+    - the DNS server first checks its own cache, if the record is not available,
+    - it performs a recursive lookup by contacting the Root DNS server, then the Top-Level Domain (TLD) server, and finally the Authoritative DNS server,
+    - the authoritative server returns the correct IP address to the DNS server,
+    - which forwards it to the client and caches it for future use,
+    - the client also stores the result in its local cache,
+    - once the IP address is known, the client establishes a TCP connection with the destination server and
+      then sends the HTTP or HTTPS request to access the website
+
+
+    Keywords:
+    ----------
+    Browser DNS Cache
+    Operating System DNS Cache
+    DNS Query (Unicast)
+    Recursive Resolver
+    Root DNS Server
+    TLD Server
+    Authoritative DNS Server
+    DNS Cache
+    TTL (Time To Live)
+    TCP Three-Way Handshake
+    TLS Handshake (HTTPS)
+    HTTP Request
+
+
+
+Step 1 – User Types www.google.com:
+-----------------------------------
+ - When a user types www.google.com into the browser and presses Enter,
+   the browser cannot communicate using the domain name.
+   It first needs the corresponding IP address, so the DNS resolution process begins
+
+Step 2 – Browser Checks DNS Cache:
+----------------------------------
+ - The browser first checks its own DNS cache.
+   If the IP address is already available and the TTL has not expired,
+   the browser immediately uses that IP address without sending any DNS request
+
+Step 3 – OS Checks DNS Cache:
+-----------------------------
+ - If the browser does not find the record, the request is passed to the operating system.
+   The operating system also checks its local DNS cache
+
+Step 4 – DNS Query Sent to Local DNS Server:
+--------------------------------------------
+ - If the record is not available locally,
+   the client sends a DNS query to the configured DNS server.
+   This is a unicast query, not a broadcast.
+
+Step 5 – Local DNS Checks Its Cache:
+------------------------------------
+ - The Local DNS Server first checks its own cache.
+   If it already knows the answer, it immediately sends the IP address back to the client
+
+Step 6 – Recursive Lookup:
+--------------------------
+ - If the Local DNS Server does not have the record,
+   it starts a recursive lookup. First, it contacts the Root DNS Server.
+   The Root Server does not know the IP address, but it knows where the .com servers are located
+
+    Then: The DNS Resolver contacts the .com TLD Server. The TLD Server tells the resolver which Authoritative DNS Server manages google.com.
+    Finally: The DNS Resolver contacts the Authoritative DNS Server, which contains the official DNS records and returns the correct IP address
+
+Step 7 – IP Address Returned:
+-----------------------------
+ - The Authoritative DNS Server returns the IP address to the Local DNS Server.
+   The Local DNS Server caches the result and forwards the response to the client.
+    Example: www.google.com -> 142.250.190.36
+
+Step 8 – Browser Connects to Google Server:
+-------------------------------------------
+ - Once the browser receives the IP address,
+   it establishes a TCP connection with the destination server.
+   If HTTPS is used, a TLS handshake is performed. After that, 
+   the browser sends the HTTP request, and the server returns the webpage.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

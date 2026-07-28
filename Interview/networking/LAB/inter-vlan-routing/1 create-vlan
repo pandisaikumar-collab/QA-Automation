@@ -1,0 +1,59 @@
+Create VLANs: Why do we need VLANs
+----------------------------------
+suppose Finance and HR are using the same switch
+
+    Without VLANs:
+    -------------
+    Finance PC --------\
+                     \
+                      Switch
+                     /
+    HR PC -------------/
+
+    - everyone is one broadcast domain
+    - if finance sends a broadcast, HR also receives it,
+    - that's inefficient and can be security concern
+
+Now create two VLANs:
+---------------------
+enable
+(cisco have different privilege levels)
+(user mode > lets you view limited information)
+
+config terminal
+(this command enters Global Configuration Mode)
+
+vlan 10
+(this create a new Layer2 broadcast domain with VLAN ID 10)
+(this of it as creating a new department)
+
+name FINANCE
+(the switch only needs the VLAN ID to function,
+the name is for humans, making it easier to indentify VLAN later)
+exit
+
+vlan 20
+name HR
+exit
+
+Verify configs:
+---------------
+sh vlan brief (should show default vlan and created vlans)
+
+
+
+************* Understand what did we actually create *****************
+                One Physical Switch
+          +----------------------------+
+          |                            |
+          |   VLAN 10    |   VLAN 20   |
+          |   Finance    |     HR      |
+          |              |             |
+          +----------------------------+
+          * one physical switch is now behaving like two independent switches
+          * instead of buying 3 physical switches, we are using 1 physical switches as diff logical switches
+          * they behave like a as if they are 3 different switches
+
+          Q) Does creating a VLAN automatically assign ports to it: NO
+             - creating a VLAN only creates the VLAN database entry
+             - no ports belong to it until we explicitly assign them

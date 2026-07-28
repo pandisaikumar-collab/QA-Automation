@@ -1,0 +1,65 @@
+TCP-Three-Way-Handshake:
+------------------------
+
+    Client Wants to Establish a Connection:
+    ---------------------------------------
+        - after the DNS resolution process is completed,
+          the client now knows the destination server's IP address
+
+        - before sending any application data such as HTTP or HTTPS requests,
+          the client must establish a reliable connection with the server
+
+        - to begin the connection, the client sends TCP packet with the SYN,
+          (Synchronize) flag set to 1.
+
+        - this SYN packet also contains the client's initial sequence number (ISN),
+          which is used to synchronize communication between the client and server
+
+            Example: Client --------> SYN (Seq=100) --------> Server
+
+    Server Responds with SYN-ACK:
+    -----------------------------
+        - when the server receives the SYN packet, it understands that the client
+          wants to establish a TCP connection
+
+        - if the requested service is available (for example: HTTPS on port 443),
+          the server accepts the request
+
+        - the server responds with a SYN-ACK packet
+
+        - the SYN indicates that the server is also ready to establish the connection,
+          and the ACK acknowledges the client's sequence number
+
+        Example: Client <---------- SYN-ACK (Seq=5000, Ack=1001) ----- Server
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
