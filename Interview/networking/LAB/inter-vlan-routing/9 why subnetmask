@@ -1,0 +1,9 @@
+Why Subnet Mask:
+----------------
+    1. subnet mask tells the PC which devices in my local network
+        Example:
+            192.168.10.10
+            255.255.255.0
+
+    2. the PC understands my network 192.168.10.0/24, any device with
+       192.168.10.x is inside my network, everything else is outside

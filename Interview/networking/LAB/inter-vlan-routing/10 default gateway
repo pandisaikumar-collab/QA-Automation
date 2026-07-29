@@ -1,0 +1,7 @@
+Why Default Gateway:
+--------------------
+    Suppose: PC0 192.168.10.10 wants to communicate with 192.168.20.20
+
+    PC checks: 192.168.20.20 my network 192.168.10.0/24, different network
+    PC0 says, I don't know how to reach that network, i will send the packet to my default gateway
+    That default gateway is: 192.168.10.1, Which is our router

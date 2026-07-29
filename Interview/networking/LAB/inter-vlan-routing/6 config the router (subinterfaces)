@@ -1,0 +1,101 @@
+Configure the Router (Subinterfaces):
+-------------------------------------
+    Question: Our router has only one physical interface connected to the switch.
+                   Trunk
+    Switch ================= Router
+                    |
+                 Gig0/0
+
+    But we have two VLANs: VLAN 10, VLAN 20
+    Each VLAN needs its own default gateway
+
+    So we need:
+    VLAN 10 → Gateway → 192.168.10.1
+    VLAN 20 → Gateway → 192.168.20.1
+
+    Can we configure both IPs on the same physical interface:
+    ---------------------------------------------------------
+    Like this: No
+
+    Gig0/0
+    192.168.10.1
+    192.168.20.1
+
+    A cisco router interface can have only one primary IP address
+    So cisco invented subinterfaces
+
+What is a Subinterface:
+-----------------------
+    GigabitEthernet0/0
+            |
+            |
+    +------------------------+
+    | G0/0.10               |
+    | G0/0.20               |
+    +------------------------+
+
+    - one physical interface
+    - multiple logical interfaces
+    - each logical interface behaves like an independent interface
+
+Why do we need them:
+--------------------
+    Because each VLAN needs it's own gateway
+    VLAN 10
+    Gateway → G0/0.10
+
+    VLAN 20
+    Gateway → G0/0.20
+
+Configure the Router:
+---------------------
+enable
+configure terminal
+interface gigabitEthernet0/0.10 (create a logical subinterface for VLAN 10)
+                                (it dose not mean 'port number 10')
+                                Physical
+encapsulation dot1Q 10          (whenever you receive a frame tagged with VLAN 10, send it to this subinterface)
+                                (this subinterface is responsible for VLAN 10)
+ip address 192.168.10.1 255.255.255.0 (because every device in VLAN 10 needs a gateway)
+exit
+
+Create Subinterface for VLAN 20:
+--------------------------------
+interface gigabitEthernet0/0.20
+encapsulation dot1Q 20
+ip address 192.168.20.1 255.255.255.0
+exit
+
+Enable the Physical Interface:  (The subinterfaces depend on the physical interface being up)
+------------------------------
+interface gigabitEthernet0/0
+no shutdown
+end
+write memory
+
+show ip interface brief
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

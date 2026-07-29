@@ -1,0 +1,73 @@
+Let's Understand the Complete Flow:
+===================================
+
+Suppose PC0 wants to ping PC1
+    1) PC0 checks:
+        Destination = 192.168.20.20
+        My Network = 192.168.10.0/24
+
+    2) different network:
+        I will send it to my gateway
+
+    3) PC0 sends the frame to:
+        Destination MAC = Router's MAC
+        Destination IP = 192.168.20.20
+        Layer2(MAC): router
+        Layer3(IP): Final destination (PC1)
+
+    4) The switch receives the frame,
+       it knows the frame came from VLAN 10
+       before sending it to the router over the trunk, it adds:
+       802.1Q Tag
+       VLAN ID = 10
+
+    5) The router receives the frame:
+        it reads the VLAN tag
+        VLAN ID = 10
+        The router says: This belongs to subinterface G0/0.10
+        The frame enters GigabitEthernet0/0.10.
+
+    6) The router examines the IP destination:
+        Destination IP = 192.168.20.20
+        It knows  192.168.20.0/24
+        G0/0.20
+        So it routes the packet internally from G0/0.10 to G0/0.20
+
+    7) Before sending the frame back to the switch, the router tags it:
+        VLAN ID = 20
+       the switch receives it on the trunk, removes VLAN tag, and forwards it only the port
+       belonging to VLAN 20 (fa0/2), where PC1 receives it
+
+    8) Why do we use subinterfaces:
+         - to allow one physical router interface to serve multiple VLANs,
+         - each subinterface acts as the default gateway for a different VLAN
+
+
+    9) What does encapsulation dot1Q 10 do:
+        - it associates the subinterface with VLAN 10
+        - the router processes all frames tagged with VLAN ID 10 that subinterface
+        show ip interface brief
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

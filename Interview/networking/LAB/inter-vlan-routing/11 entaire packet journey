@@ -1,0 +1,58 @@
+Let's Understand the Entire Packet Journey:
+-------------------------------------------
+
+    1) Imagine PC0 sends: ping 192.168.20.20
+    2) PC0 checks is 192.168.20.20 inside my subnet: No
+    3) PC0 says I will send to 192.168.10.1
+    4) Before sending, PC0 needs the router's MAC address
+    5) It sends an ARP Request: Who has 192.168.10.1
+    6) The router replies: I am 192.168.10.1, My MAC is AA:AA:AA:AA
+    7) PC0 stores this is ARP table
+    8) PC0 creates an Ethernet Frame
+        Source MAC PC0
+        Destination MAC Router
+        Source IP 192.168.10.10
+        Destination IP 192.168.20.20
+    9) Notice:
+        The MAC destination is the router, but the IP destination is still PC1
+        The destination between Layer 2 (MAC) and Layer 4 (IP) is fundamental
+    10) The switch receives the frame
+        It knows it came from VLAN 10
+        before sending it over the trunk, it adds: 802.1Q Tag
+        VLAN ID = 10
+    11) The router receives the tag frame:
+        it reads: VLAN 10
+        it sends to G0.0/10
+        The router examines the destination IP: 192.168.20.20
+        It decides: This belongs to 192.168.20.0/24
+        G0/0.20
+
+        - The router changes the Layer 2 header (new source and destination MAC address)
+        - because it's forwarding to a new network segment, but the IP source and destination remain the same (except for fields like TTL that are updated)
+    12) The router sends the frame back to the switch with VLAN 20 tagging
+    13) The switch removes the tag and forwards the same only to fa0/2, where PC1 is connected
+    14) PC1 receives the ping and sends the the replay back through the same process in reverse
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

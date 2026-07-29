@@ -1,0 +1,139 @@
+Configure the Trunk Port
+------------------------
+           VLAN 10
+PC0 ----------\
+               \
+                Switch -------- Router
+               /
+PC1 ----------/
+           VLAN 20
+
+Question:
+---------
+    - PC0 sends data
+    - the switch receives it
+    - now the switch has to send packet to the router
+
+    Question: How will the router know:
+    1) is this packet from VLAN 10
+    2) is this packet from VLAN 20
+
+    - A normal Ethernet frame does not contain the VLAN ID
+    - So if we simply send it over a normal link, the router cannot identify which VLAN it belongs to
+
+Solution:
+---------
+    - cisco uses a standard called IEEE 802.1Q
+    - when a frame leaves the switch through a trunk port, the switch adds
+      VLAN tag to the Ethernet Frame
+
+What is a Trunk:
+----------------
+    - An access port carries traffic for only one VLAN
+    Example: PC -------- Switch ----- Access Port
+
+    - A trunk port carries traffic for multiple VLANs
+    Example: Switch ------- Router ------> carries VLAN 10, VLAN 20, VLAN 30, VLAN 100
+
+    that's why the switch to router link must be a trunk
+
+
+Configure the Trunk:
+--------------------
+enable
+configure terminal
+interface fastEthernet0/24
+switchport mode trunk (this interface is no longer an access port)
+no shutdown
+exit
+end
+write memory
+
+    verify: show interfaces trunk
+
+What actually happens:
+----------------------
+    - suppose PC0 sends a frame:
+
+    inside switch:
+    --------------
+    PC0 -----> (Normal Ethernet Frame)
+    Switch --> (Add VLAN tag (VLAN 10))
+    ========= Trunk ===========
+    Router
+
+    PC1
+     |
+     |  (Normal Ethernet Frame)
+     |
+    Switch
+     |
+     |  Adds VLAN Tag (VLAN 20)
+     |
+    ========== Trunk ==========
+     |
+    Router
+
+    * The PCs never see the VLAN tag:
+    - the tag exists only on the trunk link between network devices (switches and routers)
+    - before the frame is delivered to the destination PC, the switch removes the VLAN tag
+
+Q: Why do we configure a trunk between the switch and the router:
+-----------------------------------------------------------------
+    - A trunk port is used to carry traffic from multiple VLANs over a single physical link,
+    - It used IEEE 802 1Q VLAN tagging, so that the receiving device can identify which VLAN each frame belongs to
+
+Will the router be able to distinguish VLAN 10 and VLAN 20 traffic:
+-------------------------------------------------------------------
+    - no, because without a trunk, the switch sends normal Ethernet frame
+    - A normal Ethernet frame looks like this:
+        +-------------------------+
+        | Source MAC              |
+        | Destination MAC         | # there is no VLAN ID
+        | Data                    |
+        +-------------------------+
+
+Why did Cisco invent trunking instead of using one cable per VLAN:
+------------------------------------------------------------------
+    Imagine you have:
+    -----------------
+    VLAN 10
+    VLAN 20
+    VLAN 30
+    VLAN 40
+    VLAN 50
+
+    Without trunking, you would need:
+    ---------------------------------
+    Switch ---------------- Router
+    VLAN10 ---- Cable 1
+    VLAN20 ---- Cable 2
+    VLAN30 ---- Cable 3
+    VLAN40 ---- Cable 4
+    VLAN50 ---- Cable 5
+
+    Now imagine a data center with:
+    -------------------------------
+    100 VLANs
+    500 VLANs
+    1000 VLANs
+
+    Would you install 1000 physical cables?
+    Impossible,
+    It would waste: Switch ports, Router ports, Cables, Rack space, Money
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

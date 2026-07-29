@@ -1,0 +1,52 @@
+Router-Sub Interface Concept:
+-----------------------------
+    we already know:
+    - switch adds the VLAs tag
+    - Router receives the tagged frame
+
+    Now think about the router:
+    ---------------------------
+    - the router has only one physical interface: GigabitEthernet0/0
+    - But we have: VLAN 10, VLAN 20
+
+    How can one physical interface have two different IP address:
+    -------------------------------------------------------------
+    Example:
+    192.168.10.1 AND 192.168.20.1
+
+    Normally, one interface has one IP address
+    So how is the router going to do this ?
+    >> It creates subinterfaces
+
+    Instead of one interface, the router logically divides it:
+    ----------------------------------------------------------
+        GigabitEthernet0/0
+            |
+            +--------------------+
+            |                    |
+         G0/0.10             G0/0.20
+     VLAN 10 Gateway      VLAN 20 Gateway
+    192.168.10.1          192.168.20.1
+
+    >> Notice that there is still only one physical cable, but the router behaves as if it has
+       separate logical interfaces for each VLAN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
