@@ -1,0 +1,422 @@
+1) If we only connect the cables and do not configure any IP address, will PC0 be able to ping PC1:
+---------------------------------------------------------------------------------------------------
+    - PC0 has no IP address
+    - PC1 has no IP address
+    - Router also have no IP address
+
+    Without IP address, there is not Layer3 communication.
+
+    (No, PC0 cannot ping PC1 because ping uses (IP Layer3), and without IP address there is
+    no source IP, no destination IP, and no routing)
+
+    Even if both PCs are connected to the same switch, ping still requires IP address
+
+
+2) How many different IP networks do you think we will need in this topology:
+-----------------------------------------------------------------------------
+    PC0 ---- SW1 ---- R1 ===== R2 ---- SW2 ---- PC1
+
+    Network 1:
+    ----------
+    PC0 is connected to R1
+    Should PC0 and R1 be in the same IP network: YES
+    so that's our first network
+    Example: 192.168.10.0/24
+
+    Network 2:
+    ----------
+    R1 is connected to R2
+    Can we use the same network as PC0: NO
+    WHY: Because a router separates different network
+    The cable between R1 and R2 must have its own IP network
+    Example: 10.10.10.0/30
+
+    Network 3:
+    ----------
+    R2 is connected to PC1
+    Should PC1 use the same network as R1-R2: NO
+    That is another separate network
+    Example: 10.10.20.0/24
+
+
+3) Suppose we configure all three networks like this:
+    PC0
+    192.168.10.10
+
+    ↓
+
+    R1
+    192.168.10.1
+    10.10.10.1
+
+    ↓
+
+    R2
+    10.10.10.2
+    192.168.20.1
+
+    ↓
+
+    PC1
+    192.168.20.20
+
+    - When PC0 sends a packet to 192.168.20.20, it first reaches R1
+    - How does R1 know that 192.168.20.20 is behind R2:
+    - Does R1 automatically know or do we have to tell R1 ??
+
+    Topology:
+    ---------
+    PC0 ---- SW1 ---- R1 ===== R2 ---- SW2 ---- PC1
+    192.168.10.0      10.10.10.0      192.168.20.0
+
+    - R1 knows only the networks directly connected to it:
+      192.168.10.0/24
+      10.10.10.0/30
+
+    - But dose R1 know this network (192.168.20.0/24), NO.
+    - So if PC0 sends a packet to 192.168.20.20, R1 receives it and thinks:
+    - I know 192.168.10.0, I know 10.10.10.0
+    - But what is 192.168.20.0, I have never heard of it
+    - So the router drops the packet
+
+    This is why Static Routing exits:
+    ---------------------------------
+    We manually tell R1:
+        - If you never want to reach 192.168.20.0/24
+        - Send the packet to 10.10.10.2
+
+    Similarly, we tell R2:
+        - If you never want to reach 192.168.10.0/24
+        - Send packet to 10.10.10.2
+
+    * That is exactly what the ip route command does
+
+
+Q) Notice the link between R1 and R2: Why did we choose /30 instead of /24 (255.255.255.0)
+    R1 -------- R2
+    10.10.10.0/30
+
+    - How many device are connected on that link:
+    - How many usable IP address do we actually need:
+
+    Look at the Topology:
+    PC0 -------- R1 ========== R2 -------- PC1
+                (This link)
+
+    Focus only on this cable:
+    R1 ------------ R2
+        - How many devices are connected to this cable:
+          (Only R1, R2)
+          So we need only 2 IP address
+
+    Then why not use /24:
+    ---------------------
+    Let's see what /24 gives us.
+    Subnet: 10.10.10.0/24
+    (Number of IP address, Total address = 256, usable IP address=254)
+    But we only have: R1, R2 = Only 2 devices
+    If we use /24, 254 usable IPs, Only 2 are used and 252 are wasted
+
+    Now let's use /30:
+    ------------------
+    10.10.10.0/30
+    - How many IPs: 10.10.10.0 Network Address
+      10.10.10.1 R1
+      10.10.10.2 R2
+      10.10.10.3 Broadcast
+      Only: 2 usable IP address
+      So when we used /30 nothing is wasted, only 2 used
+
+    Comparison:
+    -----------
+    /24:
+        - Total IPs (256), Usable IPs (254), Suitable for LAN with many devices
+
+    /30:
+        - Total IPs (4), Usable IPs (2), Suitable for Point-To-Point link between two routers
+
+
+Q) When PC0 wants to send a packet to PC1, who makes the first routing decision: PC0
+------------------------------------------------------------------------------------
+    PC0
+    192.168.10.10
+           |
+           |
+    R1
+    192.168.10.1
+    10.10.10.1
+           |
+           |
+    R2
+    10.10.10.2
+    192.168.20.1
+           |
+           |
+    PC1
+    192.168.20.20
+
+
+    Packet Flow:
+    ------------
+    Suppose:
+        PC0
+        IP: 192.168.10.0/24
+        Gateway: 192.168.10.1
+        Destination: 192.168.20.20
+
+        - The first think PC0 does is ask: is 192.168.20.20 is my own network?
+          PC0 compares: My network 192.168.10.0/24, Destination 192.168.20.20
+          It realizes: 192.168.20.20 # 192.168.10.0/24
+          So PC0 decides: This destination is outside my network, I must send it to my default gateway (192.168.10.1)
+          -> This is first routing decision
+          -> The router has not even seen the packet yet, The PC itself decided: I cannot send directly to the destination, I will send it to my gateway
+
+        Then what happens:
+            PC0
+               │
+               │ Ethernet Frame
+               ▼
+            Switch
+               │
+               ▼
+            Router R1
+
+            - the router does not make any routing decision
+            - it simply looks at the destination MAC address and forwards the frame
+
+        Router R1 receives the packet:
+            - now R1 removes the Ethernet header looks at the destination IP: 192.168.20.20
+            - it checks its routing table: if it has a route: 192.168.20.0/24 --> Next Hop 10.10.10.2
+            - Then it forwards the packet to R2
+
+        Router R2 receives the packet:
+            - It checks: 192.168.20.0/24, It says: This network is directly connected me
+            - So it sends the packet to PC1
+
+Complete Flow:
+--------------
+    Step 1
+    PC0 checks destination IP.
+
+    ↓
+
+    Step 2
+    PC0 decides:
+    Different network.
+    Send to default gateway.
+
+    ↓
+
+    Step 3
+    Switch forwards the Ethernet frame.
+
+    ↓
+
+    Step 4
+    Router R1 checks its routing table.
+
+    ↓
+
+    Step 5
+    R1 forwards to R2.
+
+    ↓
+
+    Step 6
+    R2 sees the destination network is directly connected.
+
+    ↓
+
+    Step 7
+    R2 sends the packet to PC1.
+
+Q) Which devices are Layer 2 devices, Which devices are Layer 3 devices:
+------------------------------------------------------------------------
+    Switches are Layer 2 devices: WHY:
+        - Because switches make forwarding decisions based on MAC address
+
+    Routers are Layer 3 devices: WHY:
+        - Because routers make forwarding decisions based on IP address
+
+
+Q) Which devices are responsible for: (Forwarding frames using MAC addresses, Forwarding packets using IP addresses)
+--------------------------------------------------------------------------------------------------------------------
+    - Switches forwards frames using MAC addresses
+    - Routers forward packets using IP address
+
+Q) PC0 wants to send data to PC1:
+------------------------------
+    PC0 ----- SW1 ----- R1 ===== R2 ----- SW2 ----- PC1
+    > Now let's see what each device is actually doing:
+
+    1) PC0 Creates a Packet:
+        Source IP: 192.168.10.10
+        Destination: 192.168.20.20
+
+        Then it creates an Ethernet Frame:
+            Source MAC,
+            Destination MAC (Default Gateway)
+
+        - The IP address is the final destination
+        - The MAC address is only for the next device
+
+    2) Switch Receives the Frame: The switch never looks at this:
+        (Destination IP 192.168.20.20, It doesn't care)
+        > Instead it checks:
+          Destination MAC
+
+        - Then it asks: Which port has this MAC address
+        - If it knows: it forwards the frame
+        - If it doesn't knw: It flood the frame
+
+    3) Router Receives the Packet:
+        - Now Router1 R1 removes the Ether header:
+        - Now it checks: Destination IP: 192.168.20.20
+        - The router never checks MAC address to decide where the packet should go next,
+          It uses the routing table and the destination IP network
+        - Then it says: I know how to reach this network
+        - OR, I dont' know this network
+        # That is routing
+
+Q) Does a switch check the destination IP address before forwarding a frame: NO
+--------------------------------------------------------------------------------
+    - A Layer 2 switch forwards Ethernet Frame based on the destination MAC address,
+    - It does not use the destination IP address for forwarding decisions
+
+Q) Does a router check the destination MAC address before routing the packet:
+-----------------------------------------------------------------------------
+    - The router removes the incoming Layer 2 header
+    - Examines the destination IP address, consults its routing table,
+    - And then creates a new layer 2 frame with new source and destination MAC address for the next hop
+
+Q) When PC0 sends the first Ethernet frame:
+-------------------------------------------
+    PC0
+    IP  = 192.168.10.10
+    MAC = AAAA
+
+    ↓
+
+    Switch
+
+    ↓
+
+    Router R1
+    IP  = 192.168.10.1
+    MAC = BBBB
+
+    - Now PC0 wants to send data to PC1 (192.168.20.20).
+    - what is the Destination MAC Address:
+
+    1) PC0 wants to send a packet:
+        PC0
+        IP : 192.168.10.10
+        MAC: AAAA
+
+        ↓
+
+        Destination IP
+        192.168.20.20
+
+        - PC0 first checks: is 192.268.20.20 my subnet:
+        - It calculates: My Network 192.168.10.0.24
+        - Destination: 192.168.20.20
+        - No, Different Network
+        - So PC0 decides: I will send this packet to my Default Gateway
+        - Who is the Default gateway: 192.168.10.1 (Router R1)
+
+    2) But PC0 doesn't know Router R1's MAC address:
+        - Now PC0 asks: Who has IP 192.168.10.1
+        - This is where ARP comes in.
+        - PC0 sends an ARP Request: Destination MAC of the ARP Request (FF:FF:FF:FF:FF:FF)
+        - This is the Broadcast MAC address
+
+    3) Router Replies:
+        - 192.168.10.1 is 00:11:22:33:44:55
+        - This is an ARP Replay
+        - Now PC0 stores: 192.168.10.1 -> 00:11:22:33:44:55 in its ARP cache
+
+    4) Now PC0 sends the Actual Data:
+        - Now that PC0 knows the router's MAC address, it creates the real Ethernet Frame
+
+        The Frame Looks Like:
+        ---------------------
+            Ethernet Header
+
+            Destination MAC
+
+            Router R1 MAC
+            (00:11:22:33:44:55)
+
+            Source MAC
+
+            PC0 MAC
+
+            ----------------------
+
+            IP Packet
+
+            Source IP
+
+            192.168.10.10
+
+            Destination IP
+
+            192.168.20.20
+
+The IP Header: Never changes
+----------------------------
+    Source IP
+    192.168.10.10
+    Destination IP
+    192.168.20.20
+
+The Ethernet Header:
+--------------------
+    First hop: PC0 - Router R1 MAC
+    Second hop: Router R1 - Router R2 MAC
+    Third hop: Router R2 - PC1 MAC
+
+Q) When PC0 sends the first Ethernet frame, what is the destination MAC:
+------------------------------------------------------------------------
+    Router R1's MAC Address: The broadcast MAC (FF:FF:FF:FF:FF:FF)
+    is used only for the ARP Request to discover the router's MAC address
+
+Q) Does the switch know the destination IP address: NO
+------------------------------------------------------
+    - A Layer 2 switch forwards Ethernet frame based on destination MAC address,
+    - If the sender does not know the MAC address of the default gateway,
+    - It first sends an ARP Request using the broadcast MAC address (FF:FF:FF:FF:FF:FF:FF)
+    - After receiving the ARP replay, the actual data frame is sent with the router's MAC address
+      as the destination MAC.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

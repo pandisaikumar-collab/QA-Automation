@@ -1,0 +1,74 @@
+Understand What We are dong:
+----------------------------
+    PC0 ---- SW1 ---- R1 ===== R2 ---- SW2 ---- PC1
+
+    Router R1 has two jobs:
+    -----------------------
+    1) Talk to the local LAN:
+        PC0 - Switch1 - R1 G0/0
+        So G0/0 must be in the same network as PC0
+        Therefore: G0/0 = 192.168.10.1/24
+
+    2) Talk to Router R2:
+        R1 G0/1 ------- G0/1 R2
+        So G0/1 needs another network: 10.10.10.1/30
+
+Q) Which interface should receive this IP address: (G0/0 G0/1)
+--------------------------------------------------------------
+                     10.10.10.0/30
+                G0/1                    G0/1
+        PC0 ---- SW1 ---- R1 ---------------- R2 ---- SW2 ---- PC1
+                 G0/0                    G0/0
+
+        192.168.10.0/24              192.168.20.0/24
+
+    Forget the IP address for a moment,
+    Just look at the physical connections,
+    Router R1 has two interfaces: [G0/0, G0/1]
+    Which interface is physically connected to Switch1: PC0 --- Switch1 --- 0/0
+    Which interface is physically connected to Router R2:
+    >> Always assign IP address based on what the interface is physically connected to.
+
+    Router R1:
+    -----------
+    G0/0 is connected to the LAN: PC0 -- SW1 -- R1 G0/0
+    The LAN network is: 192.168.10.0/24
+    Therefore: R1 G0/0 = 192.168.10.1/24
+    Why: Because every device connected to the same LAN must belong to the same IP network
+    G0/1 is connected to Router R2: R1 G0/1 ------- G0/1 R2
+    Network: 10.10.10.0/30
+    Therefore: R1 G0/1 = 10.10.10.1/30
+
+    Router R2:
+    ----------
+    R2 G0/1 -------- G0/1 R1
+    So: R2 G0/1 = 10.10.10.2/30
+    R2 G0/0 - SW2 - PC1
+    LAN Network: 192.168.20.0/24
+    Therefore: R2 G0/0 = 192.168.20.1/24
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

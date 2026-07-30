@@ -1,0 +1,133 @@
+Let's Become the Packet:
+------------------------
+
+    1) Suppose PC0 want to ping PC1:
+    --------------------------------
+        - PC0 192.168.10.10
+        - Destination (192.168.20.20)
+        - First PC0 checks: Is 192.168.20.20 is in my subnet: NO
+        - So, It sends the packet to default gateway, PC0 --- --- (192.168.10.1 (R1))
+
+    2) Router1 Receives the Packet:
+    -------------------------------
+        - The packet says: Destination IP: 192.168.20.20
+        - Router 1 now looks into its Routing table
+        - It asks: How do i reach 192.168.20.0/24
+
+    3) What does Router-1 know:
+    ---------------------------
+        - Router 1 only knows the networks that are directly connected to it:
+        - Which are (192.168.10.0/24), G0/0 and 10.10.10.0/30, G0/1
+        - That's all, It does not know: 192.168.20.0/24
+        - Because nobody has told Router-1 about that network yet
+        - I don't know where 192.168.20.0/24 is, So it drops the packet
+
+    4) This is Why Static Routing Exists: ****
+    ------------------------------------------
+        - Static Routing is simply telling the router:
+        - If you want to reach the 192.168.20.0/24 network, send teh packet to Router 2 at 10.10.10.2"
+        That's all static route does
+
+
+        Verify through(Commands): ROUTER-1
+        ----------------------------------
+        Router1#sh ip route
+        Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+               D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+               N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+               E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+               i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+               * - candidate default, U - per-user static route, o - ODR
+               P - periodic downloaded static route
+
+        Gateway of last resort is not set
+
+             10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+        C       10.10.10.0/30 is directly connected, GigabitEthernet0/1
+        L       10.10.10.1/32 is directly connected, GigabitEthernet0/1
+             192.168.10.0/24 is variably subnetted, 2 subnets, 2 masks
+        C       192.168.10.0/24 is directly connected, GigabitEthernet0/0
+        L       192.168.10.1/32 is directly connected, GigabitEthernet0/0
+
+
+        #########################################################
+         1) there is no entry for 192.168.20.0/24,
+         > That's exactly why Router-1 cannot forward the packet
+
+         2) Same problem on Router-2
+            (There is not entry for 192.168.10.0/24)
+
+         4) So, Even if the packet somehow reached Router-2,
+            the replay couldn't get back without a route
+
+         ########################################################
+
+        Router2#sh ip route
+        Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+               D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+               N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+               E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+               i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+               * - candidate default, U - per-user static route, o - ODR
+               P - periodic downloaded static route
+
+        Gateway of last resort is not set
+
+             10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+        C       10.10.10.0/30 is directly connected, GigabitEthernet0/1
+        L       10.10.10.2/32 is directly connected, GigabitEthernet0/1
+             192.168.20.0/24 is variably subnetted, 2 subnets, 2 masks
+        C       192.168.20.0/24 is directly connected, GigabitEthernet0/0
+        L       192.168.20.1/32 is directly connected, GigabitEthernet0/0
+
+        Router2#
+
+    5) What should we tell Router-1:
+    --------------------------------
+        - If you want to reach 192.168.20.0/24, send the packet to Router-2
+        - Router-2 IPs, 10.10.10.2
+        - Therefore the static route becomes:
+            ip route 192.168.20.0 255.255.255.0 10.10.10.2
+
+            ip route (create static route)
+            192.168.20.0 (Destination Network)
+            255.255.255.0 (Destination Subnet mask)
+            10.10.10.2 (Net HOP)
+
+    6) Same Route Router2 as well:
+    ------------------------------
+        Router-2 receives: Destination 192.168.10.10
+        Router-2 checks: Do I know 192.168.10.0/24: NO
+        So, We must also teach Router-2
+        ip route 192.168.10.0 255.255.255.0 10.10.10.1
+        Router-1 points to Router-2
+        Router-2 points to Router-1
+        This is why communication becomes bidirectional
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

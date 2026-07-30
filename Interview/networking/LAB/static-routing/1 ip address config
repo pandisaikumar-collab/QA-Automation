@@ -1,0 +1,118 @@
+IP Address Configuration:
+-------------------------
+    (PC0)
+    IP Address      : 192.168.10.10 (identity of PC0)
+    Subnet Mask     : 255.255.255.0 (this tells PC0 which devices belong to my local network)
+                                    (So, PC0 knows, anyone between 192.168.10.1 and 192.168.10.254 is in local network)
+    Default Gateway : 192.168.10.1 (the exit gate from local network)
+                                   (whenever PC0 wants to communicate with another network, it sends the packet to this gateway)
+
+    (PC1)
+    IP Address  : 192.168.20.20
+    Subnet Mask : 255.255.255.0
+    Default Gateway : 192.168.20.1
+
+    Why the Gateway different:
+    ---------------------------
+    Because PC1 belongs to a different network Each network must have its own gateway
+
+Q) PC0 wants to ping 192.168.10.50: (will not send to default gateway)
+----------------------------------------------------------------------
+
+    1) PC0 checks its own network:
+    ------------------------------
+        PC0 has: IP address 192.168.10.10
+        Subnet Mask: 255.255.255.0
+
+        So PC0 knows: 192.168.10.0/24
+        Now the destination is: 192.168.10.50
+        PC0 compares: My network 192.168.10.0, Destination 192.168.10.0
+        They are the same network, So, PC0 immediately says: I don't need the router
+
+    2) Then what happens:
+    ---------------------
+        PC0 send an ARP Request,
+        It asks: who has 192.168.10.50
+        The ARP Request ues the broadcast MAC = FF:FF:FF:FF:FF:FF
+        The switch floods the ARP request
+        If PC 192.168.10.50 exists, It replies with its MAC address
+        Then PC0 sends the data directly, The router is never involved
+
+    * PC0 sends the packet directly to 192.168.10.50, Because both devices are in the same subnet
+    * The default gateway is not used
+
+Q) PC0 wants to ping 192.168.20.20: [will send to Default Gateway]:
+-------------------------------------------------------------------
+    - It send to the default gateway,
+      Because PC0 compares: My network 192.168.10.0, Destination 192.168.20.0
+
+    Different Networks:
+    -------------------
+    So PC0 says: I cannot reach this network directly
+
+    Then:
+    ----
+    1. ARPs for the default gateways MAC address (if not already cached)
+    2. Sends the Ethernet Frame to the Router's MAC address
+    3. Keeps the destination IP as 192.168.20.20
+
+Q) When is the Default gateway used:
+------------------------------------
+    - The default gateway is used only when the destination IP address belongs to a different network,
+    - If the destination is in same subnet, the source device communicates directly by resolving
+      destination device's MAC address using ARP
+
+Q) Suppose PC0 (192.168.10.10/24) wants to communicate with 192.168.10.200. Will it use the default gateway:
+------------------------------------------------------------------------------------------------------------
+    - PC0 first compares the destination IP with its own subnet using the subnet mask,
+    - Since 192.168.10.200 belongs to the same 192.168.10.0/24 network,
+    - PC0 does not use the default gateway, instead, it sends an ARP request to learn the MAC address of
+      192.168.10.200 and then sends the Ethernet Frame directly to the device
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

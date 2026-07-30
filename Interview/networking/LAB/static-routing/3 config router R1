@@ -1,0 +1,134 @@
+Configure Router R1:
+--------------------
+    (Interface G0/0):
+    -----------------
+    Router>enable
+    Router#conf
+    Router#configure ter
+    Router#configure terminal
+    Enter configuration commands, one per line.  End with CNTL/Z.
+    Router(config)#int
+    Router(config)#interface gi
+    Router(config)#interface gigabitEthernet 0/0
+    Router(config-if)#ip add
+    Router(config-if)#ip address 192.168.10.1 255.255.255.0
+    Router(config-if)#no shu
+    Router(config-if)#no shutdown
+    Router(config-if)#
+    %LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to up
+    %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to up
+    Router(config-if)#
+    Router(config-if)#ex
+    Router(config-if)#exit
+    Router(config)#
+    Router(config)#
+    Router(config)#
+    Router(config)#host
+    Router(config)#hostname Router1
+    Router1(config)#end
+
+    (Interface G0/1):
+    -----------------
+    Router1#enable
+    Router1#conf
+    Router1#configure ter
+    Router1#configure terminal
+    Enter configuration commands, one per line.  End with CNTL/Z.
+    Router1(config)#int
+    Router1(config)#interface gi
+    Router1(config)#interface gigabitEthernet 0/1
+    Router1(config-if)#ip address 10.10.10.1 255.255.255.252
+    Router1(config-if)#no shut
+    Router1(config-if)#no shutdown
+    Router1(config-if)#
+    %LINK-5-CHANGED: Interface GigabitEthernet0/1, changed state to up
+    Router1(config-if)#end
+    Router1#
+    %SYS-5-CONFIG_I: Configured from console by console
+
+    Commands:
+    =========
+    enable: enters Privileged EXEC Mode, where you can view and modify the router configuration
+    configure terminal: Enter Global Configuration Mode, where you can configure interface, routing, VLANs, and other settings
+    interface gigabitEthernet 0/0:  We are telling the router: I want to configure interface G0/0
+    ip address 192.168.10.1 255.255.255.0:  This assigns the gateway IP address for the 192.168.10.0/24 LAN
+    no shutdown:  By default, Cisco router interface are administratively down
+    exit: Exit from G0/0 configuration mode back to global configuration mode
+
+    interface gigabitEthernet 0/1:
+    (We're now selecting the interface connected to Router R2)
+    ip address 10.10.10.1 255.255.255.252 (This gives R1 its IP address on the point-to-point link)
+
+    Router1#sh ip interface brief
+    Interface              IP-Address      OK? Method Status                Protocol
+    GigabitEthernet0/0     192.168.10.1    YES manual up                    up
+    GigabitEthernet0/1     10.10.10.1      YES manual up                    down
+    GigabitEthernet0/2     unassigned      YES unset  administratively down down
+    Vlan1                  unassigned      YES unset  administratively down down
+    Router1#
+
+    Understand "Status" and "Protocol":
+    -----------------------------------
+    Status = Physical Layer (Layer1): Is the cable connected, Yes(Status=UP)
+    Protocol = Data Link Layer (Layer2): Can I actually communicate with the device on the other side: (Protocol=UP)
+
+
+    Additional Information:
+    =======================
+    R2 G0/1: what is connected here:
+    --------------------------------
+    R1 G0/1  <------------->  R2 G0/1 [R1 G0/1  <------------->  R2 G0/1]
+
+    The network is: 10.10.10.0/30
+    Usable IPs are:
+    Network ID      : 10.10.10.0
+    R1              : 10.10.10.1
+    R2              : 10.10.10.2
+    Broadcast       : 10.10.10.3
+
+    So:
+    R2 G0/1
+    IP Address : 10.10.10.2
+    Subnet Mask : 255.255.255.252
+
+    Topology:
+    ---------
+    PC1 -- SW2 -- R2 G0/0
+
+    Q) What network does PC1 belong to: Earlier we configured PC1 s:
+        IP Address: 192.168.20.20
+        MASK: 255.255.255.0
+        So the network is: 192.168.20.0/24
+
+        Therefore, what should the router's gateway IP be:
+        --------------------------------------------------
+        R2 G0/0
+        IP Address: 192.168.20.1
+        Subnet Mask: 255.255.255.0
+        This becomes the default gateway for PC1
+
+        Interface: G0/0, IP Address: 192.168.20.1, Subnet Mask:255.255.255.0 (Gateway for PC1 LAN)
+        Interface: G0/1, IP Address: 10.10.10.2, Subnet Mask:255.255.255.252 (Link to Router R1)
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

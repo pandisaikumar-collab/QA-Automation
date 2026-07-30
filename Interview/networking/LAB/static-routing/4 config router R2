@@ -1,0 +1,58 @@
+Configure Router R2:
+--------------------
+    Router>enable
+    Router#conf
+    Router#configure ter
+    Router#configure terminal
+    Enter configuration commands, one per line.  End with CNTL/Z.
+    Router(config)#hostn
+    Router(config)#hostname Router2
+    Router2(config)#int
+    Router2(config)#interface gi
+    Router2(config)#interface gigabitEthernet g
+    Router2(config)#interface gigabitEthernet 0/0
+    Router2(config-if)#ip add
+    Router2(config-if)#ip address 192.168.20.1 255.255.255.0
+    Router2(config-if)#no shut
+    Router2(config-if)#no shutdown
+    Router2(config-if)#
+    %LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to up
+    %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to up
+
+    Router2(config-if)#
+    Router2(config-if)#
+    Router2(config-if)#ex
+    Router2(config-if)#exit
+    Router2(config)#
+    Router2(config)#
+    Router2(config)#int
+    Router2(config)#interface gi
+    Router2(config)#interface gigabitEthernet 0/1
+    Router2(config-if)#ip add
+    Router2(config-if)#ip address 10.10.10.2 255.255.255.252
+    Router2(config-if)#no shu
+    Router2(config-if)#no shutdown
+
+    Router2(config-if)#
+    %LINK-5-CHANGED: Interface GigabitEthernet0/1, changed state to up
+
+    %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to up
+
+    Router2(config-if)#ex
+    Router2(config-if)#exit
+    Router2(config)#
+    Router2(config)#
+    Router2(config)#end
+    Router2#
+    %SYS-5-CONFIG_I: Configured from console by console
+
+    Router2#sh ip int
+    Router2#sh ip interface br
+    Router2#sh ip interface brief
+    Interface              IP-Address      OK? Method Status                Protocol
+    GigabitEthernet0/0     192.168.20.1    YES manual up                    up
+    GigabitEthernet0/1     10.10.10.2      YES manual up                    up
+    GigabitEthernet0/2     unassigned      YES unset  administratively down down
+    Vlan1                  unassigned      YES unset  administratively down down
+    Router2#
+    Router2#
